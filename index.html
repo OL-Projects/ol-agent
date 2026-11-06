@@ -651,11 +651,9 @@ legend{padding:0;margin-bottom:8px}
     <li class="hi"><span class="pr">$5<small>/ month</small></span><span class="lab stt">Solo · start here</span><span class="ds">Bring your own model key. OL does the routing and the proving.</span></li>
     <li><span class="pr">$19<small>/ month</small></span><span class="lab ink">Pro</span><span class="ds">The full tier. Details come with your invitation.</span></li>
    </ol>
-   <noscript><p class="body" style="margin-top:14px">JavaScript is off, so the form posts directly to the form service.</p></noscript>
+   <noscript><p class="body" style="margin-top:14px">JavaScript is off, so the form opens your mail app and the request goes from your own mailbox. If nothing opens, write to spirokaglis@gmail.com with your address, tier and first task.</p></noscript>
   </div>
-  <form id="wl" action="https://formsubmit.co/ajax/spirokaglis@gmail.com" method="POST" data-reveal style="--d:1">
-   <input type="hidden" name="_subject" value="OL waitlist request">
-   <input type="hidden" name="_captcha" value="false">
+  <form id="wl" action="mailto:spirokaglis@gmail.com" method="post" enctype="text/plain" data-reveal style="--d:1">
    <div class="fld" id="f-em">
     <label class="lab" for="em"><span>Email</span><span>Required</span></label>
     <input id="em" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" aria-describedby="em-h">
@@ -770,22 +768,25 @@ if(L&&motion){
  var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){readRh();L.classList.remove('anim');place();requestAnimationFrame(function(){L.classList.add('anim')})},150)});
 }
 
-/* waitlist */
+/* waitlist — mail-first: the message is composed in his mail app; the service is only an enhancement */
 var f=d.getElementById('wl');
 if(f){
  f.setAttribute('novalidate','');
  var em=d.getElementById('em'),fe=d.getElementById('f-em'),hint=d.getElementById('em-h'),st=d.getElementById('st'),sb=d.getElementById('sb'),task=d.getElementById('task');
  var hint0=hint.textContent,label0=sb.innerHTML,MAIL='spirokaglis@gmail.com';
  function tierVal(){var c=f.querySelector('input[name=tier]:checked');return c?c.value:''}
- function mailto(){var b='Email: '+em.value.trim()+'\nLikely tier: '+tierVal()+'\nFirst task: '+(task.value.trim()||'(none given)');
-  return 'mailto:'+MAIL+'?subject='+encodeURIComponent('OL waitlist request')+'&body='+encodeURIComponent(b)}
+ function body(){return 'Email: '+em.value.trim()+'\nLikely tier: '+tierVal()+'\nFirst task: '+(task.value.trim()||'(none given)')}
+ function mailto(){return 'mailto:'+MAIL+'?subject='+encodeURIComponent('OL waitlist request')+'&body='+encodeURIComponent(body())}
  function say(cls,title,msg){st.className='status'+(cls?' '+cls:'');st.textContent='';var s=d.createElement('span');s.className='stl';s.textContent=title;st.appendChild(s);st.appendChild(d.createTextNode(msg))}
- f.addEventListener('input',function(e){if(e.target===em&&fe.classList.contains('err')&&em.value){fe.classList.remove('err');em.removeAttribute('aria-invalid');hint.textContent=hint0}});
- function fail(msg){
-  say('bad','Refused · not recorded',msg+' Nothing was recorded, and this page will not pretend otherwise. Send the same request by email: ');
-  var a=d.createElement('a');a.href=mailto();a.className='tl';a.textContent='open a pre-filled message';st.appendChild(a);st.appendChild(d.createTextNode('.'));
-  sb.disabled=false;sb.removeAttribute('aria-busy');sb.innerHTML=label0;
+ function note(t){var p=d.createElement('p');p.className='hint';p.textContent=t;st.appendChild(p)}
+ function link(href,text){var a=d.createElement('a');a.href=href;a.className='tl';a.textContent=text;st.appendChild(a)}
+ function unlock(){sb.disabled=false;sb.removeAttribute('aria-busy');sb.innerHTML=label0}
+ function composed(){
+  say('held','Composed · press Send in your mail app','Nothing is recorded on this page until you send that message. If no mail window opened, write to '+MAIL+' — the exact text is below.');
+  var pre=d.createElement('pre');pre.style.cssText='white-space:pre-wrap;margin:8px 0 0;font:inherit;opacity:.85';pre.textContent=body();st.appendChild(pre);
+  link(mailto(),'Open the message again');
  }
+ f.addEventListener('input',function(e){if(e.target===em&&fe.classList.contains('err')&&em.value){fe.classList.remove('err');em.removeAttribute('aria-invalid');hint.textContent=hint0}});
  f.addEventListener('submit',function(e){
   e.preventDefault();
   var v=em.value.trim();
@@ -794,20 +795,10 @@ if(f){
    hint.textContent=v?'That address looks incomplete. Nothing was sent.':'An email address is needed to send an invitation.';
    st.className='status';st.textContent='';em.focus();return;
   }
-  if(navigator.onLine===false){fail('You appear to be offline.');return}
-  sb.disabled=true;sb.setAttribute('aria-busy','true');sb.textContent='Sending…';
-  say('','Held · checking','Sent to one inbox. Waiting for the form service to confirm.');
-  var ctl=window.AbortController?new AbortController():null,to=setTimeout(function(){if(ctl)ctl.abort()},12000);
-  fetch(f.action,{method:'POST',body:new FormData(f),headers:{'Accept':'application/json'},signal:ctl?ctl.signal:undefined})
-  .then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})})
-  .then(function(x){clearTimeout(to);
-   if(x.ok&&x.j&&(x.j.success===true||x.j.success==='true')){
-    say('ok','Verified · on file','The form service confirmed it. Your request for '+v+' is on file. The next message comes from a person.');
-    sb.textContent='Request on file';sb.removeAttribute('aria-busy');
-    f.querySelectorAll('input,textarea').forEach(function(i){if(i.type!=='hidden')i.disabled=true});
-   }else{fail('The form service did not confirm the request.')}
-  })
-  .catch(function(){clearTimeout(to);fail('The request could not reach the form service.')});
+  sb.disabled=true;sb.setAttribute('aria-busy','true');sb.textContent='Composing…';
+  composed();
+  window.location.href=mailto();
+  unlock();
  });
 }
 })();
