@@ -10,7 +10,7 @@
 {"@context":"https://schema.org","@graph":[
  {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","alternateName":"OL-Control","url":"https://ol-projects.github.io/ol-control/","description":"A Montréal company building OL-Control, a personal agent that closes work only when its own verifier passes.","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"},"identifier":"NEQ 2270669312"},
  {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/","name":"OL","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"inLanguage":"en"},
- {"@type":"SoftwareApplication","name":"OL-Control","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"A personal agent that runs on your Mac and closes a unit of work only when its own verifier passes. Documents are rendered to pixels and measured, arithmetic is recomputed to the cent, and a deploy counts only when the served bytes hash-match the built bytes.","url":"https://ol-projects.github.io/ol-control/","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"softwareVersion":"493166d71c6b","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Day pass","price":"0.50","priceCurrency":"USD"},{"@type":"Offer","name":"Solo","price":"5","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19","priceCurrency":"USD"}]}
+ {"@type":"SoftwareApplication","name":"OL-Control","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"A personal agent that runs on your Mac and closes a unit of work only when its own verifier passes. Documents are rendered to pixels and measured, arithmetic is recomputed to the cent, and a deploy counts only when the served bytes hash-match the built bytes.","url":"https://ol-projects.github.io/ol-control/","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"softwareVersion":"0.17.0","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Day pass","price":"0.50","priceCurrency":"USD"},{"@type":"Offer","name":"Solo","price":"5","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19","priceCurrency":"USD"}]}
 ]}
 </script>
 <meta property="og:type" content="website">
@@ -474,7 +474,7 @@ legend{padding:0;margin-bottom:8px}
 
 <section class="band hero" id="top" aria-labelledby="h-hero">
  <div class="g">
-  <div class="bh"><span class="lab">01 · Montréal · Generation <span class="h">493166d71c6b</span></span><i></i></div>
+  <div class="bh"><span class="lab">01 · Montréal · Site build <span class="h" id="gen-hero">—</span></span><i></i></div>
   <h1 class="d1" id="h-hero">
    <span class="mask" style="--d:0"><span>It cannot claim</span></span>
    <span class="mask" style="--d:1"><span>what it has not proven.</span></span>
@@ -673,16 +673,16 @@ legend{padding:0;margin-bottom:8px}
 
 <section class="band" id="numbers" aria-labelledby="h-num">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">Unrounded · build <span class="h">493166d71c6b</span></span></div>
-  <h2 class="d2 hl" id="h-num"><span class="mask"><span>Twenty of thirty-eight.</span></span></h2>
-  <p class="body hr" data-reveal>That is not finished, and this page says so. The suite is printed in full — the failing count stays on the page whether it flatters us or not.</p>
+  <div class="bh"><i></i><span class="lab">Unrounded · site build <span class="h" id="build-num">—</span> · ledger as of <span class="h" id="fig-at">—</span></span></div>
+  <h2 class="d2 hl" id="h-num"><span class="mask"><span id="fig-h">Twenty-two of thirty-eight.</span></span></h2>
+  <p class="body hr" data-reveal>That is not finished, and this page says so. The figures below are read from the live ledger, not typed in: a stale number fails the deploy the same way a stale receipt does.</p>
   <div class="inst" data-reveal>
-   <div><span class="lab l">Roadmap legs</span><span class="f">38</span><span class="lab u">total</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs closed</span><span class="f">20</span><span class="lab u">of 38 · 53%</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs open</span><span class="f">18</span><span class="lab u">of 38 · 47%</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Checks</span><span class="f">201</span><span class="lab u">in suite</span><span class="lab s">src · make test</span></div>
-   <div><span class="lab l">Passing</span><span class="f">201</span><span class="lab u">of 201 · 100%</span><span class="lab s">src · make test</span></div>
-   <div><span class="lab l">Failing</span><span class="f">0</span><span class="lab u">none at this build</span><span class="lab s">src · make test</span></div>
+   <div><span class="lab l">Roadmap legs</span><span class="f" id="fig-legs">38</span><span class="lab u">total</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Legs closed</span><span class="f" id="fig-done">22</span><span class="lab u">of 38 · <span id="fig-done-pct">58</span>%</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Legs open</span><span class="f" id="fig-open">16</span><span class="lab u">of 38 · <span id="fig-open-pct">42</span>%</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Checks</span><span class="f" id="fig-checks">201</span><span class="lab u">in suite</span><span class="lab s">src · make test</span></div>
+   <div><span class="lab l">Passing</span><span class="f" id="fig-pass">201</span><span class="lab u">of 201 · 100%</span><span class="lab s">src · make test</span></div>
+   <div><span class="lab l">Failing</span><span class="f" id="fig-fail">0</span><span class="lab u">none at this build</span><span class="lab s">src · make test</span></div>
   </div>
  </div>
 </section>
@@ -759,7 +759,7 @@ legend{padding:0;margin-bottom:8px}
   <div class="mk2"><svg role="img" aria-label="OL-Control mark"><use href="#mark"/></svg></div>
   <div class="f1"><p class="ink">OL-Control</p><p>Built by OL — Optimization and Logistics</p><p>Montréal, Québec · NEQ 2270669312</p></div>
   <div class="f2"><p><a class="tl" href="#access">Request access</a></p><p>Replies within two business days.</p></div>
-  <div class="f3"><p class="lab">Build <span class="h ink">493166d71c6b</span></p><p class="lab">No fonts, images or trackers loaded</p></div>
+  <div class="f3"><p class="lab">Site build <span class="h ink" id="build-foot">—</span></p><p class="lab">No fonts, images or trackers loaded</p></div>
  </div>
 </footer>
 </div>
@@ -1127,6 +1127,25 @@ if(sc){lg.style.setProperty('--fx-lh',lg.offsetHeight+'px');sc.classList.remove(
    run.disabled=false;
   });
  });
+})();
+
+/* figures: read the published status + build, so the page cannot carry a stale number */
+(function(){
+ var d=document;
+ function set(id,v){var e=d.getElementById(id);if(e&&v!==undefined&&v!==null)e.textContent=v}
+ fetch('status.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(s){
+  if(!s)return;
+  set('fig-legs',s.legs_total); set('fig-done',s.legs_done); set('fig-open',s.legs_open);
+  set('fig-done-pct',s.legs_done_pct+'%'); set('fig-open-pct',s.legs_open_pct+'%');
+  set('fig-checks',s.checks); set('fig-pass',s.checks_passing); set('fig-fail',s.checks_failing);
+  set('fig-h',s.headline);
+  set('fig-at',s.generated_date);
+ }).catch(function(){});
+ fetch('proof.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(p){
+  if(!p)return;
+  var b=String(p.build||'').slice(0,12);
+  set('gen-hero',b); set('build-foot',b); set('build-num',b); set('build-schema',b);
+ }).catch(function(){});
 })();
 </script>
 </body>
