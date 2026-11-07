@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
- "build": "e94baa1abe71",
- "generated": "2026-11-07T06:34:36Z",
+ "build": "9b92615acb26",
+ "generated": "2026-11-07T06:41:46Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -26,14 +26,29 @@
    "bytes": 8911
   },
   {
+   "path": "film-poster.jpg",
+   "sha256": "a06001c3db335edd3a6f451fcfcefded945651e72bcda0a7e9dc23338ad52c89",
+   "bytes": 42519
+  },
+  {
    "path": "index.html",
-   "sha256": "5e69741db03ac73625e486b302cd0f381a2745e8f9770d3faa2ccc778fe2c09f",
-   "bytes": 88071
+   "sha256": "9db6e48b5054c5cc75130292c743eea5dee968790003714903b31ae6111f31a8",
+   "bytes": 88384
   },
   {
    "path": "og.png",
    "sha256": "289b913f2c0d17ff84fd20d72f46e2f8e5b83accd2b01bc8d26e7cdcc2128d91",
    "bytes": 51308
+  },
+  {
+   "path": "ol-control-30s.mp4",
+   "sha256": "83e79235d578abef040b1b35e1cc45df9d7d702b8a57f1f2c50aeebe44bbc820",
+   "bytes": 931188
+  },
+  {
+   "path": "ol-control-30s.vtt",
+   "sha256": "6e4ed574b024d8a2971a0aa0547c2cd20b866620c229e4b2d925eafc37350297",
+   "bytes": 405
   },
   {
    "path": "ol-mark-v2.svg",

@@ -407,6 +407,14 @@ legend{padding:0;margin-bottom:8px}
  .seg label:nth-child(n+3){border-top:1px solid var(--rule)}
  .foot .f3{text-align:left}
 }
+/* film */
+.film{grid-column:1/span 4;min-width:0;margin-top:40px}
+.film video{display:block;width:100%;height:auto;border:1px solid var(--rule);background:#000}
+.film figcaption{margin-top:12px;max-width:44ch}
+.film .dur{display:flex;gap:16px;align-items:center;margin-top:16px}
+@media (max-width:1080px){.film{grid-column:1/span 5}}
+@media (max-width:760px){.film{grid-column:1/-1}.film figcaption{max-width:none}}
+
 /* verify this page */
 .vf{grid-column:1/span 7;min-width:0;margin-top:40px;border:1px solid var(--rule);background:var(--bg2)}
 .vf-h{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;padding:0 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
@@ -478,6 +486,7 @@ legend{padding:0;margin-bottom:8px}
     <div class="ctas">
      <a class="btn p" href="download.html">Download 0.17.0 <span class="ar" aria-hidden="true">↓</span></a>
      <a class="btn s" href="#gate">See how it proves it</a>
+     <a class="btn s" href="#film">Watch 30s <span class="ar" aria-hidden="true">▶</span></a>
     </div>
     <p class="meta lab">Private beta · macOS 12+ · Apple silicon · <a href="#access" style="color:inherit;border-bottom:1px solid currentColor;text-decoration:none">or request access</a></p>
    </div>
@@ -511,6 +520,22 @@ legend{padding:0;margin-bottom:8px}
    </div>
    <div class="lg-f"><p class="lab cnt"><span class="k1">verified <b data-c="verified">5</b></span> · <span class="k2">refused <b data-c="refused">3</b></span> · <span class="k3">held <b data-c="held">2</b></span> · <span class="k4">closed <b data-c="closed">2</b></span></p></div>
    <figcaption class="lab lg-n" id="lg-cap">A replay, not a live feed. The rules are the ones the gate runs. The rows are a sample.</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="band" id="film" aria-labelledby="h-film">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">30 seconds · captions burned in</span></div>
+  <h2 class="d2 hl" id="h-film"><span class="mask"><span>Watch it refuse.</span></span></h2>
+  <p class="body hr" data-reveal>One document, one failed check, one verdict. The film runs the same rules the gate runs — and its ledger rows are a sample replay, not a live customer feed.</p>
+  <figure class="film" data-reveal>
+   <video controls preload="none" playsinline poster="film-poster.jpg" width="1080" height="1920" aria-describedby="film-cap">
+    <source src="ol-control-30s.mp4" type="video/mp4">
+    <track kind="captions" src="ol-control-30s.vtt" srclang="en" label="English" default>
+    <p class="body">This browser cannot play the file. <a class="tl" href="ol-control-30s.mp4">Download it instead</a> — 910 KB.</p>
+   </video>
+   <figcaption class="lab lg-n" id="film-cap">Shot by shot: a page that clips, a total that is off by twenty-seven cents, a refusal with its reason, and a close that carries its evidence. No music library, no stock footage, no actor.</figcaption>
   </figure>
  </div>
 </section>
@@ -887,23 +912,6 @@ html.fx .btn.p:focus-visible,html.fx .btn.g:focus-visible,html.fx #fx-rp:focus-v
 @media (hover:hover){html.fx a[data-nav]{position:relative}html.fx a[data-nav]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.8,.2,1);pointer-events:none}html.fx a[data-nav]:hover::after{transform:scaleX(1)}}
 html.fx #top,html.fx #split,html.fx #gate,html.fx #ladder,html.fx #refusals,html.fx #made,html.fx #numbers,html.fx #access{scroll-margin-top:calc(var(--fx-hh,0px) + 24px)}
 @media (prefers-reduced-motion:no-preference){html.fx{scroll-behavior:smooth}}
-/* verify this page */
-.vf{grid-column:1/span 7;min-width:0;margin-top:40px;border:1px solid var(--rule);background:var(--bg2)}
-.vf-h{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;padding:0 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
-.vf-h .ttl{color:var(--ink)}
-.vf-h .ttl::before{content:"";display:inline-block;width:6px;height:6px;background:var(--blue);margin-right:10px;vertical-align:1px}
-.vf-b{padding:6px 16px}
-.vf-row{display:grid;grid-template-columns:minmax(0,1fr) 110px 96px;align-items:center;gap:12px;height:34px;border-bottom:1px solid var(--rule2);font:400 12px/1 var(--mono)}
-.vf-row:last-child{border-bottom:0}
-.vf-row b{font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vf-row .hg{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vf-row .v{width:auto;justify-self:end;padding:5px 0;font-size:10px}
-.vf-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-top:1px solid var(--rule)}
-.vf-sum{font:500 11.5px/1.5 var(--mono);letter-spacing:.06em;color:var(--mute)}
-.vf-sum b{color:var(--green);font-variant-numeric:tabular-nums}
-.vf-sum .bad{color:var(--amber)}
-.vf-note{grid-column:8/-1;align-self:start;margin-top:40px}
-.vf-note p+p{margin-top:16px}
 @media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
 @media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
 @media (prefers-reduced-motion:reduce){html.fx #fx-pal,html.fx #fx-pal .p,html.fx #fx-rail b,html.fx .fx-ind,html.fx .fx-lad .tiers>li p,html.fx .fx-lad .tiers>li .d,html.fx a[data-nav]::after,html.fx .fx-pulse,html.fx .fx-scan,html.fx .fx-rt,html.fx .fx-lt{transition:none!important;animation:none!important}}
