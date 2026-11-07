@@ -48,7 +48,24 @@ def sha256(p: Path) -> str:
 
 
 def build_id() -> str:
+    """The commit whose tree produced the bytes in this receipt.
+
+    HEAD is the wrong answer: a receipt is always written *before* the commit
+    that carries it, so stamping HEAD makes the page name its own parent -- the
+    one commit guaranteed not to contain the figures it is labelling. Ask git
+    which commit last touched a served file instead. proof.json is not in
+    served_files(), so the answer stops moving once the receipt is committed
+    alone, and the page keeps naming the build it actually came from.
+    """
+    paths = [p.relative_to(SITE).as_posix() for p in served_files()]
     try:
+        out = subprocess.run(
+            ["git", "-C", str(SITE), "log", "-1", "--format=%H", "--", *paths],
+            capture_output=True, text=True, check=True,
+        ).stdout.strip()
+        if out:
+            return out[:12]
+        # Shallow CI checkout: history cannot answer, HEAD is the right commit.
         return subprocess.run(
             ["git", "-C", str(SITE), "rev-parse", "--short=12", "HEAD"],
             capture_output=True, text=True, check=True,
