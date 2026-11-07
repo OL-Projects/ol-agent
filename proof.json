@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
- "build": "70ce7908bada",
- "generated": "2026-11-07T06:49:29Z",
+ "build": "9066214a44b1",
+ "generated": "2026-11-07T06:55:38Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -26,14 +26,9 @@
    "bytes": 8911
   },
   {
-   "path": "film-poster.jpg",
-   "sha256": "a06001c3db335edd3a6f451fcfcefded945651e72bcda0a7e9dc23338ad52c89",
-   "bytes": 42519
-  },
-  {
    "path": "index.html",
-   "sha256": "ce99599b7f7dcb4f4b4a41c08b82d2002b361a2dc7b495c5778ed1a355f3a2f7",
-   "bytes": 89623
+   "sha256": "22022b232dbdd523a55f079f939a51a1f775d7b096a0bbc8dd537cd2da596647",
+   "bytes": 87376
   },
   {
    "path": "og.png",

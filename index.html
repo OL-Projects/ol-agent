@@ -47,7 +47,7 @@ h1,h2,h3{margin:0;font-weight:560}
 
 /* container */
 .box-w{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
-.top{position:sticky;top:0;z-index:20;background:rgba(11,11,10,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.top{position:sticky;top:0;z-index:20;background:rgba(11,11,10,.97)}
 .bar{display:flex;align-items:center;gap:24px;height:var(--hh);border-bottom:1px solid var(--rule)}
 .brand{display:inline-flex;color:var(--ink);text-decoration:none}
 .brand svg{display:block;width:44px;height:25px}
@@ -57,7 +57,7 @@ h1,h2,h3{margin:0;font-weight:560}
 @media (max-width:420px){.brand .wm{display:none}}
 .bar .st0{margin-left:auto;white-space:nowrap}
 .strip{display:none;gap:18px}
-.strip a{position:relative;padding:6px 0;text-decoration:none;font:500 11px/1 var(--mono);letter-spacing:.1em;color:var(--mute)}
+.strip a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:6px 0;text-decoration:none;font:500 11px/1 var(--mono);letter-spacing:.1em;color:var(--mute)}
 .strip a.on{color:var(--ink)}
 .strip a.on::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--blue)}
 
@@ -117,6 +117,7 @@ html.motion [data-fade].in{opacity:1}
 .hero-copy{grid-column:1/span 5;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
 .lede{font-size:17px;line-height:1.6;color:var(--mute);max-width:48ch}
 .lede span{display:block}
+@media (min-width:1080px) and (max-width:1420px){.lede span{display:inline}}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .meta{margin-top:20px;color:var(--ink)}
 .key-h{padding-bottom:10px;border-bottom:1px solid var(--rule)}
@@ -342,6 +343,7 @@ legend{padding:0;margin-bottom:8px}
 }
 /* ≤760: separate mobile composition */
 @media (max-width:760px){
+ .bh .lab{white-space:normal}
  :root{--gut:20px;--band:56px;--kick:32px;--hh:52px}
  body{font-size:16px}
  .strip{display:none}
@@ -434,6 +436,15 @@ legend{padding:0;margin-bottom:8px}
 .vf-note p+p{margin-top:16px}
 @media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
 @media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
+/* the hero must not wait for JS: its entrance runs from CSS at parse time, so the
+   largest element is painted ~700 ms in instead of after script + a 1 s transition */
+@media (prefers-reduced-motion:no-preference){
+ html.motion .hero .mask>span{transform:none;animation:heroIn .68s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d,0)*70ms)}
+ html.motion .hero [data-reveal]{opacity:1;transform:none;animation:heroUp .55s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d,0)*35ms + 40ms)}
+ html.motion .hero .ledger{animation-delay:.12s}
+ @keyframes heroIn{from{transform:translate3d(0,108%,0)}to{transform:none}}
+ @keyframes heroUp{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -530,7 +541,7 @@ legend{padding:0;margin-bottom:8px}
   <h2 class="d2 hl" id="h-film"><span class="mask"><span>Watch it refuse.</span></span></h2>
   <p class="body hr" data-reveal>One document, one failed check, one verdict. The film runs the same rules the gate runs — and its ledger rows are a sample replay, not a live customer feed.</p>
   <figure class="film" data-reveal>
-   <video controls preload="none" playsinline poster="film-poster.jpg" width="1080" height="1920" aria-describedby="film-cap">
+   <video controls preload="none" playsinline poster="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201080%201920%27%3E%3Crect%20width%3D%271080%27%20height%3D%271920%27%20fill%3D%27%230b0b0a%27%2F%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ecebe6%27%20stroke-width%3D%277%27%3E%3Ccircle%20cx%3D%27486%27%20cy%3D%27886%27%20r%3D%2786%27%2F%3E%3Cpath%20d%3D%27M598%20800V972H726%27%20stroke-linecap%3D%27square%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23a19e96%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2726%27%20letter-spacing%3D%276%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271102%27%3EPLAY%20%C2%B7%2030%20S%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23ecebe6%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2722%27%20letter-spacing%3D%275%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271152%27%3ECAPTIONS%20BURNED%20IN%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="1080" height="1920" aria-describedby="film-cap">
     <source src="ol-control-30s.mp4" type="video/mp4">
     <track kind="captions" src="ol-control-30s.vtt" srclang="en" label="English" default>
     <p class="body">This browser cannot play the file. <a class="tl" href="ol-control-30s.mp4">Download it instead</a> — 910 KB.</p>
@@ -694,10 +705,10 @@ legend{padding:0;margin-bottom:8px}
   <p class="body hr" data-reveal>Check it. The button below fetches every file this page is made of, hashes each one in your browser, and compares the result to the hashes published at build time. Nothing is uploaded, nothing is sent anywhere, and there is no server to ask.</p>
   <figure class="vf" data-reveal>
    <div class="vf-h"><span class="lab ttl">Proof · <span id="vf-gen">published at build</span></span><span class="lab" id="vf-count">— files</span></div>
-   <div class="vf-b" id="vf-body" aria-live="polite"></div>
+   <div class="vf-b" id="vf-body"></div>
    <div class="vf-f">
     <button class="btn p" type="button" id="vf-run" style="min-height:42px;padding:0 18px;font-size:14px">Run the check <span class="ar" aria-hidden="true">→</span></button>
-    <p class="vf-sum" id="vf-sum">Not run. The hashes are published; the check is yours to make.</p>
+    <p class="vf-sum" id="vf-sum" role="status" aria-live="polite">Not run. The hashes are published; the check is yours to make.</p>
    </div>
    <figcaption class="lab lg-n" id="vf-cap">Each row is one file this page loads. A mismatch means the file you received is not the file that was built. That is a refusal, and this page says so out loud.</figcaption>
   </figure>
@@ -910,7 +921,7 @@ html.fx #fx-rp:hover{text-decoration:underline;text-decoration-thickness:1px;opa
 html.fx .btn.p:active,html.fx .btn.g:active{scale:.985}
 html.fx .btn.p:focus-visible,html.fx .btn.g:focus-visible,html.fx #fx-rp:focus-visible,html.fx a[data-nav]:focus-visible,html.fx .tiers button:focus-visible{outline:2px solid var(--fx-acc,currentColor);outline-offset:2px}
 @media (hover:hover){html.fx a[data-nav]{position:relative}html.fx a[data-nav]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.8,.2,1);pointer-events:none}html.fx a[data-nav]:hover::after{transform:scaleX(1)}}
-html.fx #top,html.fx #split,html.fx #gate,html.fx #ladder,html.fx #refusals,html.fx #made,html.fx #numbers,html.fx #access{scroll-margin-top:calc(var(--fx-hh,0px) + 24px)}
+html.fx main>section{scroll-margin-top:calc(var(--fx-hh,0px) + 24px)}
 @media (prefers-reduced-motion:no-preference){html.fx{scroll-behavior:smooth}}
 @media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
 @media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
@@ -935,12 +946,12 @@ function reflow(el){return el.offsetWidth}
 H.classList.add('fx');
 
 /* palette of existing custom properties */
-safe(function(){var cs=getComputedStyle(H),mp={'--fx-acc':['--acc','--accent','--signal','--hi','--a'],'--fx-line':['--line','--rule','--hair','--bd','--border'],'--fx-mute':['--mute','--muted','--dim','--fg2']},k,i,v;
+safe(function(){var cs=getComputedStyle(H),mp={'--fx-acc':['--acc','--accent','--signal','--hi','--a','--blue'],'--fx-line':['--line','--rule','--hair','--bd','--border'],'--fx-mute':['--mute','--muted','--dim','--fg2']},k,i,v;
 for(k in mp)for(i=0;i<mp[k].length;i++){v=cs.getPropertyValue(mp[k][i]).trim();if(v){H.style.setProperty(k,v);break}}
 v=getComputedStyle(d.body).backgroundColor;if(v&&v!=='transparent'&&v.indexOf('0)')<0)H.style.setProperty('--fx-bg',v);
 var hh=0;$$('header').forEach(function(e){var p=getComputedStyle(e).position;if(p==='fixed'||p==='sticky')hh=Math.max(hh,e.offsetHeight)});H.style.setProperty('--fx-hh',hh+'px')});
 
-var IDS=['top','split','gate','ladder','refusals','made','numbers','access'],secs=[];
+var IDS=['top','split','gate','ladder','refusals','made','numbers','verify','access'],secs=[];
 IDS.forEach(function(id){var e=d.getElementById(id);if(e)secs.push(e)});
 var vh=w.innerHeight,vw=w.innerWidth,sh=1,tops=[],rail,fill,num,cur=-1,masks=[],amt=[1.5,3,4.5],lg=$('.ledger');
 
@@ -971,16 +982,16 @@ if(lg&&HOV&&MO)d.addEventListener('pointermove',function(e){if(e.pointerType&&e.
 /* 2 · command palette */
 safe(function(){
 var items=[],vis=[],act=-1,isOpen=0,last=null,ct,HINT='↑↓ move · ↵ run · esc close';
-function name(s){var N={top:'Index',split:'The split',gate:'The gate',ladder:'The ladder',refusals:'Refusals',made:'Made of',numbers:'Numbers',access:'Access'};if(N[s.id])return N[s.id];var h=$('h1,h2,h3',s);return h?h.textContent.replace(/\s+/g,' ').trim():s.id}
+function name(s){var N={top:'Overview',split:'The split',gate:'The gate',ladder:'The ladder',refusals:'Refusals',made:'Made of',numbers:'Numbers',verify:'Check this page',access:'Access'};if(N[s.id])return N[s.id];var h=$('h1,h2,h3',s);return h?h.textContent.replace(/\s+/g,' ').trim():s.id}
 function jump(s){if(history.replaceState)history.replaceState(null,'','#'+s.id);s.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}
 secs.forEach(function(s){items.push({n:pad(IDS.indexOf(s.id)+1),t:name(s),go:function(){jump(s)}})});
-function addr(){var m=$('#access a[href^="mailto:"]');return m?m.getAttribute('href').slice(7).split('?')[0]:location.href.split('#')[0]+'#access'}
+function addr(){var m=$('#access form[action^="mailto:"]');return m?m.getAttribute('action').slice(7).split('?')[0]:location.href.split('#')[0]+'#access'}
 function copy(){var s=addr();function ok(){note('Copied · '+s);ct=setTimeout(close,700)}
 function fb(){var t=d.createElement('textarea');t.value=s;t.setAttribute('readonly','');t.style.cssText='position:fixed;top:0;left:0;opacity:0';pal.appendChild(t);t.select();var r=false;try{r=d.execCommand('copy')}catch(e){}pal.removeChild(t);inp.focus();r?ok():note(s)}
 if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(ok,fb);else fb()}
 items.push({n:'⧉',t:'Copy the waitlist address',go:copy,keep:1});
 items.push({n:'↗',t:'Open the project on GitHub',go:function(){location.href='https://github.com/OL-Projects/ol-control'}});
-items.push({n:'→',t:'Jump to pricing',go:function(){var p=d.getElementById('ladder')||d.getElementById('access');if(p)jump(p)}});
+items.push({n:'→',t:'Jump to pricing',go:function(){var p=d.getElementById('access');if(p)jump(p)}});
 var pal=d.createElement('div');pal.id='fx-pal';pal.hidden=true;
 pal.innerHTML='<div class="p" role="dialog" aria-modal="true" aria-label="Command palette"><input id="fx-q" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="fx-ls" aria-label="Search sections and actions" placeholder="Jump to a section or run an action"><ul id="fx-ls" role="listbox" aria-label="Results"></ul><div class="k" role="status" aria-live="polite"></div></div>';
 d.body.appendChild(pal);
@@ -1015,10 +1026,8 @@ ind.className='fx-ind';ind.setAttribute('aria-hidden','true');box.appendChild(in
 function selIdx(){for(var i=0;i<lis.length;i++){var b=$('button',lis[i]);if(lis[i].classList.contains('sel')||(b&&b.getAttribute('aria-pressed')==='true'))return i}return -1}
 place=function(){var i=selIdx();if(i<0){ind.style.opacity='0';return}ind.style.opacity='';var b=box.getBoundingClientRect(),r=lis[i].getBoundingClientRect();ind.style.transform='translate('+(r.left-b.left).toFixed(1)+'px,'+(r.top-b.top).toFixed(1)+'px) scaleY('+r.height.toFixed(1)+')'};
 place();lad.classList.add('fx-lad');raf(function(){raf(function(){ind.classList.add('t')})});
-function setActual(v){var t=d.createTreeWalker(gx,4,null,false),n,seen=0,s,m;while((n=t.nextNode())){s=n.nodeValue;if(!seen){m=/actual/i.exec(s);if(!m)continue;seen=1;var a=s.slice(0,m.index+6),b=s.slice(m.index+6);if(/\d/.test(b)){n.nodeValue=a+b.replace(/\d+/,v);return}continue}if(/\d/.test(s)){n.nodeValue=s.replace(/\d+/,v);return}}}
-var prev=selIdx(),q=0;
-function onSel(){q=0;place();var i=selIdx();if(i<0||i===prev)return;prev=i;if(!gx)return;
-setTimeout(function(){safe(function(){if(gx.textContent===gt)setActual(pad(i+1));if(gx.textContent!==gt){gt=gx.textContent;gx.classList.remove('fx-pulse');reflow(gx);gx.classList.add('fx-pulse')}})},30)}
+var q=0;
+function onSel(){q=0;place()}
 if(gx)gx.addEventListener('animationend',function(){gx.classList.remove('fx-pulse')});
 if(w.MutationObserver)new MutationObserver(function(){if(!q){q=1;raf(onSel)}}).observe(tiers,{attributes:true,subtree:true,attributeFilter:['class','aria-pressed']});
 tiers.addEventListener('click',function(){if(!q){q=1;raf(onSel)}});
@@ -1027,46 +1036,7 @@ var b=e.target.closest&&e.target.closest('button'),li=b&&b.closest('li'),i=lis.i
 var nb=$('button',lis[(i+(dn?1:-1)+lis.length)%lis.length]);if(nb){nb.focus();nb.click()}});
 });
 
-/* 4 · numbers */
-safe(function(){
-var inst=$('.inst');if(!inst||!MO||!IO)return;
-var cells=$$('.inst > div').map(function(c){var f=$('.f',c),tn=f&&firstNum(f);if(!tn)return null;var s=tn.nodeValue,m=/(\d[\d,]*)(\.\d+)?/.exec(s);
-return {t:tn,s:s,pre:s.slice(0,m.index),post:s.slice(m.index+m[0].length),v:parseFloat((m[1]+(m[2]||'')).replace(/,/g,'')),dp:m[2]?m[2].length-1:0,cm:m[1].indexOf(',')>-1,zl:m[1].charAt(0)==='0'?m[1].length:0,l:$('.lab.l',c)}}).filter(Boolean);
-if(!cells.length)return;
-function fmt(c,x){var s=x.toFixed(c.dp),p=s.split('.');if(c.zl)while(p[0].length<c.zl)p[0]='0'+p[0];if(c.cm)p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');return p.join('.')}
-var ready=0;function prep(){if(ready)return;ready=1;cells.forEach(function(c){c.t.nodeValue=c.pre+fmt(c,0)+c.post;if(c.l){c.l.classList.add('fx-lt');c.l.classList.add('fx-pre')}})}
-once(inst,{rootMargin:'0px 0px 30% 0px'},prep);
-once(inst,{threshold:.35},function(){prep();var t0=0;
-cells.forEach(function(c){if(c.l)setTimeout(function(){c.l.classList.remove('fx-pre')},20)});
-function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/900),e=1-Math.pow(1-p,3);cells.forEach(function(c){c.t.nodeValue=p<1?c.pre+fmt(c,c.v*e)+c.post:c.s});if(p<1)raf(f)}raf(f)});
-});
 
-/* 5 · gate */
-safe(function(){
-var gs=$('figure.gate-fig svg');if(!gs||!MO||!IO)return;var dr=$$('path.draw,rect.draw',gs);if(!dr.length)return;
-dr.forEach(function(el){el.style.strokeDasharray='1';el.style.strokeDashoffset='1'});
-once(gs,{threshold:.25},function(){dr.forEach(function(el){var v=(getComputedStyle(el).getPropertyValue('--d')||'').trim(),ms=/ms$/.test(v)?parseFloat(v):/s$/.test(v)?parseFloat(v)*1000:(parseFloat(v)||0)*140;el.style.transition='stroke-dashoffset 700ms cubic-bezier(.2,.8,.2,1) '+(ms||0)+'ms'});
-gs.getBoundingClientRect();raf(function(){dr.forEach(function(el){el.style.strokeDashoffset='0'})})});
-});
-
-/* 6 · ledger replay */
-safe(function(){
-if(!lg)return;var hd=$('.lg-h',lg)||$('.lg-head',lg)||$('header',lg)||lg.firstElementChild,rb=d.createElement('button');
-rb.type='button';rb.id='fx-rp';rb.textContent='Replay';rb.setAttribute('aria-label','Replay the verification trace');
-if(hd&&!hd.classList.contains('lg-row')&&!hd.classList.contains('lg-scan'))hd.appendChild(rb);else lg.insertBefore(rb,lg.firstChild);
-var okE=$('.lg-ok',lg),noE=$('.lg-no',lg),sc=$('.lg-scan',lg),tg=[0,0],rt=[];
-function nOf(e){var m=e&&/\d+/.exec(e.textContent);return m?+m[0]:0}
-function setN(e,n){var t=e&&firstNum(e);if(t)t.nodeValue=t.nodeValue.replace(/\d+/,n)}
-if(sc)sc.addEventListener('animationend',function(e){if(e.animationName==='fxs')sc.classList.remove('fx-scan')});
-rb.addEventListener('click',function(){safe(function(){
-tg=[Math.max(tg[0],nOf(okE)),Math.max(tg[1],nOf(noE))];rt.forEach(clearTimeout);rt=[];
-var rows=$$('.lg-row',lg),n=rows.length;setN(okE,0);setN(noE,0);
-if(RM||!n){setN(okE,tg[0]);setN(noE,tg[1]);return}
-rows.forEach(function(r){r.classList.remove('fx-rt');r.classList.add('fx-pre')});reflow(lg);
-rows.forEach(function(r,i){rt.push(setTimeout(function(){r.classList.add('fx-rt');r.classList.remove('fx-pre');var k=(i+1)/n;setN(okE,Math.round(tg[0]*k));setN(noE,Math.round(tg[1]*k))},120+i*60))});
-if(sc){lg.style.setProperty('--fx-lh',lg.offsetHeight+'px');sc.classList.remove('fx-scan');reflow(sc);sc.style.animationDuration=(300+n*60)+'ms';sc.classList.add('fx-scan')}
-})});
-});
 })();
 
 /* verify this page: fetch each file, hash it in the browser, compare to the published receipt */
