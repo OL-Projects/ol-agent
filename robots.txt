@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ol-projects.github.io/ol-agent/sitemap.xml
+Sitemap: https://ol-projects.github.io/ol-control/sitemap.xml

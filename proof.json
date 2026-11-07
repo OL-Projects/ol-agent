@@ -1,0 +1,64 @@
+{
+ "schema": "ol.control.proof/1",
+ "build": "fc0a6676601e",
+ "generated": "2026-11-07T06:27:43Z",
+ "algorithm": "sha256",
+ "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
+ "files": [
+  {
+   "path": "README.md",
+   "sha256": "5aaff4482dda56bdb0923b24cda7767c8d036f48604de34fac51e12c836f6215",
+   "bytes": 1347
+  },
+  {
+   "path": "RELEASE-NOTES.md",
+   "sha256": "31692e5d67a7fb9cc5e5dc3669e9afa3960541117aaf25a0e69aaa85e6a809d7",
+   "bytes": 1822
+  },
+  {
+   "path": "avatar-1024.png",
+   "sha256": "441f36ab023790b0fffd5d2b4af7dbeab39d6bcc30e6fd57ed95b14957ce1c70",
+   "bytes": 13027
+  },
+  {
+   "path": "download.html",
+   "sha256": "12913b111ec8ad6fc01e0d5082d04deddde26634a6c7e4d27f14b1a83014fe1e",
+   "bytes": 8911
+  },
+  {
+   "path": "index.html",
+   "sha256": "5e69741db03ac73625e486b302cd0f381a2745e8f9770d3faa2ccc778fe2c09f",
+   "bytes": 88071
+  },
+  {
+   "path": "og.png",
+   "sha256": "ad503b7f5fe74409edafc20adf91ef0417dd2e5869221c60eada334f1b784a54",
+   "bytes": 70385
+  },
+  {
+   "path": "ol-mark-v2.svg",
+   "sha256": "17db3151664b03b832ddbf990b864922f0618ccbd0af2b36604bfd9f8fc54086",
+   "bytes": 247
+  },
+  {
+   "path": "proof.py",
+   "sha256": "4726879121ab52f5e861e12bdff920b1cf2fd837784f1efacd446f1f809d728f",
+   "bytes": 3414
+  },
+  {
+   "path": "robots.txt",
+   "sha256": "9f7c04246dce5a9e85bfd0eaee402f378c8c67cd02fc2803e6629ed128d951c2",
+   "bytes": 86
+  },
+  {
+   "path": "sitemap.xml",
+   "sha256": "9b7f10ef07c9e5a66cd2e3d58d5e086d64ce886fbc2d69f8b3b6cd633a4c1ff5",
+   "bytes": 652
+  },
+  {
+   "path": "start.html",
+   "sha256": "7b38e3ee718a5f7ac26882a79566ae2beef02e16d70f3703be29e84e828e567d",
+   "bytes": 8273
+  }
+ ]
+}

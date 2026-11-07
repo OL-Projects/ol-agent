@@ -3,28 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OL — the verifiable agent</title>
-<meta name="description" content="OL is a personal agent that runs on your Mac. It closes a unit of work only when its own verifier passes, and it cannot claim what it has not proven.">
-<link rel="canonical" href="https://ol-projects.github.io/ol-agent/">
+<title>OL-Control — the verifiable agent</title>
+<meta name="description" content="OL-Control is a personal agent that runs on your Mac. It closes a unit of work only when its own verifier passes, and it cannot claim what it has not proven.">
+<link rel="canonical" href="https://ol-projects.github.io/ol-control/">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"https://ol-projects.github.io/ol-agent/#org","name":"OL — Optimization and Logistics","alternateName":"OL","url":"https://ol-projects.github.io/ol-agent/","description":"A Montréal company building OL, a personal agent that closes work only when its own verifier passes.","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"},"identifier":"NEQ 2270669312"},
- {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-agent/#site","url":"https://ol-projects.github.io/ol-agent/","name":"OL","publisher":{"@id":"https://ol-projects.github.io/ol-agent/#org"},"inLanguage":"en"},
- {"@type":"SoftwareApplication","name":"OL","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"A personal agent that runs on your Mac and closes a unit of work only when its own verifier passes. Documents are rendered to pixels and measured, arithmetic is recomputed to the cent, and a deploy counts only when the served bytes hash-match the built bytes.","url":"https://ol-projects.github.io/ol-agent/","publisher":{"@id":"https://ol-projects.github.io/ol-agent/#org"},"softwareVersion":"493166d71c6b","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Day pass","price":"0.50","priceCurrency":"USD"},{"@type":"Offer","name":"Solo","price":"5","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19","priceCurrency":"USD"}]}
+ {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","alternateName":"OL-Control","url":"https://ol-projects.github.io/ol-control/","description":"A Montréal company building OL-Control, a personal agent that closes work only when its own verifier passes.","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"},"identifier":"NEQ 2270669312"},
+ {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/","name":"OL","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"inLanguage":"en"},
+ {"@type":"SoftwareApplication","name":"OL-Control","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"A personal agent that runs on your Mac and closes a unit of work only when its own verifier passes. Documents are rendered to pixels and measured, arithmetic is recomputed to the cent, and a deploy counts only when the served bytes hash-match the built bytes.","url":"https://ol-projects.github.io/ol-control/","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"softwareVersion":"493166d71c6b","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Day pass","price":"0.50","priceCurrency":"USD"},{"@type":"Offer","name":"Solo","price":"5","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19","priceCurrency":"USD"}]}
 ]}
 </script>
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ol-projects.github.io/ol-agent/">
-<meta property="og:title" content="OL — It cannot claim what it has not proven.">
+<meta property="og:url" content="https://ol-projects.github.io/ol-control/">
+<meta property="og:title" content="OL-Control — It cannot claim what it has not proven.">
 <meta property="og:description" content="A personal agent that runs on your Mac and closes work only when its verifier passes. Private beta.">
-<meta property="og:image" content="https://ol-projects.github.io/ol-agent/og.png">
+<meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="OL — It cannot claim what it has not proven.">
+<meta property="og:image:alt" content="OL-Control — It cannot claim what it has not proven.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OL — It cannot claim what it has not proven.">
+<meta name="twitter:title" content="OL-Control — It cannot claim what it has not proven.">
 <meta name="twitter:description" content="A personal agent that runs on your Mac and closes work only when its verifier passes.">
-<meta name="twitter:image" content="https://ol-projects.github.io/ol-agent/og.png">
+<meta name="twitter:image" content="https://ol-projects.github.io/ol-control/og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -12 56 56'%3E%3Crect x='0' y='-12' width='56' height='56' fill='%230b0b0a'/%3E%3Ccircle cx='15' cy='16' r='12.4' fill='none' stroke='%23ecebe6' stroke-width='3.6'/%3E%3Cpath d='M35.6 3.4V28.6H54' fill='none' stroke='%23ecebe6' stroke-width='3.6' stroke-linecap='square'/%3E%3C/svg%3E">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0b0b0a">
@@ -51,6 +51,10 @@ h1,h2,h3{margin:0;font-weight:560}
 .bar{display:flex;align-items:center;gap:24px;height:var(--hh);border-bottom:1px solid var(--rule)}
 .brand{display:inline-flex;color:var(--ink);text-decoration:none}
 .brand svg{display:block;width:44px;height:25px}
+.brand{gap:12px;align-items:center}
+.brand .wm{font:600 12.5px/1 var(--mono);letter-spacing:.2em;color:var(--ink);white-space:nowrap}
+.brand .wm-h{color:var(--dim);font-weight:500}
+@media (max-width:420px){.brand .wm{display:none}}
 .bar .st0{margin-left:auto;white-space:nowrap}
 .strip{display:none;gap:18px}
 .strip a{position:relative;padding:6px 0;text-decoration:none;font:500 11px/1 var(--mono);letter-spacing:.1em;color:var(--mute)}
@@ -403,6 +407,25 @@ legend{padding:0;margin-bottom:8px}
  .seg label:nth-child(n+3){border-top:1px solid var(--rule)}
  .foot .f3{text-align:left}
 }
+/* verify this page */
+.vf{grid-column:1/span 7;min-width:0;margin-top:40px;border:1px solid var(--rule);background:var(--bg2)}
+.vf-h{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;padding:0 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.vf-h .ttl{color:var(--ink)}
+.vf-h .ttl::before{content:"";display:inline-block;width:6px;height:6px;background:var(--blue);margin-right:10px;vertical-align:1px}
+.vf-b{padding:6px 16px}
+.vf-row{display:grid;grid-template-columns:minmax(0,1fr) 110px 96px;align-items:center;gap:12px;height:34px;border-bottom:1px solid var(--rule2);font:400 12px/1 var(--mono)}
+.vf-row:last-child{border-bottom:0}
+.vf-row b{font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vf-row .hg{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vf-row .v{width:auto;justify-self:end;padding:5px 0;font-size:10px}
+.vf-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-top:1px solid var(--rule)}
+.vf-sum{font:500 11.5px/1.5 var(--mono);letter-spacing:.06em;color:var(--mute)}
+.vf-sum b{color:var(--green);font-variant-numeric:tabular-nums}
+.vf-sum .bad{color:var(--amber)}
+.vf-note{grid-column:8/-1;align-self:start;margin-top:40px}
+.vf-note p+p{margin-top:16px}
+@media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
+@media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -415,9 +438,9 @@ legend{padding:0;margin-bottom:8px}
 <header class="top">
  <div class="box-w">
   <div class="bar">
-   <a class="brand" href="#top" aria-label="OL — back to top"><svg aria-hidden="true"><use href="#mark"/></svg></a>
+   <a class="brand" href="#top" aria-label="OL-Control — back to top"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm">OL<span class="wm-h">-</span>CONTROL</span></a>
    <nav class="strip" aria-label="Sections, compact">
-    <a href="#top" data-s="top" aria-label="01 Overview">01</a><a href="#split" data-s="split" aria-label="02 The split">02</a><a href="#gate" data-s="gate" aria-label="03 The gate">03</a><a href="#ladder" data-s="ladder" aria-label="04 The ladder">04</a><a href="#refusals" data-s="refusals" aria-label="05 Refusals">05</a><a href="#made" data-s="made" aria-label="06 Made of">06</a><a href="#numbers" data-s="numbers" aria-label="07 Numbers">07</a><a href="#access" data-s="access" aria-label="08 Access">08</a>
+    <a href="#top" data-s="top" aria-label="01 Overview">01</a><a href="#split" data-s="split" aria-label="02 The split">02</a><a href="#gate" data-s="gate" aria-label="03 The gate">03</a><a href="#ladder" data-s="ladder" aria-label="04 The ladder">04</a><a href="#refusals" data-s="refusals" aria-label="05 Refusals">05</a><a href="#made" data-s="made" aria-label="06 Made of">06</a><a href="#numbers" data-s="numbers" aria-label="07 Numbers">07</a><a href="#verify" data-s="verify" aria-label="08 Check this page">08</a><a href="#access" data-s="access" aria-label="09 Access">09</a>
    </nav>
    <p class="lab st0">Private beta · <a href="download.html" style="color:inherit;border-bottom:1px solid currentColor;text-decoration:none">Download 0.17.0</a></p>
   </div>
@@ -434,7 +457,7 @@ legend{padding:0;margin-bottom:8px}
   <li><a href="#refusals" data-s="refusals"><span class="n">05</span><span>Refusals</span></a></li>
   <li><a href="#made" data-s="made"><span class="n">06</span><span>Made of</span></a></li>
   <li><a href="#numbers" data-s="numbers"><span class="n">07</span><span>Numbers</span></a></li>
-  <li><a href="#access" data-s="access"><span class="n">08</span><span>Access</span></a></li>
+  <li><a href="#verify" data-s="verify"><span class="n">08</span><span>Check it</span></a></li><li><a href="#access" data-s="access"><span class="n">09</span><span>Access</span></a></li>
  </ol>
 </nav>
 
@@ -451,7 +474,7 @@ legend{padding:0;margin-bottom:8px}
   <p class="what" data-reveal style="--d:2">A personal agent that runs on your Mac — and closes work only when its verifier passes.</p>
   <div class="hero-copy" data-reveal style="--d:3">
    <div>
-    <p class="lede"><span>Other agents sound just as sure when they are wrong.</span> <span>OL renders, recomputes and hashes its own work,</span> <span>and refuses anything that fails the check.</span></p>
+    <p class="lede"><span>Other agents sound just as sure when they are wrong.</span> <span>OL-Control renders, recomputes and hashes its own work,</span> <span>and refuses anything that fails the check.</span></p>
     <div class="ctas">
      <a class="btn p" href="download.html">Download 0.17.0 <span class="ar" aria-hidden="true">↓</span></a>
      <a class="btn s" href="#gate">See how it proves it</a>
@@ -639,6 +662,29 @@ legend{padding:0;margin-bottom:8px}
  </div>
 </section>
 
+<section class="band" id="verify" aria-labelledby="h-vf">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">08 · This page · hashed in your browser</span></div>
+  <h2 class="d2 hl" id="h-vf"><span class="mask"><span>Do not trust this page.</span></span></h2>
+  <p class="body hr" data-reveal>Check it. The button below fetches every file this page is made of, hashes each one in your browser, and compares the result to the hashes published at build time. Nothing is uploaded, nothing is sent anywhere, and there is no server to ask.</p>
+  <figure class="vf" data-reveal>
+   <div class="vf-h"><span class="lab ttl">Proof · <span id="vf-gen">published at build</span></span><span class="lab" id="vf-count">— files</span></div>
+   <div class="vf-b" id="vf-body" aria-live="polite"></div>
+   <div class="vf-f">
+    <button class="btn p" type="button" id="vf-run" style="min-height:42px;padding:0 18px;font-size:14px">Run the check <span class="ar" aria-hidden="true">→</span></button>
+    <p class="vf-sum" id="vf-sum">Not run. The hashes are published; the check is yours to make.</p>
+   </div>
+   <figcaption class="lab lg-n" id="vf-cap">Each row is one file this page loads. A mismatch means the file you received is not the file that was built. That is a refusal, and this page says so out loud.</figcaption>
+  </figure>
+  <div class="vf-note">
+   <p class="lab ink">Why this section exists</p>
+   <p class="body" data-reveal>A product that asks you to check its work cannot begin by asking you to believe a web page. So this page is made of the same rule it sells: publish the hash, let anyone recompute it, and print the result whether or not it flatters us.</p>
+   <p class="limit" data-reveal><b>The limit, stated</b>A hash proves the bytes you received are the bytes that were built. It does not prove the bytes are any good. One of those is measurable. The other is still your judgement.</p>
+   <p class="lab" data-reveal>Same rule in the repository: <span class="ink">proof.py --check</span> recomputes every hash on each push and fails the deploy if one line disagrees. The page cannot go live with a stale receipt.</p>
+  </div>
+ </div>
+</section>
+
 <section class="band" id="access" aria-labelledby="h-acc">
  <div class="g">
   <div class="bh"><i></i><span class="lab">4 tiers · 1 gate</span></div>
@@ -685,8 +731,8 @@ legend{padding:0;margin-bottom:8px}
 
 <footer class="foot">
  <div class="g">
-  <div class="mk2"><svg role="img" aria-label="OL mark"><use href="#mark"/></svg></div>
-  <div class="f1"><p class="ink">OL — Optimization and Logistics</p><p>Montréal, Québec · NEQ 2270669312</p></div>
+  <div class="mk2"><svg role="img" aria-label="OL-Control mark"><use href="#mark"/></svg></div>
+  <div class="f1"><p class="ink">OL-Control</p><p>Built by OL — Optimization and Logistics</p><p>Montréal, Québec · NEQ 2270669312</p></div>
   <div class="f2"><p><a class="tl" href="#access">Request access</a></p><p>Replies within two business days.</p></div>
   <div class="f3"><p class="lab">Build <span class="h ink">493166d71c6b</span></p><p class="lab">No fonts, images or trackers loaded</p></div>
  </div>
@@ -841,6 +887,25 @@ html.fx .btn.p:focus-visible,html.fx .btn.g:focus-visible,html.fx #fx-rp:focus-v
 @media (hover:hover){html.fx a[data-nav]{position:relative}html.fx a[data-nav]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.8,.2,1);pointer-events:none}html.fx a[data-nav]:hover::after{transform:scaleX(1)}}
 html.fx #top,html.fx #split,html.fx #gate,html.fx #ladder,html.fx #refusals,html.fx #made,html.fx #numbers,html.fx #access{scroll-margin-top:calc(var(--fx-hh,0px) + 24px)}
 @media (prefers-reduced-motion:no-preference){html.fx{scroll-behavior:smooth}}
+/* verify this page */
+.vf{grid-column:1/span 7;min-width:0;margin-top:40px;border:1px solid var(--rule);background:var(--bg2)}
+.vf-h{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;padding:0 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
+.vf-h .ttl{color:var(--ink)}
+.vf-h .ttl::before{content:"";display:inline-block;width:6px;height:6px;background:var(--blue);margin-right:10px;vertical-align:1px}
+.vf-b{padding:6px 16px}
+.vf-row{display:grid;grid-template-columns:minmax(0,1fr) 110px 96px;align-items:center;gap:12px;height:34px;border-bottom:1px solid var(--rule2);font:400 12px/1 var(--mono)}
+.vf-row:last-child{border-bottom:0}
+.vf-row b{font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vf-row .hg{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vf-row .v{width:auto;justify-self:end;padding:5px 0;font-size:10px}
+.vf-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-top:1px solid var(--rule)}
+.vf-sum{font:500 11.5px/1.5 var(--mono);letter-spacing:.06em;color:var(--mute)}
+.vf-sum b{color:var(--green);font-variant-numeric:tabular-nums}
+.vf-sum .bad{color:var(--amber)}
+.vf-note{grid-column:8/-1;align-self:start;margin-top:40px}
+.vf-note p+p{margin-top:16px}
+@media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
+@media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
 @media (prefers-reduced-motion:reduce){html.fx #fx-pal,html.fx #fx-pal .p,html.fx #fx-rail b,html.fx .fx-ind,html.fx .fx-lad .tiers>li p,html.fx .fx-lad .tiers>li .d,html.fx a[data-nav]::after,html.fx .fx-pulse,html.fx .fx-scan,html.fx .fx-rt,html.fx .fx-lt{transition:none!important;animation:none!important}}
 </style>
 ```
@@ -906,7 +971,7 @@ function copy(){var s=addr();function ok(){note('Copied · '+s);ct=setTimeout(cl
 function fb(){var t=d.createElement('textarea');t.value=s;t.setAttribute('readonly','');t.style.cssText='position:fixed;top:0;left:0;opacity:0';pal.appendChild(t);t.select();var r=false;try{r=d.execCommand('copy')}catch(e){}pal.removeChild(t);inp.focus();r?ok():note(s)}
 if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(ok,fb);else fb()}
 items.push({n:'⧉',t:'Copy the waitlist address',go:copy,keep:1});
-items.push({n:'↗',t:'Open the project on GitHub',go:function(){location.href='https://github.com/OL-Projects/ol-agent'}});
+items.push({n:'↗',t:'Open the project on GitHub',go:function(){location.href='https://github.com/OL-Projects/ol-control'}});
 items.push({n:'→',t:'Jump to pricing',go:function(){var p=d.getElementById('ladder')||d.getElementById('access');if(p)jump(p)}});
 var pal=d.createElement('div');pal.id='fx-pal';pal.hidden=true;
 pal.innerHTML='<div class="p" role="dialog" aria-modal="true" aria-label="Command palette"><input id="fx-q" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="fx-ls" aria-label="Search sections and actions" placeholder="Jump to a section or run an action"><ul id="fx-ls" role="listbox" aria-label="Results"></ul><div class="k" role="status" aria-live="polite"></div></div>';
@@ -994,6 +1059,66 @@ rows.forEach(function(r,i){rt.push(setTimeout(function(){r.classList.add('fx-rt'
 if(sc){lg.style.setProperty('--fx-lh',lg.offsetHeight+'px');sc.classList.remove('fx-scan');reflow(sc);sc.style.animationDuration=(300+n*60)+'ms';sc.classList.add('fx-scan')}
 })});
 });
+})();
+
+/* verify this page: fetch each file, hash it in the browser, compare to the published receipt */
+(function(){
+ var d=document,run=d.getElementById('vf-run'),body=d.getElementById('vf-body'),sum=d.getElementById('vf-sum'),
+     cnt=d.getElementById('vf-count'),gen=d.getElementById('vf-gen');
+ if(!run||!body)return;
+ function hex(buf){var b=new Uint8Array(buf),s='',i;for(i=0;i<b.length;i++){s+=('0'+b[i].toString(16)).slice(-2)}return s}
+ function row(path,hash){
+  var el=d.createElement('div');el.className='vf-row';el.setAttribute('data-v','checking');
+  var b=d.createElement('b');b.textContent=path;
+  var h=d.createElement('span');h.className='hg';h.textContent=hash.slice(0,16)+'…';
+  var v=d.createElement('span');v.className='v';v.textContent='checking';
+  el.appendChild(b);el.appendChild(h);el.appendChild(v);body.appendChild(el);
+  return {el:el,v:v,h:h};
+ }
+ run.addEventListener('click',function(){
+  if(!(window.crypto&&window.crypto.subtle)){
+   sum.textContent='This browser will not hash without a secure context. Open the page over https and try again.';
+   return;
+  }
+  run.disabled=true;body.innerHTML='';sum.textContent='Reading the receipt…';
+  fetch('proof.json',{cache:'no-store'}).then(function(r){
+   if(!r.ok)throw new Error('proof.json answered '+r.status);
+   return r.json();
+  }).then(function(p){
+   var files=p.files||[];
+   if(!files.length)throw new Error('the receipt lists no files');
+   if(gen)gen.textContent='build '+String(p.build||'').slice(0,12);
+   if(cnt)cnt.textContent=files.length+(files.length===1?' file':' files');
+   var done=0,ok=0,bad=0;
+   sum.textContent='Hashing '+files.length+' files in this browser…';
+   files.forEach(function(f){
+    var r=row(f.path,f.sha256);
+    fetch(f.path,{cache:'no-store'}).then(function(res){
+     if(!res.ok)throw new Error(res.status);
+     return res.arrayBuffer();
+    }).then(function(ab){
+     return window.crypto.subtle.digest('SHA-256',ab);
+    }).then(function(dg){
+     var got=hex(dg);
+     if(got===f.sha256){ok++;r.el.setAttribute('data-v','verified');r.v.textContent='verified'}
+     else{bad++;r.el.setAttribute('data-v','refused');r.v.textContent='mismatch';r.h.textContent=got.slice(0,16)+'…'}
+    }).catch(function(){
+     bad++;r.el.setAttribute('data-v','refused');r.v.textContent='unreadable';r.h.textContent='fetch failed';
+    }).then(function(){
+     done++;
+     if(done===files.length){
+      sum.innerHTML='<b>'+ok+'</b> of '+files.length+' files verified · '+
+        (bad?'<span class="bad">'+bad+' mismatched</span>':'0 mismatched')+
+        (bad?' — the page is telling you, not hiding it.':' — recomputed in your browser, not ours.');
+      run.disabled=false;
+     }
+    });
+   });
+  }).catch(function(e){
+   sum.textContent='The receipt could not be read: '+(e&&e.message?e.message:'unknown reason')+'. That is a refusal, not a pass.';
+   run.disabled=false;
+  });
+ });
 })();
 </script>
 </body>
