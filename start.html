@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start — from download to your first proof | OL</title>
+<meta name="description" content="Five steps from the download to your first verified unit of work in OL. Add one model key, give it a task, watch the gate.">
+<link rel="canonical" href="https://ol-projects.github.io/ol-agent/start.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Start — from download to your first proof">
+<meta property="og:image" content="https://ol-projects.github.io/ol-agent/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23080A0E'/%3E%3Cg fill='%23ECEBE4'%3E%3Cpath fill-rule='evenodd' d='M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z'/%3E%3Cpath d='M68 29h14v48h28v14H68z'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{--bg:#080A0E;--ink:#ECEBE4;--mute:#93A0B4;--dim:#6B7A8F;--rule:rgba(236,235,228,.14);
+        --rule2:rgba(236,235,228,.07);--accent:#5B9DFF;--ok:#7FE3A9;
+        --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+        --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:820px;margin:0 auto;padding:0 26px}
+  .ml{font:500 10.5px/1.6 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+  header{border-bottom:1px solid var(--rule)}
+  header .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;text-decoration:none}
+  .brand svg{width:26px;height:26px;color:var(--ink)}
+  .back{color:var(--mute);text-decoration:none}.back:hover{color:var(--ink)}
+  main{padding:64px 0 30px}
+  h1{font-size:clamp(34px,4.4vw,52px);line-height:1.03;letter-spacing:-.035em;font-weight:600;margin:18px 0 0;max-width:18ch}
+  .lede{margin-top:18px;color:var(--mute);font-size:18px;max-width:56ch}
+  .step{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:34px 0;border-bottom:1px solid var(--rule2)}
+  .step:last-of-type{border-bottom:0}
+  .step>div{min-width:0}
+  .step .n{font:500 11px/1.6 var(--mono);letter-spacing:.1em;color:var(--dim);padding-top:6px}
+  .step h2{font-size:20px;font-weight:600;letter-spacing:-.01em;margin-bottom:8px}
+  .step p{color:var(--mute);max-width:58ch}
+  .step p+p{margin-top:10px}
+  code{font:400 12.5px/1.6 var(--mono);background:#0B1017;border:1px solid var(--rule2);padding:2px 6px;color:var(--ink)}
+  pre{background:#0B1017;border:1px solid var(--rule2);padding:14px;overflow-x:auto;max-width:100%;font:400 12.5px/1.7 var(--mono);color:var(--mute);margin-top:12px}
+  .callout{margin-top:22px;border-left:2px solid var(--accent);padding:14px 18px;background:#0B1017;color:var(--mute);font-size:14.5px}
+  .callout b{color:var(--ink)}
+  .tiers{margin-top:10px;display:grid;gap:0;border-top:1px solid var(--rule2)}
+  .tiers div{display:flex;gap:16px;padding:9px 0;border-bottom:1px solid var(--rule2);color:var(--mute);font-size:14.5px}
+  .tiers b{font:500 11px/1.9 var(--mono);letter-spacing:.1em;color:var(--dim);flex:none;width:22px}
+  .end{margin-top:44px;padding-top:22px;border-top:1px solid var(--rule);display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:4px;text-decoration:none;font-weight:600;font-size:14.5px;border:1px solid transparent}
+  .btn-p{background:var(--accent);color:#04101F}.btn-p:hover{background:#7DB2FF}
+  .btn-g{border-color:var(--rule)}.btn-g:hover{border-color:rgba(236,235,228,.35)}
+  footer{border-top:1px solid var(--rule);margin-top:64px;padding:22px 0 56px}
+  footer .wrap{max-width:1080px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./" aria-label="OL — back to the product"><svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg></a>
+  <a class="back ml" href="download.html">Download ↓</a>
+</div></header>
+
+<main class="wrap">
+  <p class="ml">Start here · five steps · about ten minutes</p>
+  <h1>From download to your first proof.</h1>
+  <p class="lede">OL does not ask you to configure it. It asks you for one key, one task, and then it shows you what it did.</p>
+
+  <section class="step">
+    <div class="n">01</div>
+    <div>
+      <h2>Install it</h2>
+      <p>Download the zip, drag <b>OL.app</b> into <code>/Applications</code>, and open it once with
+      right-click → <b>Open</b>. macOS refuses it on the first try because the build is signed but not
+      notarised — that is stated on the <a href="download.html" style="border-bottom:1px solid currentColor;text-decoration:none">download page</a>, with the checksum to verify first.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="n">02</div>
+    <div>
+      <h2>Give it one model key</h2>
+      <p>Open <b>Settings</b> and add a key for one provider: Anthropic, OpenAI, DeepSeek or OpenRouter.
+      OL routes each task to a model; it does not sell you credits, and it never hides which model did the work.</p>
+      <p>Nothing else is required. Permissions for the screen, the microphone or your calendar are asked only
+      by the features that use them, and everything else runs without them.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="n">03</div>
+    <div>
+      <h2>Give it something that can be checked</h2>
+      <p>The first task should have a right answer. A document, a total, a file, a deploy. Ask in the
+      conversation, in plain language:</p>
+      <pre>Take this invoice, check it, and refuse it if the total is wrong:
+~/Documents/invoice-0417.pdf</pre>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="n">04</div>
+    <div>
+      <h2>Watch the gate, not the answer</h2>
+      <p>Work appears beside your message. When it finishes you get a verdict and the evidence behind it:
+      the pages it rendered, the arithmetic it recomputed, the hash it compared. If something does not
+      match, the unit is <b>refused</b> and nothing leaves your machine.</p>
+      <div class="callout"><b>Try the one-cent test.</b> Hand it an invoice whose printed total is off by a
+      cent. The right behaviour is a refusal that names both numbers — not a fixed file, and never a
+      confident "done".</div>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="n">05</div>
+    <div>
+      <h2>Read the rung it reached</h2>
+      <p>Every closed unit records the highest tier it actually reached. It may not be described above that.</p>
+      <div class="tiers">
+        <div><b>01</b><span>source — the code exists</span></div>
+        <div><b>02</b><span>wired — something calls it</span></div>
+        <div><b>03</b><span>tested — automated checks pass</span></div>
+        <div><b>04</b><span>built — a shippable artifact exists</span></div>
+        <div><b>05</b><span>installed — it is on the target machine</span></div>
+        <div><b>06</b><span>runtime-proven — seen working in the running system</span></div>
+        <div><b>07</b><span>device-proven — seen working on the device it was built for</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="end">
+    <a class="btn btn-p" href="download.html">Download OL 0.17.0</a>
+    <a class="btn btn-g" href="./">What it is, in one page</a>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <span class="ml">OL — Optimization and Logistics · Montréal · NEQ 2270669312</span>
+  <span class="ml">Private beta · macOS 12+ · Apple silicon</span>
+</div></footer>
+</body>
+</html>

@@ -38,7 +38,9 @@
   .eyebrow::before{content:"";width:28px;height:1px;background:var(--rule)}
   h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.04em;font-weight:600;margin:22px 0 0;max-width:14ch}
   .lede{margin-top:22px;max-width:52ch;color:var(--mute);font-size:18px}
-  .grid{display:grid;gap:56px;margin-top:56px}
+  .grid{display:grid;gap:56px;margin-top:56px;min-width:0}
+  .grid>section{min-width:0}
+  .codewrap{min-width:0;max-width:100%}
   @media (min-width:900px){.grid{grid-template-columns:1.1fr .9fr;gap:72px}}
   .dl{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:8px}
   .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:4px;text-decoration:none;
@@ -79,7 +81,6 @@
   <div class="wrap">
     <a class="brand" href="./">
       <svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg>
-      <b>OL</b>
     </a>
     <a class="back ml" href="./">← Back to the product</a>
   </div>
@@ -119,6 +120,7 @@ shasum -a 256 OL-0.17.0-gen0387.zip</pre>
         <li><b>Add one model key</b> — Anthropic, OpenAI, DeepSeek or OpenRouter. OL routes the work and proves the result.</li>
       </ol>
       <p class="ml" style="margin-top:6px">Requires macOS 12 Monterey or later · Apple Silicon</p>
+      <p style="margin-top:22px"><a href="start.html" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px">New to OL? Five steps from download to your first proof →</a></p>
     </section>
   </div>
 
