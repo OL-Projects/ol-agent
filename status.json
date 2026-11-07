@@ -1,6 +1,6 @@
 {
  "schema": "ol.control.status/1",
- "generated": "2026-11-07T06:57:47Z",
+ "generated": "2026-11-07T06:58:49Z",
  "generated_date": "2026-11-07",
  "legs_total": 38,
  "legs_done": 22,
@@ -12,6 +12,6 @@
  "checks_passing": 255,
  "checks_failing": 0,
  "checks_at": "2026-11-07T01:57:47",
- "headline": "Twenty-two of thirty-eight.",
+ "headline": "Twenty\u2011two of thirty\u2011eight.",
  "source": "~/.ol/state/roadmap.json"
 }
