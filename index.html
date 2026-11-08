@@ -685,14 +685,14 @@ legend{padding:0;margin-bottom:8px}
 <section class="band" id="numbers" aria-labelledby="h-num">
  <div class="g">
   <div class="bh"><i></i><span class="lab">Unrounded · site build <span class="h" id="build-num">—</span> · ledger as of <span class="h" id="fig-at">—</span></span></div>
-  <h2 class="d2 hl" id="h-num"><span class="mask"><span id="fig-h">Twenty-two of thirty-eight.</span></span></h2>
+  <h2 class="d2 hl" id="h-num"><span class="mask"><span id="fig-h">Twenty‑four of forty‑five.</span></span></h2>
   <p class="body hr" data-reveal>That is not finished, and this page says so. The figures below are read from the live ledger, not typed in: a stale number fails the deploy the same way a stale receipt does.</p>
   <div class="inst" data-reveal>
-   <div><span class="lab l">Roadmap legs</span><span class="f" id="fig-legs">38</span><span class="lab u">total</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs closed</span><span class="f" id="fig-done">22</span><span class="lab u">of 38 · <span id="fig-done-pct">58</span>%</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs open</span><span class="f" id="fig-open">16</span><span class="lab u">of 38 · <span id="fig-open-pct">42</span>%</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Roadmap legs</span><span class="f" id="fig-legs">45</span><span class="lab u">total</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Legs closed</span><span class="f" id="fig-done">24</span><span class="lab u">of <span id="fig-total-a">45</span> · <span id="fig-done-pct">53.3</span>%</span><span class="lab s">src · roadmap ledger</span></div>
+   <div><span class="lab l">Legs open</span><span class="f" id="fig-open">21</span><span class="lab u">of <span id="fig-total-b">45</span> · <span id="fig-open-pct">46.7</span>%</span><span class="lab s">src · roadmap ledger</span></div>
    <div><span class="lab l">Checks</span><span class="f" id="fig-checks">255</span><span class="lab u">in suite</span><span class="lab s">src · make test</span></div>
-   <div><span class="lab l">Passing</span><span class="f" id="fig-pass">255</span><span class="lab u">of 255 · 100%</span><span class="lab s">src · make test</span></div>
+   <div><span class="lab l">Passing</span><span class="f" id="fig-pass">255</span><span class="lab u">of <span id="fig-pass-total">255</span> · <span id="fig-pass-pct">100</span>%</span><span class="lab s">src · make test</span></div>
    <div><span class="lab l">Failing</span><span class="f" id="fig-fail">0</span><span class="lab u">none at this build</span><span class="lab s">src · make test</span></div>
   </div>
  </div>
@@ -1100,8 +1100,11 @@ var nb=$('button',lis[(i+(dn?1:-1)+lis.length)%lis.length]);if(nb){nb.focus();nb
  fetch('status.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(s){
   if(!s)return;
   set('fig-legs',s.legs_total); set('fig-done',s.legs_done); set('fig-open',s.legs_open);
-  set('fig-done-pct',s.legs_done_pct+'%'); set('fig-open-pct',s.legs_open_pct+'%');
+  set('fig-total-a',s.legs_total); set('fig-total-b',s.legs_total);
+  set('fig-done-pct',s.legs_done_pct); set('fig-open-pct',s.legs_open_pct);
   set('fig-checks',s.checks); set('fig-pass',s.checks_passing); set('fig-fail',s.checks_failing);
+  set('fig-pass-total',s.checks);
+  if(s.checks&&s.checks_passing!==undefined&&s.checks_passing!==null)set('fig-pass-pct',Math.round(1000*s.checks_passing/s.checks)/10);
   set('fig-h',s.headline);
   set('fig-at',s.generated_date);
  }).catch(function(){});
