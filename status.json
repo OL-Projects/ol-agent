@@ -1,6 +1,6 @@
 {
  "schema": "ol.control.status/1",
- "generated": "2026-11-08T12:51:11Z",
+ "generated": "2026-11-08T12:56:45Z",
  "generated_date": "2026-11-08",
  "legs_total": 44,
  "legs_done": 26,
@@ -8,10 +8,10 @@
  "legs_done_pct": 59.1,
  "legs_open_pct": 40.9,
  "roadmap_updated": "2026-11-08T12:23:08Z",
- "checks": 255,
- "checks_passing": 255,
+ "checks": 227,
+ "checks_passing": 227,
  "checks_failing": 0,
- "checks_at": "2026-11-08T07:46:56",
+ "checks_at": "2026-11-08T07:56:26",
  "headline": "Twenty\u2011six of forty\u2011four.",
  "source": "~/.ol/state/roadmap.json"
 }
