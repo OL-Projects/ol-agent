@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Download OL-Control 0.17.0 — macOS, Apple Silicon</title>
-<meta name="description" content="Download OL 0.17.0 for macOS. Private beta, Apple Silicon, bring your own model key. Checksum and first-launch steps included.">
+<title>Download OL-Control 0.17.1 — notarised, macOS Apple Silicon</title>
+<meta name="description" content="Download OL 0.17.1 for macOS. Notarised by Apple, Gatekeeper accepted. Private beta, Apple Silicon, bring your own model key. Checksum and first-launch steps included.">
 <link rel="canonical" href="https://ol-projects.github.io/ol-control/download.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Download OL-Control 0.17.0">
-<meta property="og:description" content="Private beta for macOS. Signed, not notarised. Checksum and first-launch steps included.">
+<meta property="og:title" content="Download OL-Control 0.17.1">
+<meta property="og:description" content="Private beta for macOS. Signed with a Developer ID and notarised by Apple. Checksum and first-launch steps included.">
 <meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23080A0E'/%3E%3Cg fill='%23ECEBE4'%3E%3Cpath fill-rule='evenodd' d='M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z'/%3E%3Cpath d='M68 29h14v48h28v14H68z'/%3E%3C/g%3E%3C/svg%3E">
@@ -87,28 +87,29 @@
 </header>
 
 <main class="wrap">
-  <p class="eyebrow ml">Download · 0.17.0 · gen a9ec0b05 · macOS 12+ · Apple silicon</p>
+  <p class="eyebrow ml">Download · 0.17.1 · gen f225595fa9b9 · macOS 12+ · Apple silicon</p>
   <h1>Install OL.</h1>
   <p class="lede">Private beta. One download, one model key of your own, nothing to configure before the first unit of work.</p>
 
   <div class="grid">
     <section>
       <div class="dl">
-        <a class="btn btn-p" href="https://github.com/OL-Projects/ol-control/releases/latest/download/OL-0.17.0-gen0387.zip" id="dl">Download for macOS <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-p" href="https://github.com/OL-Projects/ol-control/releases/latest/download/OL-0.17.1-notarized.zip" id="dl">Download for macOS <span aria-hidden="true">↓</span></a>
         <a class="btn btn-g" href="#verify">Verify the file</a>
       </div>
-      <p class="meta ml" id="meta">318 MB · signed by OL · not notarised · arm64 only · macOS 12+</p>
+      <p class="meta ml" id="meta">331 MB · notarised by Apple · Gatekeeper accepted · arm64 only · macOS 12+</p>
 
       <div class="codewrap" id="verify">
         <div class="cap ml"><span>sha-256</span><span>check this before you open it</span></div>
-        <pre><b>2b779008b1ff12fb40b6a07a668079cc42914b80d422d5a1b0f48b63fa370417</b>
-shasum -a 256 OL-0.17.0-gen0387.zip</pre>
+        <pre><b>961479034168cf09258271d7602982069a34892af0bbda36595c2fb23fbd9c30</b>
+shasum -a 256 OL-0.17.1-notarized.zip</pre>
       </div>
 
       <div class="note">
-        <b>First launch will be refused by macOS.</b> This build is signed but not notarised, so Gatekeeper
-        blocks it. That is expected: right-click OL.app → <b>Open</b> → <b>Open</b>, or run once:<br>
-        <code>xattr -dr com.apple.quarantine /Applications/OL.app</code>
+        <b>First launch opens normally.</b> This build is signed with a Developer ID, notarised by Apple
+        (notary status: Accepted) and the ticket is stapled into the bundle — verified again after a full
+        round trip through this zip. Gatekeeper reports <code>accepted / Notarized Developer ID</code>,
+        so there is no right-click step and no quarantine command to run.
       </div>
     </section>
 
@@ -116,7 +117,7 @@ shasum -a 256 OL-0.17.0-gen0387.zip</pre>
       <h2>Install</h2>
       <ol class="steps">
         <li><b>Unzip</b> the download and drag <b>OL.app</b> into <code>/Applications</code>.</li>
-        <li><b>Open it</b> the first time with right-click → Open (see the note).</li>
+        <li><b>Open it</b> — Gatekeeper accepts this build, so it launches like any other app.</li>
         <li><b>Add one model key</b> — Anthropic, OpenAI, DeepSeek or OpenRouter. OL routes the work and proves the result.</li>
       </ol>
       <p class="ml" style="margin-top:6px">Requires macOS 12 Monterey or later · Apple Silicon</p>
@@ -128,7 +129,7 @@ shasum -a 256 OL-0.17.0-gen0387.zip</pre>
     <section>
       <h2>In this build</h2>
       <ul class="plain">
-        <li>Generation a9ec0b05 — the first wave of the Nov 7 batch</li>
+        <li>Generation f225595fa9b9 — notarised, timestamped, sealed</li>
         <li>The proof gate: render, measure, recompute, hash</li>
         <li>Local runtime, scheduler, memory, seven-tier ladder</li>
         <li>Bring your own key; no credits are sold with it</li>
