@@ -1,6 +1,6 @@
 {
  "schema": "ol.control.proof/1",
- "build": "bfbfb93a12bd",
+ "build": "0d2d6221affa",
  "generated": "2026-11-09T12:25:09Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
