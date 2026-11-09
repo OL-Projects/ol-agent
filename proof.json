@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
- "build": "8c2c31df979d",
- "generated": "2026-11-09T11:27:03Z",
+ "build": "157d16c405bd",
+ "generated": "2026-11-09T11:32:28Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -27,8 +27,8 @@
   },
   {
    "path": "index.html",
-   "sha256": "4ce46e77155077686e77b2c1692740a55d5375ff138bdb52191a46d62b0a1666",
-   "bytes": 86977
+   "sha256": "8b7871f951bd8c876165997a4bc2e4c50e9534f81a647ac1c2552d0ffa63109b",
+   "bytes": 86980
   },
   {
    "path": "og.png",
@@ -72,8 +72,8 @@
   },
   {
    "path": "status.json",
-   "sha256": "c1b4be9ec9ec97913a0b16b6e94fa063a237fd77162d979a5e4ca9b9d4c40441",
-   "bytes": 447
+   "sha256": "8a92e2392225e4819c9e64eb3bd8e5e2ba0f70d5dfa53f582766667f8f8bb012",
+   "bytes": 446
   }
  ]
 }
