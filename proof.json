@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
- "build": "fcb29695c3fc",
- "generated": "2026-11-09T01:03:17Z",
+ "build": "5e668e73c933",
+ "generated": "2026-11-09T01:10:17Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -72,7 +72,7 @@
   },
   {
    "path": "status.json",
-   "sha256": "fbc96430145ad2c60a9a4434c17e6536db7348a3ed0981015ef78db5242819a3",
+   "sha256": "4f9a4676f266fc4414497d637f2aa1864bc839c4847fb7d9956b58034b3a5da9",
    "bytes": 446
   }
  ]
