@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
  "build": "fac6fae61240",
- "generated": "2026-11-14T12:42:13Z",
+ "generated": "2026-11-14T12:47:26Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -37,13 +37,13 @@
   },
   {
    "path": "download.html",
-   "sha256": "8f751b35926a3a5bc590f7cda8559da48e7dbe627b20029b461cb3f218e0755d",
-   "bytes": 11512
+   "sha256": "89cc87678f1bbe2826decd9fdfdd26051837c216647bc06f6de69ec79175b620",
+   "bytes": 11513
   },
   {
    "path": "en/download.html",
-   "sha256": "607071a1e99f70b223ae371d756872379cc142b4682bb8d4141851e50b458f2e",
-   "bytes": 11238
+   "sha256": "d91fac53b3ccf98a9e5401894ede766bb80e030062683e753729de047e30dfd3",
+   "bytes": 11239
   },
   {
    "path": "en/index.html",
@@ -52,8 +52,8 @@
   },
   {
    "path": "en/start.html",
-   "sha256": "8c3746e1b10402818fe5b4cc6c3dd04b0ee2b0bb84ebdb039bd5e3aedec239c0",
-   "bytes": 10470
+   "sha256": "ac110ffce78e856c685d25c8f1e29e090279fb8b63c342b83c0e967ee9779314",
+   "bytes": 10471
   },
   {
    "path": "index.html",
@@ -102,8 +102,8 @@
   },
   {
    "path": "start.html",
-   "sha256": "c7549dcd4e11647a0b5e24b66c54d198d3d3c047acb55a6fd5bbb07e2f9e5c45",
-   "bytes": 10842
+   "sha256": "e3a5864f8a057dc53195e5b5a0824abf1bc6f253bdd6683d992e0e443802fe5e",
+   "bytes": 10843
   },
   {
    "path": "status.json",
