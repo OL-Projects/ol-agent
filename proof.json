@@ -1,7 +1,7 @@
 {
  "schema": "ol.control.proof/1",
- "build": "1d86a82edc88",
- "generated": "2026-11-14T04:25:08Z",
+ "build": "00bf8615d4a8",
+ "generated": "2026-11-14T06:03:57Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
@@ -37,13 +37,13 @@
   },
   {
    "path": "download.html",
-   "sha256": "9592fef74a74ac289f581a0a2c693a14ea08f83ff65d846db33f6d8b763bc222",
-   "bytes": 10139
+   "sha256": "4fc435effb53479e6e73394b9a95a84edc3fe93e8fe14de08f96b89fb9a291ad",
+   "bytes": 10245
   },
   {
    "path": "en/download.html",
-   "sha256": "77418c8b31050cdd6bd18ed2510ddc4c2ff865f6bc7488adfbf60c0d6256214d",
-   "bytes": 9830
+   "sha256": "115a527a211e7e655bc94a05d1c531d95bf9f18cc7198fc7f86e74c77baa1222",
+   "bytes": 9959
   },
   {
    "path": "en/index.html",
@@ -52,8 +52,8 @@
   },
   {
    "path": "en/start.html",
-   "sha256": "6736ff92dfb7df95484c5c12b18164f957c88dd72e8ed938ebae5666d346c8b1",
-   "bytes": 9093
+   "sha256": "1166905d7403d20922ac256efbb7e9a9b6041971a0064150fe93fd4e0c38a19d",
+   "bytes": 9219
   },
   {
    "path": "index.html",
@@ -97,13 +97,13 @@
   },
   {
    "path": "sitemap.xml",
-   "sha256": "1dae31b526f82e5a85fab6615c5c5f30bd12c1d91efea8216ac8198aa16a6d81",
-   "bytes": 1502
+   "sha256": "a6e51bdfe6da32cda05c424d1753ff58b77ac89ca13485ce1e620149fa93ec3f",
+   "bytes": 2409
   },
   {
    "path": "start.html",
-   "sha256": "4a9e0b950bd211ef0c92921e8ee8f2fe913c9363bee8430f92c2d475590396e2",
-   "bytes": 9417
+   "sha256": "cbb0e2c0a7b6110b9c89997251e7c89520543dfe913479aa87927437aadf8436",
+   "bytes": 9543
   },
   {
    "path": "status.json",
