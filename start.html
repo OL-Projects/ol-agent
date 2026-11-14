@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Start — from download to your first proof | OL</title>
-<meta name="description" content="Five steps from the download to your first verified unit of work in OL. Add one model key, give it a task, watch the gate.">
+<title>Commencer — du téléchargement à votre première preuve | OL</title>
+<meta name="description" content="Cinq étapes du téléchargement à votre première unité de travail vérifiée dans OL. Ajoutez une clé de modèle, donnez-lui une tâche, regardez la porte.">
 <link rel="canonical" href="https://ol-projects.github.io/ol-control/start.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/start.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/start.html">
+<meta name="ol-root" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Start — from download to your first proof">
+<meta property="og:title" content="Commencer — du téléchargement à votre première preuve">
 <meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23080A0E'/%3E%3Cg fill='%23ECEBE4'%3E%3Cpath fill-rule='evenodd' d='M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z'/%3E%3Cpath d='M68 29h14v48h28v14H68z'/%3E%3C/g%3E%3C/svg%3E">
 <style>
@@ -22,10 +27,14 @@
   .wrap{max-width:820px;margin:0 auto;padding:0 26px}
   .ml{font:500 10.5px/1.6 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
   header{border-bottom:1px solid var(--rule)}
-  header .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  header .wrap{max-width:1080px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
   .brand{display:flex;align-items:center;text-decoration:none}
   .brand svg{width:26px;height:26px;color:var(--ink)}
+  .nav{display:flex;align-items:center;gap:18px}
   .back{color:var(--mute);text-decoration:none}.back:hover{color:var(--ink)}
+  .lang{display:flex;align-items:center;gap:8px}
+  .lang a{text-decoration:none;color:var(--mute);border-bottom:1px solid transparent}
+  .lang a[aria-current=true]{color:var(--ink);border-bottom-color:var(--accent)}
   main{padding:64px 0 30px}
   h1{font-size:clamp(34px,4.4vw,52px);line-height:1.03;letter-spacing:-.035em;font-weight:600;margin:18px 0 0;max-width:18ch}
   .lede{margin-top:18px;color:var(--mute);font-size:18px;max-width:56ch}
@@ -54,86 +63,82 @@
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="./" aria-label="OL — back to the product"><svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg></a>
-  <a class="back ml" href="download.html">Download ↓</a>
+  <a class="brand" href="./" aria-label="OL — retour au produit"><svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg></a>
+  <div class="nav">
+    <a class="back ml" href="download.html">Télécharger ↓</a>
+    <nav class="lang ml" aria-label="Langue">
+      <a href="start.html" aria-current="true" hreflang="fr-CA">FR</a><span aria-hidden="true" style="color:var(--dim)">/</span><a href="en/start.html" hreflang="en-CA" lang="en-CA">EN</a>
+    </nav>
+  </div>
 </div></header>
 
 <main class="wrap">
-  <p class="ml">Start here · five steps · about ten minutes</p>
-  <h1>From download to your first proof.</h1>
-  <p class="lede">OL does not ask you to configure it. It asks you for one key, one task, and then it shows you what it did.</p>
+  <p class="ml">Commencer ici · cinq étapes · environ dix minutes</p>
+  <h1>Du téléchargement à votre première preuve.</h1>
+  <p class="lede">OL ne vous demande pas de le configurer. Il vous demande une clé, une tâche, puis il vous montre ce qu'il a fait.</p>
 
   <section class="step">
     <div class="n">01</div>
     <div>
-      <h2>Install it</h2>
-      <p>Download the zip, drag <b>OL.app</b> into <code>/Applications</code>, and open it once with
-      nothing special. The build is signed with a Developer ID and notarised by Apple, so Gatekeeper
-      opens it on the first try — that is stated on the <a href="download.html" style="border-bottom:1px solid currentColor;text-decoration:none">download page</a>, with the checksum to verify first.</p>
+      <h2>Installez-le</h2>
+      <p>Téléchargez le zip, glissez <b>OL.app</b> dans <code>/Applications</code>, et ouvrez-le une fois, sans rien de spécial. La version est signée avec un Developer ID et notariée par Apple, donc Gatekeeper l'ouvre du premier coup — c'est écrit sur la <a href="download.html" style="border-bottom:1px solid currentColor;text-decoration:none">page de téléchargement</a>, avec la somme de contrôle à vérifier avant.</p>
     </div>
   </section>
 
   <section class="step">
     <div class="n">02</div>
     <div>
-      <h2>Give it one model key</h2>
-      <p>Open <b>Settings</b> and add a key for one provider: Anthropic, OpenAI, DeepSeek or OpenRouter.
-      OL routes each task to a model; it does not sell you credits, and it never hides which model did the work.</p>
-      <p>Nothing else is required. Permissions for the screen, the microphone or your calendar are asked only
-      by the features that use them, and everything else runs without them.</p>
+      <h2>Donnez-lui une clé de modèle</h2>
+      <p>Ouvrez <b>Réglages</b> et ajoutez une clé pour un fournisseur : Anthropic, OpenAI, DeepSeek ou OpenRouter. OL route chaque tâche vers un modèle ; il ne vous vend pas de crédits et il ne cache jamais quel modèle a fait le travail.</p>
+      <p>Rien d'autre n'est requis. Les permissions pour l'écran, le microphone ou votre calendrier ne sont demandées que par les fonctions qui les utilisent, et tout le reste tourne sans elles.</p>
     </div>
   </section>
 
   <section class="step">
     <div class="n">03</div>
     <div>
-      <h2>Give it something that can be checked</h2>
-      <p>The first task should have a right answer. A document, a total, a file, a deploy. Ask in the
-      conversation, in plain language:</p>
-      <pre>Take this invoice, check it, and refuse it if the total is wrong:
-~/Documents/invoice-0417.pdf</pre>
+      <h2>Donnez-lui quelque chose de vérifiable</h2>
+      <p>La première tâche doit avoir une bonne réponse. Un document, un total, un fichier, un déploiement. Demandez dans la conversation, en langage simple :</p>
+      <pre>Prends cette facture, vérifie-la, et refuse-la si le total est faux :
+~/Documents/facture-0417.pdf</pre>
     </div>
   </section>
 
   <section class="step">
     <div class="n">04</div>
     <div>
-      <h2>Watch the gate, not the answer</h2>
-      <p>Work appears beside your message. When it finishes you get a verdict and the evidence behind it:
-      the pages it rendered, the arithmetic it recomputed, the hash it compared. If something does not
-      match, the unit is <b>refused</b> and nothing leaves your machine.</p>
-      <div class="callout"><b>Try the one-cent test.</b> Hand it an invoice whose printed total is off by a
-      cent. The right behaviour is a refusal that names both numbers — not a fixed file, and never a
-      confident "done".</div>
+      <h2>Regardez la porte, pas la réponse</h2>
+      <p>Le travail apparaît à côté de votre message. Quand il se termine, vous obtenez un verdict et la preuve derrière : les pages mises en page, l'arithmétique recalculée, l'empreinte comparée. Si quelque chose ne concorde pas, l'unité est <b>refusée</b> et rien ne quitte votre machine.</p>
+      <div class="callout"><b>Essayez le test du cent.</b> Donnez-lui une facture dont le total imprimé est faux d'un cent. Le bon comportement est un refus qui nomme les deux nombres — pas un fichier corrigé, et jamais un «&nbsp;terminé&nbsp;» confiant.</div>
     </div>
   </section>
 
   <section class="step">
     <div class="n">05</div>
     <div>
-      <h2>Read the rung it reached</h2>
-      <p>Every closed unit records the highest tier it actually reached. It may not be described above that.</p>
+      <h2>Lisez le palier atteint</h2>
+      <p>Chaque unité fermée consigne le palier le plus haut qu'elle a réellement atteint. Elle ne peut pas être décrite au-dessus.</p>
       <div class="tiers">
-        <div><b>01</b><span>source — the code exists</span></div>
-        <div><b>02</b><span>wired — something calls it</span></div>
-        <div><b>03</b><span>tested — automated checks pass</span></div>
-        <div><b>04</b><span>built — a shippable artifact exists</span></div>
-        <div><b>05</b><span>installed — it is on the target machine</span></div>
-        <div><b>06</b><span>runtime-proven — seen working in the running system</span></div>
-        <div><b>07</b><span>device-proven — seen working on the device it was built for</span></div>
+        <div><b>01</b><span>source — le code existe</span></div>
+        <div><b>02</b><span>wired — quelque chose l'appelle</span></div>
+        <div><b>03</b><span>tested — les vérifications automatiques passent</span></div>
+        <div><b>04</b><span>built — un artefact livrable existe</span></div>
+        <div><b>05</b><span>installed — il est sur la machine cible</span></div>
+        <div><b>06</b><span>runtime-proven — vu fonctionner dans le système en marche</span></div>
+        <div><b>07</b><span>device-proven — vu fonctionner sur l'appareil pour lequel il a été construit</span></div>
       </div>
     </div>
   </section>
 
   <div class="end">
-    <a class="btn btn-p" href="download.html">Download OL 0.17.1</a>
-    <a class="btn btn-g" href="./">What it is, in one page</a>
+    <a class="btn btn-p" href="download.html">Télécharger OL 0.17.1</a>
+    <a class="btn btn-g" href="./">Ce que c'est, en une page</a>
   </div>
 </main>
 
 <footer><div class="wrap">
   <span class="ml">OL — Optimization and Logistics · Montréal · NEQ 2270669312</span>
-  <span class="ml">Private beta · macOS 12+ · Apple silicon</span>
+  <span class="ml">macOS 12+ · Apple silicon</span>
 </div></footer>
 </body>
 </html>

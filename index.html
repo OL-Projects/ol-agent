@@ -1,455 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OL-Control — the verifiable agent</title>
-<meta name="description" content="OL-Control is a personal agent that runs on your Mac. It closes a unit of work only when its own verifier passes, and it cannot claim what it has not proven.">
+<title>OL — l'application qui remplace la pile</title>
+<meta name="description" content="OL est un seul organisme persistant : la puissance de code de Claude Code, Codex, Cline et Cursor ; l'exécution d'agents de Hermes ; l'usage de l'ordinateur d'OpenClaw ; l'orchestration de Dots et Herdr. Une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
 <link rel="canonical" href="https://ol-projects.github.io/ol-control/">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","alternateName":"OL-Control","url":"https://ol-projects.github.io/ol-control/","description":"A Montréal company building OL-Control, a personal agent that closes work only when its own verifier passes.","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"},"identifier":"NEQ 2270669312"},
- {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/","name":"OL","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"inLanguage":"en"},
- {"@type":"SoftwareApplication","name":"OL-Control","applicationCategory":"BusinessApplication","operatingSystem":"macOS","description":"A personal agent that runs on your Mac and closes a unit of work only when its own verifier passes. Documents are rendered to pixels and measured, arithmetic is recomputed to the cent, and a deploy counts only when the served bytes hash-match the built bytes.","url":"https://ol-projects.github.io/ol-control/","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"},"softwareVersion":"0.17.1","offers":[{"@type":"Offer","name":"Free","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Day pass","price":"0.50","priceCurrency":"USD"},{"@type":"Offer","name":"Solo","price":"5","priceCurrency":"USD"},{"@type":"Offer","name":"Pro","price":"19","priceCurrency":"USD"}]}
-]}
-</script>
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/">
+<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-control/">
+<meta name="ol-root" content="">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ol-projects.github.io/ol-control/">
-<meta property="og:title" content="OL-Control — It cannot claim what it has not proven.">
-<meta property="og:description" content="A personal agent that runs on your Mac and closes work only when its verifier passes. Private beta.">
+<meta property="og:title" content="L'application qui remplace la pile.">
+<meta property="og:description" content="Un seul organisme persistant : une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
 <meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="OL-Control — It cannot claim what it has not proven.">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="OL-Control — It cannot claim what it has not proven.">
-<meta name="twitter:description" content="A personal agent that runs on your Mac and closes work only when its verifier passes.">
+<meta name="twitter:title" content="L'application qui remplace la pile.">
+<meta name="twitter:description" content="Une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
 <meta name="twitter:image" content="https://ol-projects.github.io/ol-control/og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -12 56 56'%3E%3Crect x='0' y='-12' width='56' height='56' fill='%230b0b0a'/%3E%3Ccircle cx='15' cy='16' r='12.4' fill='none' stroke='%23ecebe6' stroke-width='3.6'/%3E%3Cpath d='M35.6 3.4V28.6H54' fill='none' stroke='%23ecebe6' stroke-width='3.6' stroke-linecap='square'/%3E%3C/svg%3E">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0b0b0a">
+<link rel="stylesheet" href="assets/site.css">
 <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('motion')}</script>
-<style>
-:root{--bg:#0b0b0a;--bg2:#10100e;--ink:#ecebe6;--mute:#a19e96;--dim:#8c897f;--rule:rgba(236,235,230,.16);--rule2:rgba(236,235,230,.08);--blue:#5aa8ff;--green:#86d4a2;--amber:#e9ae52;--mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;--serif:ui-serif,"New York","Iowan Old Style","Palatino Linotype",Georgia,serif;--gut:48px;--gap:24px;--band:88px;--kick:40px;--rh:46px;--hh:56px}
-*,*::before,*::after{box-sizing:border-box}
-html{background:var(--bg);color:var(--ink);-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--hh)}
-body{margin:0;font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--blue);color:#05080c}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-p{margin:0}
-h1,h2,h3{margin:0;font-weight:560}
-.skip{position:absolute;left:12px;top:-60px;z-index:30;background:var(--blue);color:#05080c;padding:10px 14px;font:500 13px var(--mono);text-decoration:none}
-.skip:focus{top:12px}
-.lab{font:500 11px/1.45 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.h{text-transform:none;letter-spacing:.04em}
-.ink{color:var(--ink)}
-
-/* container */
-.box-w{max-width:1440px;margin:0 auto;padding:0 var(--gut)}
-.top{position:sticky;top:0;z-index:20;background:rgba(11,11,10,.97)}
-.bar{display:flex;align-items:center;gap:24px;height:var(--hh);border-bottom:1px solid var(--rule)}
-.brand{display:inline-flex;color:var(--ink);text-decoration:none}
-.brand svg{display:block;width:44px;height:25px}
-.brand{gap:12px;align-items:center}
-.brand .wm{font:600 12.5px/1 var(--mono);letter-spacing:.2em;color:var(--ink);white-space:nowrap}
-.brand .wm-h{color:var(--dim);font-weight:500}
-@media (max-width:420px){.brand .wm{display:none}}
-.bar .st0{margin-left:auto;white-space:nowrap}
-.strip{display:none;gap:18px}
-.strip a{position:relative;display:inline-flex;align-items:center;min-height:44px;padding:6px 0;text-decoration:none;font:500 11px/1 var(--mono);letter-spacing:.1em;color:var(--mute)}
-.strip a.on{color:var(--ink)}
-.strip a.on::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--blue)}
-
-.frame{position:relative;max-width:1440px;margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:184px minmax(0,1fr)}
-.frame::before{content:"";position:absolute;top:0;bottom:0;left:var(--gut);right:var(--gut);pointer-events:none;z-index:0;background-image:linear-gradient(to right,rgba(236,235,230,.03) 1px,transparent 1px),linear-gradient(to bottom,rgba(236,235,230,.03) 1px,transparent 1px);background-size:96px 96px;border-right:1px solid rgba(236,235,230,.03)}
-
-/* rail */
-.rail{position:sticky;top:var(--hh);align-self:start;z-index:2;padding-top:var(--band)}
-.rail ol{list-style:none;margin:0;padding:0}
-.rail a{position:relative;display:flex;gap:12px;padding:7px 0 7px 24px;text-decoration:none;white-space:nowrap;font:500 11px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);transition:color .2s}
-.rail a .n{font-variant-numeric:tabular-nums}
-.rail a:hover,.rail a.on{color:var(--ink)}
-.rail a.on::before{content:"";position:absolute;left:0;top:50%;width:14px;height:1px;background:var(--blue)}
-
-.col{position:relative;z-index:1;min-width:0;border-left:1px solid var(--rule);padding-left:40px}
-
-/* links + buttons */
-.tl{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(236,235,230,.4);text-decoration-thickness:1px;text-underline-offset:4px;transition:color .2s,text-decoration-color .2s}
-.tl:hover{color:var(--blue);text-decoration-color:var(--blue)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;padding:0 22px;font:500 15px/1 var(--sans);white-space:nowrap;text-decoration:none;border:1px solid transparent;border-radius:0;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}
-.btn .ar{display:inline-block;transition:transform .25s}
-.btn:hover .ar{transform:translateX(3px)}
-.btn.p{background:var(--blue);color:#05080c}
-.btn.p:hover{background:#82bdff}
-.btn.s{border-color:var(--rule);color:var(--ink);background:transparent}
-.btn.s:hover{border-color:var(--blue);color:var(--blue)}
-.btn[disabled]{background:#24241f;color:var(--mute);border-color:var(--rule);cursor:not-allowed}
-
-/* bands: padding-top only; the header rule is the divider */
-.band{position:relative;padding:var(--band) 0 0}
-.g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap)}
-.bh{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;min-height:16px;margin-bottom:var(--kick)}
-.bh i{height:1px;background:var(--rule)}
-.bh .lab{white-space:nowrap}
-.hero .bh{grid-template-columns:auto minmax(24px,1fr)}
-.hero .bh .lab{white-space:normal;color:var(--ink)}
-.d1{font-size:clamp(42px,6vw,86px);line-height:.98;letter-spacing:-.045em;font-weight:580}
-.d2{font-size:clamp(32px,3.6vw,56px);line-height:1.02;letter-spacing:-.035em;font-weight:560}
-.body{max-width:62ch;color:var(--mute);font-size:17px}
-.body strong{color:var(--ink);font-weight:500}
-.hl{grid-column:1/span 6}
-.hr{grid-column:8/-1;align-self:end}
-
-/* reveal (only with JS + motion) */
-.mask{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
-.mask>span{display:block}
-html.motion .mask>span{transform:translate3d(0,108%,0);transition:transform 1s cubic-bezier(.2,.7,.1,1);transition-delay:calc(var(--d,0)*110ms)}
-html.motion .mask.in>span{transform:none}
-html.motion [data-reveal]{opacity:0;transform:translate3d(0,14px,0);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.1,1);transition-delay:calc(var(--d,0)*80ms)}
-html.motion [data-reveal].in{opacity:1;transform:none}
-html.motion [data-fade]{opacity:0;transition:opacity 1s ease;transition-delay:calc(var(--d,0)*80ms)}
-html.motion [data-fade].in{opacity:1}
-
-/* hero */
-.hero h1{grid-column:1/-1;margin-bottom:20px}
-.what{grid-column:1/-1;font-size:21px;line-height:1.35;letter-spacing:-.01em;color:var(--ink);font-weight:450;margin-bottom:40px}
-.hero-copy{grid-column:1/span 5;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
-.lede{font-size:17px;line-height:1.6;color:var(--mute);max-width:48ch}
-.lede span{display:block}
-@media (min-width:1080px) and (max-width:1420px){.lede span{display:inline}}
-.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.meta{margin-top:20px;color:var(--ink)}
-.key-h{padding-bottom:10px;border-bottom:1px solid var(--rule)}
-.key{margin:0}
-.key>div{display:grid;grid-template-columns:104px 1fr;align-items:center;gap:14px;height:38px;border-bottom:1px solid var(--rule2)}
-.key dd{margin:0;font-size:14px;color:var(--mute)}
-
-/* verdict pill */
-.v{position:relative;display:inline-block;width:92px;padding:6px 0;font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-align:center;border:1px solid currentColor;transition:color .5s,background-color .5s,border-color .5s}
-[data-v=verified] .v{color:var(--green)}
-[data-v=refused] .v{color:var(--amber)}
-[data-v=held] .v{color:var(--mute);border-style:dashed}
-[data-v=closed] .v{color:#0b0b0a;background:var(--green);border-color:var(--green)}
-[data-v=checking] .v{color:var(--ink);border-color:var(--rule)}
-[data-v=checking] .v::after{content:"";position:absolute;left:-1px;right:-1px;bottom:-1px;height:1px;background:var(--ink);transform-origin:left;animation:chk 1.5s linear forwards}
-@keyframes chk{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
-/* ledger */
-.ledger{grid-column:6/-1;min-width:0;max-width:100%;margin:0;border:1px solid var(--rule);background:var(--bg2);align-self:start;overflow:hidden}
-.lg-h,.lg-f{display:flex;justify-content:space-between;align-items:center;gap:12px;height:40px;padding:0 14px;white-space:nowrap}
-.lg-h{border-bottom:1px solid var(--rule)}
-.lg-f{border-top:1px solid var(--rule);justify-content:flex-start}
-.lg-n{margin:0;padding:12px 14px 14px;border-top:1px solid var(--rule2);color:var(--mute)}
-.lg-h .ttl{color:var(--ink)}
-.lg-h .ttl::before{content:"";display:inline-block;width:6px;height:6px;background:var(--green);margin-right:10px;vertical-align:1px}
-html.motion .lg-h .ttl::before{animation:pulse 3.2s ease-in-out infinite}
-@keyframes pulse{50%{opacity:.3}}
-.lg-k,.row{display:grid;grid-template-columns:78px 14px minmax(0,1fr) 104px;align-items:center;padding:0 14px}
-.lg-k{height:30px;border-bottom:1px solid var(--rule)}
-.lg-k span:last-child{text-align:right}
-.lg-b{position:relative;height:calc(var(--rh)*12);overflow:hidden}
-.lg-b::before{content:"";position:absolute;top:0;bottom:0;left:95px;width:1px;background:var(--rule2)}
-.row{height:var(--rh);border-bottom:1px solid var(--rule2)}
-.lg-b.js .row{position:absolute;left:0;right:0;top:0}
-.lg-b.anim .row{transition:transform 1s cubic-bezier(.3,.7,.1,1),opacity 1s ease}
-.row .t{font:400 11px/1 var(--mono);color:var(--mute);font-variant-numeric:tabular-nums}
-.row .dot{position:relative;z-index:1;width:7px;height:7px;background:var(--bg2);border:1px solid var(--mute);transition:background-color .5s,border-color .5s}
-.row .c{min-width:0;font-family:var(--mono);padding:0 10px 0 4px}
-.row .c b{display:block;font-weight:500;font-size:12px;line-height:16px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .c em{display:block;font-style:normal;font-size:10.5px;line-height:14px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .v{justify-self:end}
-.row[data-v=verified] .dot,.row[data-v=closed] .dot{background:var(--green);border-color:var(--green)}
-.row[data-v=refused] .dot{background:var(--amber);border-color:var(--amber)}
-.row[data-v=checking] .dot{border-color:var(--ink)}
-.cnt{text-transform:none;letter-spacing:.04em;font-size:11.5px}
-.cnt b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums}
-.cnt .k1 b,.cnt .k4 b{color:var(--green)}.cnt .k2 b{color:var(--amber)}
-
-/* split */
-.side h3{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--rule)}
-.side h3 .w{font:560 clamp(22px,2vw,28px)/1.1 var(--sans);letter-spacing:-.025em;color:var(--ink)}
-.side ul{list-style:none;margin:0;padding:0;counter-reset:i}
-.side li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:14px 0;border-bottom:1px solid var(--rule2);font-size:18px;line-height:1.4;letter-spacing:-.01em}
-.side li::after{content:counter(i,decimal-leading-zero);counter-increment:i;font:500 11px/1 var(--mono);letter-spacing:.14em;color:var(--mute)}
-.side.def{grid-column:1/span 6;margin-top:48px}
-.side.def li{color:var(--mute)}
-.side.ol{grid-column:7/-1;margin-top:48px}
-.side.ol h3{border-bottom-color:var(--ink)}
-.side.ol li::after{color:var(--green)}
-.coda{grid-column:1/span 9;margin-top:48px;font-size:clamp(24px,2.4vw,34px);line-height:1.15;letter-spacing:-.025em;font-weight:400;max-width:34ch}
-.coda b{font-weight:600}
-
-/* gate */
-.gate-l{grid-column:1/span 6}
-.gate-r{grid-column:7/-1;align-self:start}
-.gate-l .body{margin-top:20px}
-.checks{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--rule)}
-.checks li{display:grid;grid-template-columns:4ch 1fr;gap:4px 14px;padding:16px 0;border-bottom:1px solid var(--rule)}
-.checks .n{grid-row:span 3;color:var(--ink)}
-.checks h3{font-size:18px;letter-spacing:-.015em;font-weight:560}
-.checks p{color:var(--mute);font-size:15.5px;line-height:1.5}
-.th{justify-self:start;margin-top:6px;padding:5px 8px;border:1px solid var(--rule);color:var(--ink);text-transform:none;letter-spacing:.06em}
-.th b{color:var(--green);font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin-right:8px}
-.limit{margin-top:24px;padding-left:16px;border-left:1px solid var(--amber);color:var(--mute);font-size:15.5px;max-width:56ch}
-.limit b{display:block;margin-bottom:4px;color:var(--amber);font:500 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
-.dg{display:block;width:100%;height:auto;overflow:hidden}
-.dg text{font-family:var(--mono);font-size:11px;letter-spacing:1.2px;fill:var(--mute)}
-.dg .k{fill:var(--ink)}.dg .q{font-size:12.5px;letter-spacing:.2px;fill:var(--ink)}
-.dg .gT{fill:var(--green)}.dg .aT{fill:var(--amber)}
-.dg .ln{fill:none;stroke:var(--ink);stroke-width:1}
-.dg .ln.g{stroke:var(--green)}.dg .ln.a{stroke:var(--amber)}.dg .ln.dsh{stroke:var(--mute);stroke-dasharray:3 4}
-.dg rect{fill:none;stroke:rgba(236,235,230,.4);stroke-width:1}
-.dg rect.in{stroke:var(--ink)}
-.dg rect.gb{stroke:var(--green);fill:rgba(134,212,162,.06)}
-.dg rect.ab{stroke:var(--amber)}
-.dg rect.sq{fill:var(--green);stroke:none}
-.dg-cap{margin-top:14px;max-width:52ch}
-.wk{grid-column:1/-1;margin-top:48px;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
-.wk-h{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--rule2)}
-.wk-r{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--gap)}
-.wk-r>div{min-width:0;padding:14px 0 16px;display:grid;grid-template-rows:16px 30px;row-gap:6px}
-.wk-r .lab{white-space:nowrap}
-.wk-r .x{font:500 22px/30px var(--mono);letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
-.wk-r .bad .x,.wk-r .bad .lab{color:var(--amber)}
-.wk-r .vd .x{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
-
-/* ladder */
-.lad{grid-column:1/-1;margin-top:56px}
-.gapx{position:relative;display:flex;justify-content:space-between;margin-left:calc(200%/7);width:calc(400%/7);padding-bottom:26px;margin-bottom:12px}
-.gapx span:nth-child(2){color:var(--amber)}
-.gapx span:last-child{color:var(--ink);transform:translateX(50%)}
-.gapx::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:12px;border:1px solid var(--mute);border-bottom:0}
-.tiers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--ink)}
-.tiers li{position:relative;min-width:0;padding-right:12px}
-.tiers li::before{content:"";position:absolute;left:0;top:0;width:1px;height:12px;background:var(--ink)}
-.tiers button{display:block;width:100%;margin:0;padding:18px 0 8px 12px;background:none;border:0;color:inherit;text-align:left;cursor:pointer;font:inherit}
-.tiers .tn{display:block;font:500 11px/1.5 var(--mono);letter-spacing:.14em;color:var(--mute)}
-.tiers .tt{display:block;font:500 12px/1.35 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);white-space:nowrap;transition:color .2s}
-.tiers button:hover .tt{color:var(--blue)}
-.tiers p{padding-left:12px;font-size:14px;line-height:1.45;color:var(--mute);max-width:22ch}
-.tiers li.sel::before{left:0;right:0;top:-2px;width:auto;height:3px;background:var(--blue)}
-.tiers li.sel::after{content:"";position:absolute;left:-5px;top:-11px;border:5px solid transparent;border-top:9px solid var(--blue);border-bottom:0}
-.tiers li.sel .tt{color:var(--blue)}
-.tiers li.sel p{color:var(--ink)}
-.tag{display:none}
-.pq{grid-column:3/-1;margin:56px 0 0;padding-top:24px;border-top:1px solid var(--rule)}
-.pq p{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3vw,44px);line-height:1.1;letter-spacing:-.015em;max-width:26ch;color:var(--ink)}
-.pq p em{font-style:italic;color:var(--amber)}
-.pq footer{margin-top:16px}
-
-/* refusals */
-.laws{grid-column:1/-1;list-style:none;margin:40px 0 0;padding:0;border-bottom:1px solid var(--rule)}
-.laws li{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:baseline;padding:34px 0;border-top:1px solid var(--rule)}
-.laws .ln-n{grid-column:1/span 1;color:var(--ink)}
-.laws .ln-t{grid-column:2/span 8;font-size:clamp(28px,3vw,42px);line-height:1.05;letter-spacing:-.03em;color:var(--ink)}
-.laws .ln-t span{display:block;white-space:nowrap}
-.laws .ln-t span:first-child{font-weight:620}
-.laws .ln-t span:last-child{font-weight:380}
-.laws .ln-a{grid-column:10/-1;text-align:right}
-
-/* made of */
-.spec{grid-column:1/-1;margin:40px 0 0;border-bottom:1px solid var(--rule)}
-.spec>div{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gap);align-items:baseline;padding:20px 0;border-top:1px solid var(--rule)}
-.spec .hd{padding:0 0 10px;border-top:0}
-.spec dt{grid-column:1/span 3;display:flex;gap:14px}
-.spec dt .w{color:var(--ink)}
-.spec dd{margin:0}
-.spec .ds{grid-column:4/span 6;font-size:17px;line-height:1.5;letter-spacing:-.005em;max-width:56ch}
-.spec .nt{grid-column:10/-1;text-align:right}
-.spec .nt.lim{color:var(--amber)}
-
-/* numbers: instrument */
-.inst{grid-column:1/-1;margin-top:40px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:var(--gap);border-top:1px solid var(--ink);border-bottom:1px solid var(--rule);padding:18px 0 20px}
-.inst>div{display:grid;grid-template-rows:16px 60px 16px 16px;row-gap:6px;min-width:0;grid-template-areas:"l" "f" "u" "s"}
-.inst .l,.inst .u,.inst .s{line-height:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.inst .l{grid-area:l;color:var(--ink)}
-.inst .f{grid-area:f;font:500 clamp(40px,3.8vw,56px)/60px var(--mono);letter-spacing:-.04em;font-variant-numeric:tabular-nums;color:var(--ink)}
-.inst .f.am{color:var(--amber)}
-.inst .u{grid-area:u}
-.inst .u.am{color:var(--amber)}
-.inst .s{grid-area:s;color:var(--dim)}
-
-/* access */
-.acc-l{grid-column:1/span 5}
-.acc-l .body{margin-top:20px}
-.price{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--rule)}
-.price li{display:grid;grid-template-columns:104px 1fr;align-items:baseline;gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--rule2)}
-.price .pr{grid-row:span 2;font:560 28px/1 var(--sans);letter-spacing:-.03em}
-.price .pr small{display:block;margin-top:6px;font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--mute);text-transform:uppercase}
-.price .ds{color:var(--mute);font-size:15px;line-height:1.45}
-.price li.hi{border-left:2px solid var(--ink);padding-left:14px;margin-left:-16px}
-.price li.hi .ds{color:var(--ink)}
-.price .stt{color:var(--green)}
-form{grid-column:7/-1;display:grid;gap:22px;align-content:start;min-width:0}
-.fld{display:grid;gap:8px}
-.fld .lab{display:flex;justify-content:space-between}
-input[type=email],textarea{width:100%;padding:14px 16px;background:rgba(11,11,10,.8);border:1px solid var(--rule);border-radius:0;color:var(--ink);font:400 16px/1.45 var(--sans);transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
-textarea{resize:vertical;min-height:92px}
-input::placeholder,textarea::placeholder{color:#8b887f}
-input:hover,textarea:hover{border-color:rgba(236,235,230,.34)}
-input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
-input:disabled,textarea:disabled{opacity:.6}
-.fld.err input{border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)}
-.hint{font-size:14px;color:var(--mute)}
-.fld.err .hint{color:var(--amber)}
-fieldset{margin:0;padding:0;border:0;display:grid;gap:8px;min-width:0}
-legend{padding:0;margin-bottom:8px}
-.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--rule)}
-.seg label{position:relative;display:block;cursor:pointer}
-.seg label+label{border-left:1px solid var(--rule)}
-.seg input{position:absolute;opacity:0;width:1px;height:1px}
-.seg span{display:block;padding:13px 6px;text-align:center;font:500 11px/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute);white-space:nowrap;transition:color .2s,background-color .2s}
-.seg label:hover span{color:var(--ink)}
-.seg input:checked+span{color:#05080c;background:var(--ink)}
-.seg input:focus-visible+span{outline:2px solid var(--blue);outline-offset:-2px}
-.sub{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
-.fb{font-size:15px;color:var(--mute)}
-.status{font-size:15px;line-height:1.5;padding:12px 14px;border:1px solid var(--rule);border-left:2px solid var(--ink);color:var(--ink)}
-.status:empty{display:none}
-.status .stl{display:block;margin-bottom:4px;font:500 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
-.status.ok{border-left-color:var(--green)}
-.status.ok .stl{color:var(--green)}
-.status.bad{border-left-color:var(--amber)}
-.status.bad .stl{color:var(--amber)}
-
-/* footer */
-.foot{margin-top:var(--band);padding:40px 0 44px;border-top:1px solid var(--rule)}
-.foot .g{row-gap:20px}
-.foot .mk2{grid-column:1/span 2;color:var(--ink)}
-.foot .mk2 svg{width:44px;height:25px;display:block}
-.foot .f1{grid-column:3/span 4}
-.foot .f2{grid-column:7/span 3}
-.foot .f3{grid-column:10/-1;text-align:right}
-.foot p{font-size:15px;color:var(--mute)}
-.foot p+p{margin-top:6px}
-
-/* ≤1080: rail becomes a numbers strip in the header */
-@media (max-width:1080px){
- :root{--gut:32px}
- .frame{display:block}
- .rail{display:none}
- .strip{display:flex}
- .col{border-left:0;padding-left:0}
- .hero-copy{grid-column:1/-1;justify-content:flex-start}
- .ledger{grid-column:1/-1;margin-top:48px}
- .key{max-width:560px}
- .tiers .tt{font-size:11px;letter-spacing:.04em;white-space:normal;overflow-wrap:anywhere}
- .laws .ln-t span{white-space:normal}
- .wk-r{grid-template-columns:repeat(3,minmax(0,1fr))}
- .wk-r>div:nth-child(n+4){border-top:1px solid var(--rule2)}
- .wk-r .x{font-size:18px}
- .inst{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:20px}
-}
-/* ≤760: separate mobile composition */
-@media (max-width:760px){
- .bh .lab{white-space:normal}
- :root{--gut:20px;--band:56px;--kick:32px;--hh:52px}
- body{font-size:16px}
- .strip{display:none}
- .g>*{grid-column:1/-1!important}
- .hl,.hr{grid-column:1/-1}
- .hr{margin-top:20px}
- .d1{font-size:clamp(38px,11vw,48px);letter-spacing:-.04em}
- .what{font-size:20px;margin-bottom:28px}
- .lede span{display:inline}
- .btn{flex:1 1 100%}
- .sub{align-items:stretch}
- .sub .btn{flex:none}
- .lg-h,.lg-f{padding:0 12px}
- .lg-n{padding:12px}
- .lg-k,.row{grid-template-columns:50px minmax(0,1fr) 84px;padding:0 12px}
- .lg-k span:nth-child(2),.row .dot,.lg-b::before{display:none}
- .row .c{padding:0 8px 0 0}
- .row .t{font-size:10px}
- .row .v,.key .v{width:80px;font-size:10px;letter-spacing:.08em}
- .key>div{grid-template-columns:88px 1fr}
- .cnt{font-size:11px;letter-spacing:0}
- .side.def,.side.ol{margin-top:40px}
- .side li{font-size:17px}
- .gate-r{margin-top:40px}
- .wk-r{grid-template-columns:1fr}
- .wk-r>div{grid-template-columns:1fr auto;grid-template-rows:auto;align-items:baseline;padding:10px 0;border-top:1px solid var(--rule2)}
- .wk-r>div:first-child{border-top:0}
- .wk-r .x{font-size:17px;line-height:1.3}
- .wk-h{flex-direction:column;gap:4px}
- .lad{margin-top:40px}
- .gapx{display:none}
- .tiers{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--ink);margin-left:6px}
- .tiers li{display:grid;grid-template-columns:150px 1fr;align-items:center;column-gap:12px;min-height:58px;padding:0;border-bottom:1px solid var(--rule2)}
- .tiers li::before{left:0;top:50%;width:10px;height:1px}
- .tiers li.sel::before{left:-2px;right:auto;top:0;bottom:0;width:3px;height:auto}
- .tiers li.sel::after{left:2px;top:50%;margin-top:-5px;border:5px solid transparent;border-left:9px solid var(--blue);border-right:0}
- .tiers button{padding:10px 0 10px 18px}
- .tiers .tt{font-size:12px;letter-spacing:.06em}
- .tiers p{padding:8px 0;font-size:14px;max-width:none}
- .tag{display:block;font:500 10.5px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
- .pq{margin-top:40px}
- .pq p{font-size:28px}
- .laws{margin-top:32px}
- .laws li{grid-template-columns:auto 1fr;grid-template-areas:"n a" "t t";row-gap:12px;padding:24px 0}
- .laws .ln-n{grid-area:n}
- .laws .ln-a{grid-area:a;text-align:right}
- .laws .ln-t{grid-area:t;font-size:30px;line-height:1.05}
- .spec{margin-top:32px}
- .spec .hd{display:none}
- .spec>div{grid-template-columns:1fr auto;row-gap:8px}
- .spec dt{grid-column:1/2!important}
- .spec .nt{grid-column:2/3!important;grid-row:1}
- .spec .ds{grid-column:1/-1!important;font-size:16px}
- .inst{grid-template-columns:1fr;padding:0}
- .inst>div{grid-template-columns:1fr auto;grid-template-rows:auto auto;grid-template-areas:"l f" "s u";row-gap:2px;column-gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--rule2)}
- .inst>div:first-child{border-top:0}
- .inst .f{font-size:36px;line-height:40px;text-align:right}
- .inst .u{text-align:right}
- .price li.hi{margin-left:0}
- form{margin-top:48px}
- .seg{grid-template-columns:repeat(2,minmax(0,1fr))}
- .seg label:nth-child(3){border-left:0}
- .seg label:nth-child(n+3){border-top:1px solid var(--rule)}
- .foot .f3{text-align:left}
-}
-/* film */
-.film{grid-column:1/span 4;min-width:0;margin-top:40px}
-.film video{display:block;width:100%;height:auto;border:1px solid var(--rule);background:#000}
-.film figcaption{margin-top:12px;max-width:44ch}
-.film .dur{display:flex;gap:16px;align-items:center;margin-top:16px}
-@media (max-width:1080px){.film{grid-column:1/span 5}}
-@media (max-width:760px){.film{grid-column:1/-1}.film figcaption{max-width:none}}
-
-/* verify this page */
-.vf{grid-column:1/span 7;min-width:0;margin-top:40px;border:1px solid var(--rule);background:var(--bg2)}
-.vf-h{display:flex;justify-content:space-between;align-items:center;gap:12px;height:42px;padding:0 16px;border-bottom:1px solid var(--rule);white-space:nowrap}
-.vf-h .ttl{color:var(--ink)}
-.vf-h .ttl::before{content:"";display:inline-block;width:6px;height:6px;background:var(--blue);margin-right:10px;vertical-align:1px}
-.vf-b{padding:6px 16px}
-.vf-row{display:grid;grid-template-columns:minmax(0,1fr) 110px 96px;align-items:center;gap:12px;height:34px;border-bottom:1px solid var(--rule2);font:400 12px/1 var(--mono)}
-.vf-row:last-child{border-bottom:0}
-.vf-row b{font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vf-row .hg{color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.vf-row .v{width:auto;justify-self:end;padding:5px 0;font-size:10px}
-.vf-f{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-top:1px solid var(--rule)}
-.vf-sum{font:500 11.5px/1.5 var(--mono);letter-spacing:.06em;color:var(--mute)}
-.vf-sum b{color:var(--green);font-variant-numeric:tabular-nums}
-.vf-sum .bad{color:var(--amber)}
-.vf-note{grid-column:8/-1;align-self:start;margin-top:40px}
-.vf-note p+p{margin-top:16px}
-@media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
-@media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
-/* the hero must not wait for JS: its entrance runs from CSS at parse time, so the
-   largest element is painted ~700 ms in instead of after script + a 1 s transition */
-@media (prefers-reduced-motion:no-preference){
- html.motion .hero .mask>span{transform:none;animation:heroIn .68s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d,0)*70ms)}
- html.motion .hero [data-reveal]{opacity:1;transform:none;animation:heroUp .55s cubic-bezier(.2,.7,.1,1) both;animation-delay:calc(var(--d,0)*35ms + 40ms)}
- html.motion .hero .ledger{animation-delay:.12s}
- @keyframes heroIn{from{transform:translate3d(0,108%,0)}to{transform:none}}
- @keyframes heroUp{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}
-}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
-</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","url":"https://ol-projects.github.io/ol-control/","email":"spirokaglis+ol@gmail.com","description":"OL — Optimization and Logistics, Montréal. Un organisme persistant : une mémoire, une identité, une colonne d'autorité et de vérification, et un noyau génératif.","identifier":"NEQ 2270669312","vatID":"819029992RT0001","taxID":"4024451921TQ0002","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"}},
+ {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/","name":"OL","inLanguage":"fr-CA","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"}},
+ {"@type":"Service","name":"OL Services","serviceType":"Prises de quantités, estimations, audits techniques et automatisation","provider":{"@id":"https://ol-projects.github.io/ol-control/#org"},"areaServed":{"@type":"AdministrativeArea","name":"Québec"},"url":"https://ol-projects.github.io/ol-services/","offers":[
+  {"@type":"Offer","name":"Micro-prise de quantités","price":"25","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Prise de quantités complète (lancement)","price":"74.99","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Audit technique (lancement)","price":"290","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Automatisation simple (lancement)","price":"49","priceCurrency":"CAD"}
+ ]}
+]}
+</script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Aller au contenu</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
  <symbol id="mark" viewBox="0 0 56 32"><circle cx="15" cy="16" r="13.2" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M35.6 3.4V28.6H54" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></symbol>
 </svg>
@@ -457,11 +50,14 @@ legend{padding:0;margin-bottom:8px}
 <header class="top">
  <div class="box-w">
   <div class="bar">
-   <a class="brand" href="#top" aria-label="OL-Control — back to top"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm">OL<span class="wm-h">-</span>CONTROL</span></a>
-   <nav class="strip" aria-label="Sections, compact">
-    <a href="#top" data-s="top" aria-label="01 Overview">01</a><a href="#split" data-s="split" aria-label="02 The split">02</a><a href="#gate" data-s="gate" aria-label="03 The gate">03</a><a href="#ladder" data-s="ladder" aria-label="04 The ladder">04</a><a href="#refusals" data-s="refusals" aria-label="05 Refusals">05</a><a href="#made" data-s="made" aria-label="06 Made of">06</a><a href="#numbers" data-s="numbers" aria-label="07 Numbers">07</a><a href="#verify" data-s="verify" aria-label="08 Check this page">08</a><a href="#access" data-s="access" aria-label="09 Access">09</a>
+   <a class="brand" href="#top" aria-label="OL — retour en haut"><svg aria-hidden="true"><use href="#mark"/></svg></a>
+   <nav class="strip" aria-label="Sections, forme compacte">
+    <a href="#top" data-s="top" aria-label="01 Aperçu">01</a><a href="#film" data-s="film" aria-label="02 Le film">02</a><a href="#pile" data-s="pile" aria-label="03 La pile">03</a><a href="#organisme" data-s="organisme" aria-label="04 L'organisme">04</a><a href="#noyau" data-s="noyau" aria-label="05 Le noyau">05</a><a href="#colonne" data-s="colonne" aria-label="06 La colonne">06</a><a href="#entonnoir" data-s="entonnoir" aria-label="07 L'entonnoir">07</a><a href="#divisions" data-s="divisions" aria-label="08 Divisions">08</a><a href="#commission" data-s="commission" aria-label="09 2,7 pour cent">09</a><a href="#limites" data-s="limites" aria-label="10 Limites">10</a><a href="#preuve" data-s="preuve" aria-label="11 Preuve">11</a><a href="#commencer" data-s="commencer" aria-label="12 Commencer">12</a><a href="#faq" data-s="faq" aria-label="13 Questions">13</a>
    </nav>
-   <p class="lab st0">Private beta · <a href="download.html" style="color:inherit;border-bottom:1px solid currentColor;text-decoration:none">Download 0.17.1</a></p>
+   <a class="svc" href="https://ol-projects.github.io/ol-services/"><span>OL Services</span> <span aria-hidden="true">→</span></a>
+   <nav class="langsw lab" aria-label="Langue">
+    <a href="./" aria-current="true" hreflang="fr-CA">FR</a><span class="sep" aria-hidden="true">/</span><a href="en/" hreflang="en-CA" lang="en-CA">EN</a>
+   </nav>
   </div>
  </div>
 </header>
@@ -469,14 +65,19 @@ legend{padding:0;margin-bottom:8px}
 <div class="frame">
 <nav class="rail" aria-label="Sections">
  <ol>
-  <li><a href="#top" data-s="top"><span class="n">01</span><span>Overview</span></a></li>
-  <li><a href="#split" data-s="split"><span class="n">02</span><span>The split</span></a></li>
-  <li><a href="#gate" data-s="gate"><span class="n">03</span><span>The gate</span></a></li>
-  <li><a href="#ladder" data-s="ladder"><span class="n">04</span><span>The ladder</span></a></li>
-  <li><a href="#refusals" data-s="refusals"><span class="n">05</span><span>Refusals</span></a></li>
-  <li><a href="#made" data-s="made"><span class="n">06</span><span>Made of</span></a></li>
-  <li><a href="#numbers" data-s="numbers"><span class="n">07</span><span>Numbers</span></a></li>
-  <li><a href="#verify" data-s="verify"><span class="n">08</span><span>Check it</span></a></li><li><a href="#access" data-s="access"><span class="n">09</span><span>Access</span></a></li>
+  <li><a href="#top" data-s="top"><span class="n">01</span><span>Aperçu</span></a></li>
+  <li><a href="#film" data-s="film"><span class="n">02</span><span>Le film</span></a></li>
+  <li><a href="#pile" data-s="pile"><span class="n">03</span><span>La pile</span></a></li>
+  <li><a href="#organisme" data-s="organisme"><span class="n">04</span><span>L'organisme</span></a></li>
+  <li><a href="#noyau" data-s="noyau"><span class="n">05</span><span>Le noyau</span></a></li>
+  <li><a href="#colonne" data-s="colonne"><span class="n">06</span><span>La colonne</span></a></li>
+  <li><a href="#entonnoir" data-s="entonnoir"><span class="n">07</span><span>L'entonnoir</span></a></li>
+  <li><a href="#divisions" data-s="divisions"><span class="n">08</span><span>Divisions</span></a></li>
+  <li><a href="#commission" data-s="commission"><span class="n">09</span><span>2,7&nbsp;%</span></a></li>
+  <li><a href="#limites" data-s="limites"><span class="n">10</span><span>Limites</span></a></li>
+  <li><a href="#preuve" data-s="preuve"><span class="n">11</span><span>Preuve</span></a></li>
+  <li><a href="#commencer" data-s="commencer"><span class="n">12</span><span>Commencer</span></a></li>
+  <li><a href="#faq" data-s="faq"><span class="n">13</span><span>FAQ</span></a></li>
  </ol>
 </nav>
 
@@ -485,281 +86,401 @@ legend{padding:0;margin-bottom:8px}
 
 <section class="band hero" id="top" aria-labelledby="h-hero">
  <div class="g">
-  <div class="bh"><span class="lab">01 · Montréal · Site build <span class="h" id="gen-hero">—</span></span><i></i></div>
+  <div class="bh"><span class="lab">01 · Montréal · OL — Optimization and Logistics</span><i></i></div>
   <h1 class="d1" id="h-hero">
-   <span class="mask" style="--d:0"><span>It cannot claim</span></span>
-   <span class="mask" style="--d:1"><span>what it has not proven.</span></span>
+   <span class="mask" style="--d:0"><span>Une seule application</span></span>
+   <span class="mask" style="--d:1"><span>à la place de neuf.</span></span>
   </h1>
-  <p class="what" data-reveal style="--d:2">A personal agent that runs on your Mac — and closes work only when its verifier passes.</p>
+  <p class="what" data-reveal style="--d:2">Pas en regroupant neuf produits. En possédant ce que chacun d'eux n'a qu'en partie.</p>
   <div class="hero-copy" data-reveal style="--d:3">
    <div>
-    <p class="lede"><span>Other agents sound just as sure when they are wrong.</span> <span>OL-Control renders, recomputes and hashes its own work,</span> <span>and refuses anything that fails the check.</span></p>
+    <p class="lede"><span>Une mémoire, une identité, une colonne d'autorité et de vérification —</span> <span>et un noyau qui construit ce qui manque,</span> <span>puis améliore la méthode qui l'a construit.</span></p>
     <div class="ctas">
-     <a class="btn p" href="download.html">Download 0.17.1 <span class="ar" aria-hidden="true">↓</span></a>
-     <a class="btn s" href="#gate">See how it proves it</a>
-     <a class="btn s" href="#film">Watch 30s <span class="ar" aria-hidden="true">▶</span></a>
+     <a class="btn p" href="https://ol-projects.github.io/ol-services/">Demander une prise de quantités — la première est gratuite <span class="ar" aria-hidden="true">→</span></a>
+     <a class="btn s" href="#limites">Voir ce qu'il refuse</a>
+     <a class="btn s" href="#film">Regarder 30&nbsp;s <span class="ar" aria-hidden="true">▶</span></a>
     </div>
-    <p class="meta lab">Private beta · macOS 12+ · Apple silicon · <a href="#access" style="color:inherit;border-bottom:1px solid currentColor;text-decoration:none">or request access</a></p>
-   </div>
-   <div>
-    <p class="lab key-h ink">How to read the ledger</p>
-    <dl class="key">
-     <div data-v="verified"><dt><span class="v">verified</span></dt><dd>A check ran and passed.</dd></div>
-     <div data-v="refused"><dt><span class="v">refused</span></dt><dd>A check ran and failed. The reason is logged.</dd></div>
-     <div data-v="held"><dt><span class="v">held</span></dt><dd>Not checked yet. Never reported as done.</dd></div>
-     <div data-v="closed"><dt><span class="v">closed</span></dt><dd>Every check passed. Evidence stored.</dd></div>
-    </dl>
+    <p class="meta lab">OL Services est en service. Prises de quantités à partir de 25&nbsp;$, la première gratuite. Audits et automatisations à prix fixe.</p>
    </div>
   </div>
 
   <figure class="ledger" data-reveal style="--d:4" aria-labelledby="lg-cap">
-   <div class="lg-h"><span class="lab ttl">Ledger</span><span class="lab" id="lg-clock">T+ 04:31.902</span></div>
-   <div class="lg-k" aria-hidden="true"><span class="lab">Time</span><span></span><span class="lab">Claim / evidence</span><span class="lab">Verdict</span></div>
+   <div class="lg-h"><span class="lab ttl">Registre</span><span class="lab" id="lg-clock">T+ 04:31.902</span></div>
+   <div class="lg-k" aria-hidden="true"><span class="lab">Temps</span><span></span><span class="lab">Affirmation / preuve</span><span class="lab">Verdict</span></div>
    <div class="lg-b" id="lg">
-    <div class="row" data-v="verified"><span class="t">04:02.118</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.1 rendered</b><em>png · 0 px outside page bounds</em></span><span class="v">verified</span></div>
-    <div class="row" data-v="refused"><span class="t">04:04.603</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.2 ink</b><em>coverage 0.0% · blank page</em></span><span class="v">refused</span></div>
-    <div class="row" data-v="verified"><span class="t">04:07.091</span><i class="dot"></i><span class="c"><b>subtotal + GST 5% + QST 9.975%</b><em>1,240.00 + 62.00 + 123.69 = 1,425.69</em></span><span class="v">verified</span></div>
-    <div class="row" data-v="refused"><span class="t">04:09.774</span><i class="dot"></i><span class="c"><b>printed total vs recomputed</b><em>1,425.96 ≠ 1,425.69 · Δ 0.27</em></span><span class="v">refused</span></div>
-    <div class="row" data-v="held"><span class="t">04:12.330</span><i class="dot"></i><span class="c"><b>invoice-0412 · regenerated</b><em>awaiting the gate again</em></span><span class="v">held</span></div>
-    <div class="row" data-v="verified"><span class="t">04:15.046</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.2 re-rendered</b><em>ink 41.2% · 0 px clipped</em></span><span class="v">verified</span></div>
-    <div class="row" data-v="closed"><span class="t">04:17.158</span><i class="dot"></i><span class="c"><b>invoice-0412 · all checks pass</b><em>evidence: 2 png · 1 recompute</em></span><span class="v">closed</span></div>
-    <div class="row" data-v="held"><span class="t">04:20.442</span><i class="dot"></i><span class="c"><b>deploy · server returned 200</b><em>a status code is not proof</em></span><span class="v">held</span></div>
-    <div class="row" data-v="verified"><span class="t">04:23.902</span><i class="dot"></i><span class="c"><b>deploy · sha256 served = built</b><em>9f3c…41e0 = 9f3c…41e0</em></span><span class="v">verified</span></div>
-    <div class="row" data-v="closed"><span class="t">04:25.517</span><i class="dot"></i><span class="c"><b>deploy · unit closed</b><em>tier recorded: runtime-proven</em></span><span class="v">closed</span></div>
-    <div class="row" data-v="refused"><span class="t">04:28.260</span><i class="dot"></i><span class="c"><b>report · “sent to client”</b><em>no delivery receipt on record</em></span><span class="v">refused</span></div>
-    <div class="row" data-v="verified"><span class="t">04:31.902</span><i class="dot"></i><span class="c"><b>leg 21 · tier reached: installed</b><em>claim lowered from device-proven</em></span><span class="v">verified</span></div>
+    <div class="row" data-v="verified"><span class="t">04:02.118</span><i class="dot"></i><span class="c"><b>facture-0412 · p.1 rendue</b><em>png · 0 px hors du cadre</em></span><span class="v">vérifié</span></div>
+    <div class="row" data-v="refused"><span class="t">04:04.603</span><i class="dot"></i><span class="c"><b>facture-0412 · encre p.2</b><em>couverture 0,0 % · page blanche</em></span><span class="v">refusé</span></div>
+    <div class="row" data-v="verified"><span class="t">04:07.091</span><i class="dot"></i><span class="c"><b>sous-total + TPS 5 % + TVQ 9,975 %</b><em>1 240,00 + 62,00 + 123,69 = 1 425,69</em></span><span class="v">vérifié</span></div>
+    <div class="row" data-v="refused"><span class="t">04:09.774</span><i class="dot"></i><span class="c"><b>total imprimé vs recalculé</b><em>1 425,96 ≠ 1 425,69 · Δ 0,27</em></span><span class="v">refusé</span></div>
+    <div class="row" data-v="held"><span class="t">04:12.330</span><i class="dot"></i><span class="c"><b>facture-0412 · régénérée</b><em>en attente de la porte</em></span><span class="v">en attente</span></div>
+    <div class="row" data-v="verified"><span class="t">04:15.046</span><i class="dot"></i><span class="c"><b>facture-0412 · p.2 réimprimée</b><em>encre 41,2 % · 0 px tronqué</em></span><span class="v">vérifié</span></div>
+    <div class="row" data-v="closed"><span class="t">04:17.158</span><i class="dot"></i><span class="c"><b>facture-0412 · toutes les vérifications</b><em>preuve : 2 png · 1 recalcul</em></span><span class="v">fermé</span></div>
+    <div class="row" data-v="held"><span class="t">04:20.442</span><i class="dot"></i><span class="c"><b>déploiement · le serveur a répondu 200</b><em>un code de statut n'est pas une preuve</em></span><span class="v">en attente</span></div>
+    <div class="row" data-v="verified"><span class="t">04:23.902</span><i class="dot"></i><span class="c"><b>déploiement · sha256 servi = construit</b><em>9f3c…41e0 = 9f3c…41e0</em></span><span class="v">vérifié</span></div>
+    <div class="row" data-v="closed"><span class="t">04:25.517</span><i class="dot"></i><span class="c"><b>déploiement · unité fermée</b><em>palier consigné : runtime-proven</em></span><span class="v">fermé</span></div>
+    <div class="row" data-v="refused"><span class="t">04:28.260</span><i class="dot"></i><span class="c"><b>rapport · « envoyé au client »</b><em>aucun accusé de livraison au dossier</em></span><span class="v">refusé</span></div>
+    <div class="row" data-v="verified"><span class="t">04:31.902</span><i class="dot"></i><span class="c"><b>étape 21 · palier atteint : installed</b><em>prétention abaissée depuis device-proven</em></span><span class="v">vérifié</span></div>
    </div>
-   <div class="lg-f"><p class="lab cnt"><span class="k1">verified <b data-c="verified">5</b></span> · <span class="k2">refused <b data-c="refused">3</b></span> · <span class="k3">held <b data-c="held">2</b></span> · <span class="k4">closed <b data-c="closed">2</b></span></p></div>
-   <figcaption class="lab lg-n" id="lg-cap">A replay, not a live feed. The rules are the ones the gate runs. The rows are a sample.</figcaption>
+   <div class="lg-f"><p class="lab cnt"><span class="k1">vérifié <b data-c="verified">5</b></span> · <span class="k2">refusé <b data-c="refused">3</b></span> · <span class="k3">en attente <b data-c="held">2</b></span> · <span class="k4">fermé <b data-c="closed">2</b></span></p></div>
+   <figcaption class="lab lg-n" id="lg-cap">Une reprise, pas un flux en direct. Les règles sont celles que la porte applique. Les lignes sont un échantillon.</figcaption>
   </figure>
+
+  <div class="tools" data-reveal style="--d:3;margin-top:36px">
+   <span>Hermes</span><span class="d">·</span><span>Claude Code</span><span class="d">·</span><span>Codex</span><span class="d">·</span><span>MUSE</span><span class="d">·</span><span>OpenClaw</span><span class="d">·</span><span>Cline</span><span class="d">·</span><span>Cursor</span><span class="d">·</span><span>Dots</span><span class="d">·</span><span>Herdr</span><span class="ar" aria-hidden="true">→</span><span class="to">OL</span>
+  </div>
  </div>
 </section>
 
 <section class="band" id="film" aria-labelledby="h-film">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">30 seconds · captions burned in</span></div>
-  <h2 class="d2 hl" id="h-film"><span class="mask"><span>Watch it refuse.</span></span></h2>
-  <p class="body hr" data-reveal>One document, one failed check, one verdict. The film runs the same rules the gate runs — and its ledger rows are a sample replay, not a live customer feed.</p>
+  <div class="bh"><i></i><span class="lab">30 secondes · filmé en anglais, sous-titres incrustés</span></div>
+  <h2 class="d2 hl" id="h-film"><span class="mask"><span>Regardez-le refuser.</span></span></h2>
+  <p class="body hr" data-reveal>Un document, une vérification échouée, un verdict. Le film applique les règles que la porte applique — et ses lignes de registre sont une reprise d'échantillon, pas un flux client.</p>
   <figure class="film" data-reveal>
-   <video controls preload="none" playsinline poster="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201080%201920%27%3E%3Crect%20width%3D%271080%27%20height%3D%271920%27%20fill%3D%27%230b0b0a%27%2F%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ecebe6%27%20stroke-width%3D%277%27%3E%3Ccircle%20cx%3D%27486%27%20cy%3D%27886%27%20r%3D%2786%27%2F%3E%3Cpath%20d%3D%27M598%20800V972H726%27%20stroke-linecap%3D%27square%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23a19e96%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2726%27%20letter-spacing%3D%276%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271102%27%3EPLAY%20%C2%B7%2030%20S%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23ecebe6%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2722%27%20letter-spacing%3D%275%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271152%27%3ECAPTIONS%20BURNED%20IN%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="1080" height="1920" aria-describedby="film-cap">
+   <video controls preload="none" playsinline poster="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201080%201920%27%3E%3Crect%20width%3D%271080%27%20height%3D%271920%27%20fill%3D%27%230b0b0a%27%2F%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ecebe6%27%20stroke-width%3D%277%27%3E%3Ccircle%20cx%3D%27486%27%20cy%3D%27886%27%20r%3D%2786%27%2F%3E%3Cpath%20d%3D%27M598%20800V972H726%27%20stroke-linecap%3D%27square%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23a19e96%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2726%27%20letter-spacing%3D%276%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271102%27%3ELIRE%20%C2%B7%2030%20S%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23ecebe6%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2722%27%20letter-spacing%3D%275%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271152%27%3ESOUS-TITRES%20INCRUST%C3%89S%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="1080" height="1920" aria-describedby="film-cap">
     <source src="ol-control-30s.mp4" type="video/mp4">
     <track kind="captions" src="ol-control-30s.vtt" srclang="en" label="English" default>
-    <p class="body">This browser cannot play the file. <a class="tl" href="ol-control-30s.mp4">Download it instead</a> — 910 KB.</p>
+    <p class="body">Ce navigateur ne peut pas lire le fichier. <a class="tl" href="ol-control-30s.mp4">Téléchargez-le</a> — 910&nbsp;Ko.</p>
    </video>
-   <figcaption class="lab lg-n" id="film-cap">Shot by shot: a page that clips, a total that is off by twenty-seven cents, a refusal with its reason, and a close that carries its evidence. No music library, no stock footage, no actor.</figcaption>
+   <figcaption class="lab lg-n" id="film-cap">Plan par plan : une page qui déborde, un total faux de vingt-sept cents, un refus avec sa raison, et une clôture qui porte sa preuve. Aucune musique de bibliothèque, aucune image de stock, aucun acteur.</figcaption>
   </figure>
  </div>
 </section>
 
-<section class="band" id="split" aria-labelledby="h-split">
+<section class="band" id="pile" aria-labelledby="h-pile">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">Default vs. verifiable</span></div>
-  <h2 class="d2 hl" id="h-split"><span class="mask"><span>Two kinds of agents.</span></span></h2>
-  <p class="body hr" data-reveal>Same task, same model, same afternoon. The difference is what happens after the output exists.</p>
-  <div class="side def" data-reveal>
-   <h3><span class="w">The default</span><span class="lab">Generates</span></h3>
-   <ul>
-    <li>It writes something shaped like the finished thing.</li>
-    <li>It sounds exactly as sure when it is wrong.</li>
-    <li>It reports success because a request returned 200.</li>
-    <li>It cannot tell you how it knows.</li>
-    <li>It hands you the risk.</li>
-   </ul>
+  <div class="bh"><i></i><span class="lab">02 · La pile</span></div>
+  <h2 class="d2 hl" id="h-pile"><span class="mask"><span>Neuf outils.</span></span><span class="mask" style="--d:1"><span>Un seul organisme.</span></span></h2>
+  <p class="body hr" data-reveal>Chacun est excellent dans une chose. Chacun traîne sa propre mémoire, sa propre idée de ce qui est vrai, et son propre point d'arrêt. OL possède la couche qu'ils partagent — et celle qu'aucun d'eux n'a.</p>
+
+  <div class="stk" role="table" aria-label="Neuf outils et ce qu'OL unifie">
+   <div class="stk-r stk-h" role="row"><span role="columnheader">Outil</span><span role="columnheader">Ce qu'on lui connaît</span><span role="columnheader">Ce qu'OL unifie</span></div>
+   <div class="stk-r" role="row"><b role="cell">Hermes</b><span role="cell">exécution d'agents, messagerie, orchestration</span><span role="cell">une exécution, une identité, des canaux, des missions, du travail durable</span></div>
+   <div class="stk-r" role="row"><b role="cell">Claude Code</b><span role="cell">agent de terminal et de code</span><span role="cell">code, shell, tests, dépôts, exécution vérifiée</span></div>
+   <div class="stk-r" role="row"><b role="cell">Codex</b><span role="cell">génération et exécution de code</span><span role="cell">code, outils, exécution, preuve</span></div>
+   <div class="stk-r" role="row"><b role="cell">MUSE</b><span role="cell">agent créatif et de connaissances</span><span role="cell">recherche, travail créatif, modèle du monde, artefacts</span></div>
+   <div class="stk-r" role="row"><b role="cell">OpenClaw</b><span role="cell">usage de l'ordinateur et automatisation</span><span role="cell">écran, navigateur, action sur l'appareil par une seule passerelle d'effets</span></div>
+   <div class="stk-r" role="row"><b role="cell">Cline</b><span role="cell">agent de code dans l'EDI</span><span role="cell">modifications de code, outils, contexte du dépôt</span></div>
+   <div class="stk-r" role="row"><b role="cell">Cursor</b><span role="cell">éditeur natif pour l'IA</span><span role="cell">éditeur, base de code, codage agentique</span></div>
+   <div class="stk-r" role="row"><b role="cell">Dots</b><span role="cell">orchestration d'agents et d'équipes</span><span role="cell">rôles, contrats, coordination multi-agents</span></div>
+   <div class="stk-r" role="row"><b role="cell">Herdr</b><span role="cell">orchestration de flottes d'agents</span><span role="cell">flotte, ordonnancement, supervision, reprise</span></div>
+   <div class="stk-r z" role="row"><b role="cell">OL</b><span role="cell"><strong>tout cela, et plus</strong></span><span role="cell">un organisme, une mémoire, une colonne d'autorité et de vérification, un noyau génératif</span></div>
   </div>
-  <div class="side ol" data-reveal style="--d:2">
-   <h3><span class="w">The verifiable agent</span><span class="lab" style="color:var(--green)">Acts, then proves</span></h3>
-   <ul>
-    <li>It renders the document and measures the pixels.</li>
-    <li>It recomputes the total before it prints it.</li>
-    <li>It compares the bytes served to the bytes built.</li>
-    <li>It records the tier it reached, not the one it hoped for.</li>
-    <li>It hands you the evidence.</li>
-   </ul>
-  </div>
-  <p class="coda" data-reveal>One hands you output. <b>The other hands you output and the receipt.</b></p>
+
+  <p class="body cap" data-reveal>Le <em>plus</em> n'est pas une dixième fonctionnalité. C'est le noyau : il construit la capacité qui n'existe pas encore, l'éprouve contre un échec réel, l'adopte, puis la retire quand quelque chose de meilleur arrive.</p>
  </div>
 </section>
 
-<section class="band" id="gate" aria-labelledby="h-gate">
+<section class="band" id="organisme" aria-labelledby="h-org">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">3 checks · real thresholds</span></div>
-  <div class="gate-l">
-   <h2 class="d2" id="h-gate"><span class="mask"><span>Nothing leaves</span></span><span class="mask" style="--d:1"><span>until it passes.</span></span></h2>
-   <p class="body" data-reveal>Between the work and you sits a gate. Each kind of output has a verifier that knows what wrong looks like. If any check fails, the output is <strong>refused</strong>, the reason is written down, and the unit stays open.</p>
-   <ol class="checks">
-    <li data-reveal><span class="lab n">01</span><h3>Rendered to pixels</h3><p>Every page of a document is rendered to PNG and measured before it may leave.</p><span class="lab th"><b>Pass</b>clipping = 0 px · ink &gt; 0 on every page</span></li>
-    <li data-reveal style="--d:1"><span class="lab n">02</span><h3>Arithmetic recomputed</h3><p>Subtotal plus GST 5% plus QST 9.975% is recomputed and compared to the printed total.</p><span class="lab th"><b>Pass</b>|printed − recomputed| &lt; $0.01</span></li>
-    <li data-reveal style="--d:2"><span class="lab n">03</span><h3>Bytes, not status codes</h3><p>A static deploy is accepted only when the bytes served hash-match the bytes built. A 200 alone is not accepted.</p><span class="lab th"><b>Pass</b>sha256(served) = sha256(built)</span></li>
-   </ol>
-   <p class="limit" data-reveal><b>The limit, stated</b>A verifier proves what it measures. It proves the total adds up. It does not prove the invoice went to the right client. That question is still yours.</p>
+  <div class="bh"><i></i><span class="lab">03 · Une pile n'est pas un organisme</span></div>
+  <h2 class="d2 hl" id="h-org"><span class="mask"><span>Une pile n'est pas</span></span><span class="mask" style="--d:1"><span>un organisme.</span></span></h2>
+  <p class="body hr" data-reveal>La différence n'est pas dans la liste des fonctions. Elle est dans ce qui se passe quand le travail demandé sort de la catégorie prévue.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3><span class="n">01</span> Ce sont des outils à surface fixe.</h3>
+    <p>Vous les employez pour une catégorie de travail, et la catégorie est la limite. Demandez autre chose et la réponse honnête est «&nbsp;non pris en charge&nbsp;».</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02</span> OL est un organisme à noyau génératif.</h3>
+    <p>Il prend un but, trouve l'écart entre ce qu'il faut et ce qui existe, construit la pièce manquante, prouve le résultat et conserve la méthode qui a fonctionné.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03</span> Les outils sont des organes.</h3>
+    <p>OL peut en faire pousser, en absorber ou en remplacer un. OL est l'intelligence qui les coordonne — et la mémoire qui survit au remplacement.</p>
+   </div>
   </div>
-  <div class="gate-r" data-fade>
-   <svg class="dg" viewBox="0 0 480 540" role="img" aria-labelledby="dg-t dg-d">
-    <title id="dg-t">Claim, gate, evidence, close</title>
-    <desc id="dg-d">A claim enters the gate. Three checks run: render to PNG with zero pixels clipped and ink on every page, totals recomputed to the cent, and served bytes hash-matched to built bytes. On pass, evidence is stored and the unit closes with its tier recorded. On fail, the output is refused, the reason is logged, the unit stays open and the work is re-attempted.</desc>
-    <rect x=".5" y=".5" width="300" height="60"/><text x="16" y="24">CLAIM</text><text class="q" x="16" y="46">“invoice-0412 is ready”</text>
-    <path class="ln" d="M150.5 61V98"/><path class="ln" d="M145.5 92L150.5 98L155.5 92"/>
-    <rect class="in" x=".5" y="100.5" width="300" height="200"/><text class="k" x="16" y="126">GATE · ALL MUST PASS</text>
-    <rect class="sq" x="16" y="147" width="8" height="8"/><text class="k" x="34" y="155">01 RENDER → PNG</text><text x="34" y="173">CLIP = 0 PX · INK &gt; 0</text>
-    <rect class="sq" x="16" y="197" width="8" height="8"/><text class="k" x="34" y="205">02 RECOMPUTE TOTAL</text><text x="34" y="223">|Δ| &lt; $0.01</text>
-    <rect class="sq" x="16" y="247" width="8" height="8"/><text class="k" x="34" y="255">03 HASH SERVED BYTES</text><text x="34" y="273">SHA256 SERVED = BUILT</text>
-    <path class="ln g" d="M150.5 301V358"/><path class="ln g" d="M145.5 352L150.5 358L155.5 352"/><text class="gT" x="162" y="334">PASS</text>
-    <path class="ln a" d="M301 210.5H400.5V358"/><path class="ln a" d="M395.5 352L400.5 358L405.5 352"/><text class="aT" x="314" y="200">FAIL</text>
-    <rect x=".5" y="360.5" width="300" height="80"/><text class="k" x="16" y="384">EVIDENCE · STORED</text><text x="16" y="406">PAGE-1.PNG · PAGE-2.PNG</text><text x="16" y="424">RECOMPUTE.TXT · SHA256</text>
-    <path class="ln g" d="M150.5 441V478"/><path class="ln g" d="M145.5 472L150.5 478L155.5 472"/>
-    <rect class="gb" x=".5" y="480.5" width="300" height="58"/><text class="gT" x="16" y="504">CLOSE</text><text class="k" x="16" y="526">UNIT CLOSED · TIER RECORDED</text>
-    <rect class="ab" x="340.5" y="360.5" width="120" height="80"/><text class="aT" x="354" y="384">REFUSE</text><text x="354" y="406">REASON LOGGED</text><text x="354" y="424">UNIT OPEN</text>
-    <path class="ln dsh" d="M460.5 400.5H472.5V30.5H306"/><path class="ln" d="M312 25.5L306 30.5L312 35.5" style="stroke:var(--mute)"/><text x="330" y="20">RE-ATTEMPT</text>
-   </svg>
-   <p class="dg-cap lab">Fig. 03 — A failed check never becomes a quieter success. It becomes a refusal with a reason.</p>
+
+  <h3 class="subh">Ce que ça vous donne, concrètement</h3>
+  <div class="two" style="border-top:0;margin-top:0">
+   <div data-reveal><ul>
+    <li><b>Le contexte survit au modèle.</b>Changez le modèle, gardez la mémoire, les engagements et la trace de ce qui a été prouvé.</li>
+   </ul></div>
+   <div data-reveal style="--d:1"><ul>
+    <li><b>Une seule vérité.</b>Un modèle du monde, un registre, un seul endroit où une affirmation est vérifiée — pas neuf historiques de clavardage qui se contredisent.</li>
+   </ul></div>
   </div>
-  <div class="wk" data-reveal>
-   <div class="wk-h"><span class="lab ink">Worked example · invoice-0412 · check 02</span><span class="lab">Threshold |Δ| &lt; 0.01</span></div>
-   <div class="wk-r">
-    <div><span class="lab">Subtotal</span><span class="x">1,240.00</span></div>
-    <div><span class="lab">+ GST 5%</span><span class="x">62.00</span></div>
-    <div><span class="lab">+ QST 9.975%</span><span class="x">123.69</span></div>
-    <div><span class="lab ink">= Recomputed</span><span class="x">1,425.69</span></div>
-    <div class="bad"><span class="lab">Printed total</span><span class="x">1,425.96</span></div>
-    <div class="vd"><span class="lab">Verdict</span><span class="x">Refused · Δ 0.27</span></div>
+  <div style="grid-column:1/-1;border-bottom:1px solid var(--rule2)">
+   <div data-reveal style="padding:14px 0"><p class="body" style="max-width:70ch"><strong>Le dixième outil.</strong> Quand le mandat exige quelque chose qui n'existe pas, la réponse n'est pas «&nbsp;non pris en charge&nbsp;».</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="noyau" aria-labelledby="h-noyau">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">04 · LA BOUCLE GÉNÉRATIVE</span></div>
+  <h2 class="d2 hl" id="h-noyau"><span class="mask"><span>Il construit</span></span><span class="mask" style="--d:1"><span>la pièce qui manque.</span></span></h2>
+  <p class="body hr" data-reveal>La boucle, et non la liste de fonctionnalités, est le produit. Tout le reste sur cette page — l'application, les modèles, les divisions — est un organe, une preuve ou une application de la boucle.</p>
+
+  <div class="loop" data-reveal aria-label="Les étapes de la boucle">
+   <span>Percevoir</span><span class="s" aria-hidden="true">→</span><span>Comprendre</span><span class="s" aria-hidden="true">→</span><span>Planifier</span><span class="s" aria-hidden="true">→</span><span class="s">Trouver l'écart</span><span class="s" aria-hidden="true">→</span><span>Construire ou acquérir</span><span class="s" aria-hidden="true">→</span><span>Agir</span><span class="s" aria-hidden="true">→</span><span>Observer</span><span class="s" aria-hidden="true">→</span><span>Vérifier</span><span class="s" aria-hidden="true">→</span><span>Apprendre</span><span class="s" aria-hidden="true">→</span><span>Améliorer la méthode</span><span class="s" aria-hidden="true">→</span><b>Recommencer</b>
+  </div>
+
+  <div class="cds">
+   <div data-reveal>
+    <h3>Il sait ce qu'il ne sait pas.</h3>
+    <p>Il tient un modèle de ses capacités, de ses limites, de son incertitude et de son rendement. Il peut dire «&nbsp;je ne sais pas&nbsp;» et «&nbsp;je ne l'ai pas prouvé&nbsp;» — et les deux sont consignés, pas lissés.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Il construit ce qui manque.</h3>
+    <p>L'écart est détecté à partir d'un échec réel, pas d'une réunion de planification. La capacité manquante est construite ou acquise, éprouvée contre l'échec qui l'a révélée, enregistrée sur preuve, utilisée, puis retirée quand elle ne mérite plus sa place.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Il ne perd pas le fil.</h3>
+    <p>Missions, points de reprise, effets et continuations survivent à un plantage, à un redémarrage ou à un portable refermé. Aucun travail fantôme, aucune reprise à l'aveugle, aucune action en double.</p>
+   </div>
+   <div data-reveal>
+    <h3>Il prouve le résultat.</h3>
+    <p>Portes, reçus, provenance, preuve indépendante. «&nbsp;La requête a retourné 200&nbsp;» n'est pas terminé. «&nbsp;Transmis&nbsp;» n'est pas terminé. Terminé, c'est quand la vérification passe et que la preuve est conservée.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Il apprend la méthode, pas seulement le fait.</h3>
+    <p>La mémoire est étagée : de travail, épisodique, sémantique, procédurale, institutionnelle. Il conserve les corrections et les contradictions au lieu de les écraser, et il améliore sa façon d'évaluer son travail — pas seulement le travail.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Il reste sous votre main.</h3>
+    <p>Le propriétaire est le principal. Les actions sont autorisées, délimitées et auditées. STOP est absolu et immédiat — le seul interrupteur qui ne se délègue jamais.</p>
    </div>
   </div>
  </div>
 </section>
 
-<section class="band" id="ladder" aria-labelledby="h-ladder">
+<section class="band" id="colonne" aria-labelledby="h-col">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">7 tiers · source → device</span></div>
-  <h2 class="d2 hl" id="h-ladder"><span class="mask"><span>Seven tiers. One ceiling.</span></span></h2>
-  <p class="body hr" data-reveal>Every unit records the highest tier it actually reached, and may not be described above it. Not in a status line, not in a summary, not to you. Select a tier.</p>
-  <div class="lad" id="lad" data-reveal>
-   <div class="gapx lab" aria-hidden="true"><span>Actual · 03</span><span>The gap · four tiers</span><span>Claimed · 07</span></div>
-   <ol class="tiers">
-    <li><button type="button" aria-pressed="false"><span class="tn">01</span><span class="tt">source</span></button><p>The code exists.</p></li>
-    <li><button type="button" aria-pressed="false"><span class="tn">02</span><span class="tt">wired</span></button><p>Something calls it.</p></li>
-    <li class="sel"><button type="button" aria-pressed="true"><span class="tn">03</span><span class="tt">tested</span></button><p><span class="tag">Where most claims sit</span>Automated checks pass.</p></li>
-    <li><button type="button" aria-pressed="false"><span class="tn">04</span><span class="tt">built</span></button><p>A shippable artifact exists.</p></li>
-    <li><button type="button" aria-pressed="false"><span class="tn">05</span><span class="tt">installed</span></button><p>It is on the target machine.</p></li>
-    <li><button type="button" aria-pressed="false"><span class="tn">06</span><span class="tt">runtime-proven</span></button><p>Seen working in the running system.</p></li>
-    <li><button type="button" aria-pressed="false"><span class="tn">07</span><span class="tt">device-proven</span></button><p><span class="tag">How they are described</span>Seen working on the device in your hand.</p></li>
-   </ol>
+  <div class="bh"><i></i><span class="lab">05 · La colonne vertébrale</span></div>
+  <h2 class="d2 hl" id="h-col"><span class="mask"><span>Une mémoire. Une identité.</span></span><span class="mask" style="--d:1"><span>Une autorité.</span></span></h2>
+  <p class="body hr" data-reveal>Trois choses que neuf outils séparés ne peuvent pas vous donner, parce qu'aucun d'eux n'en est propriétaire.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3>Mémoire</h3>
+    <p>Un modèle du monde avec sa provenance. L'observation reste distincte de l'inférence, de la prédiction et de l'affirmation. Un fait porte la date à laquelle il était vrai. Les corrections remplacent, elles n'effacent pas. Rien n'est à réexpliquer chaque matin.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Identité</h3>
+    <p>Le même OL d'un modèle à l'autre, d'une machine à l'autre, d'un redémarrage à l'autre. Le but, l'autorité, la mémoire et la lignée voyagent ; le modèle n'a pas à le faire. Le modèle est un organe remplaçable — la trame est l'organisme.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Autorité et vérification</h3>
+    <p>Une seule frontière d'effets, une seule porte, un seul reçu. Ce qui agit passe par le même chemin autorisé, et ce qui affirme n'affirme que ce qu'une vérification a confirmé. Vos données et vos décisions restent les vôtres, et STOP est absolu.</p>
+   </div>
   </div>
-  <blockquote class="pq" data-reveal>
-   <p>Most software claims sit at tier three and are described as <em>tier seven.</em></p>
-   <footer class="lab">The reason the ladder exists</footer>
-  </blockquote>
+  <p class="coda" data-reveal>Un assemblage vous donne neuf outils avec neuf mémoires et neuf idées de ce qui est vrai. Ceci vous donne <b>un seul modèle du monde.</b></p>
  </div>
 </section>
 
-<section class="band" id="refusals" aria-labelledby="h-ref">
+<section class="band" id="entonnoir" aria-labelledby="h-ent">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">5 laws · enforced at close</span></div>
-  <h2 class="d2 hl" id="h-ref"><span class="mask"><span>What it refuses.</span></span></h2>
-  <p class="body hr" data-reveal>Each line is a rule in the gate, not a value statement. Break one and the unit does not close.</p>
-  <ol class="laws">
-   <li data-reveal><span class="lab ln-n">L.01</span><span class="ln-t"><span>It will not take its own word</span><span>that the work is done.</span></span><span class="lab ln-a">Verifier required to close</span></li>
-   <li data-reveal><span class="lab ln-n">L.02</span><span class="ln-t"><span>It will not call a page finished</span><span>before it has seen the pixels.</span></span><span class="lab ln-a">Render gate · clip + ink</span></li>
-   <li data-reveal><span class="lab ln-n">L.03</span><span class="ln-t"><span>It will not print a total</span><span>it did not recompute.</span></span><span class="lab ln-a">Arithmetic gate · |Δ| &lt; $0.01</span></li>
-   <li data-reveal><span class="lab ln-n">L.04</span><span class="ln-t"><span>It will not call a deploy done</span><span>because a server said 200.</span></span><span class="lab ln-a">Hash gate · sha256</span></li>
-   <li data-reveal><span class="lab ln-n">L.05</span><span class="ln-t"><span>It will not report a tier</span><span>above the one it proved.</span></span><span class="lab ln-a">Ceiling = tier proven</span></li>
+  <div class="bh"><i></i><span class="lab">06 · L'entonnoir</span></div>
+  <h2 class="d2 hl" id="h-ent"><span class="mask"><span>Si ça peut être livré</span></span><span class="mask" style="--d:1"><span>par logiciel, ça a sa place ici.</span></span></h2>
+  <p class="body hr" data-reveal>Un seul endroit pour tout besoin ou désir humain qui peut être livré en numérique. Pas seulement la construction. Pas seulement le travail.</p>
+
+  <p class="tools" style="margin-top:36px">travail<span class="d">·</span>clients<span class="d">·</span>opérations d'entreprise<span class="d">·</span>logiciel<span class="d">·</span>médias<span class="d">·</span>recherche<span class="d">·</span>éducation<span class="d">·</span>outils<span class="d">·</span>services<span class="d">·</span>travail créatif<span class="d">·</span>données</p>
+
+  <p class="body cap" data-reveal>La colonne numérique d'une entreprise au même endroit : CRM, secrétariat, courriel, SMS, appels, horaires, documents, estimations, factures, taxes, site Web, logiciel, automatisation, médias, archives. Et la partie plus difficile à acheter : comprendre un projet, un prix, un contrat ou la prochaine étape — et garder vos données, votre réputation et vos relations à portée de main.</p>
+
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:32px"><b>Statut honnête</b><strong>Un seul domaine est chiffré et en service aujourd'hui :</strong> les prises de quantités en construction, les audits techniques et l'automatisation, par OL Services. Le reste est la carte que nous construisons, pas un menu où commander. Cette page ne prétendra pas le contraire.</p>
+ </div>
+</section>
+
+<section class="band" id="divisions" aria-labelledby="h-div">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">07 · Divisions</span></div>
+  <h2 class="d2 hl" id="h-div"><span class="mask"><span>Cinq divisions.</span></span><span class="mask" style="--d:1"><span>Une seule colonne vertébrale.</span></span></h2>
+  <p class="body hr" data-reveal>Chaque division est un organe du même organisme : même mémoire, même autorité, même porte. Une division ouvre quand celle qui la précède est répétable.</p>
+
+  <div class="cds c5">
+   <div data-reveal>
+    <h3><span class="n">01 · OL Services</span> <span class="bdg live">En service</span></h3>
+    <p><em>La première division.</em> Prises de quantités, estimations, audits techniques et automatisation en construction. Prix fixes annoncés avant le début du travail, livrés en 24&nbsp;à&nbsp;48&nbsp;h.</p>
+    <a class="lnk" href="https://ol-projects.github.io/ol-services/">→ Prix et échantillon</a>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02 · OL Numérique / Logiciel</span> <span class="bdg">Prochaine</span></h3>
+    <p>Tout produit numérique, logiciel, média, recherche, formation, donnée ou service créatif dont une personne a besoin — bâti sur le même noyau que la prise de quantités. Ouvre quand le premier service est répétable, pas avant.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03 · 2,7&nbsp;%</span> <span class="bdg">Après la répétabilité</span></h3>
+    <p>La commission de plateforme sur les gains qu'OL a réellement aidé à créer : un mandat présenté, un client trouvé, un paiement accéléré, un risque retiré. 2,7&nbsp;% seulement si vous gagnez. <a class="tl" href="#commission">Voir plus bas</a>.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">04 · OL Labs</span> <span class="bdg">En continu</span></h3>
+    <p>Amélioration récursive, nouvelles capacités, matériel. Là où le noyau est éprouvé contre lui-même, et où un changement candidat est sondé, révisé et annulé s'il ne tient pas.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">05 · OL Network</span> <span class="bdg">Long terme</span></h3>
+    <p>Coordination fédérée de l'IA et science à long terme : protocoles communs, preuves communes, valeurs communes, chaque participant souverain. Une fédération, pas un monopole — la distinction est tout l'objet.</p>
+   </div>
+  </div>
+
+  <p class="body cap" data-reveal>Aucune division n'est la nouvelle étiquette d'un service qui existe déjà ailleurs. Chacune doit gagner son économie, et aucune n'a le droit d'affaiblir le noyau.</p>
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:24px"><b>Ce qui est en vente</b><strong>L'ultra-application elle-même</strong> — OL comme produit par abonnement — n'est pas encore en vente. Elle ouvre quand les services auront prouvé la demande. D'ici là, la seule chose en vente sur ce site est OL Services, aux prix indiqués sur sa page.</p>
+ </div>
+</section>
+
+<section class="band" id="commission" aria-labelledby="h-fee">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">08 · DIVISION 03 · APRÈS LA RÉPÉTABILITÉ · PAS ENCORE OUVERTE</span></div>
+  <h2 class="d2 hl" id="h-fee"><span class="mask"><span>2,7&nbsp;%, et seulement</span></span><span class="mask" style="--d:1"><span>si vous gagnez.</span></span></h2>
+  <p class="body hr" data-reveal>Une commission sur les gains qu'OL a réellement aidé à créer. Rien sur le travail qu'OL n'a pas touché. Ce n'est pas un abonnement et ce n'est pas encore ouvert.</p>
+
+  <div class="stat2" data-reveal>
+   <div><p class="f">2,7&nbsp;%</p><p class="d">des gains qu'OL a réellement aidé à créer</p></div>
+   <div><p class="f">97,3&nbsp;%</p><p class="d">restent à la personne qui a fait le travail</p></div>
+  </div>
+
+  <div style="grid-column:1/span 7;min-width:0">
+   <p class="body" data-reveal style="margin-top:32px">OL prend 2,7&nbsp;% des gains qu'il a réellement aidé à créer — un mandat qu'il a présenté, un client qu'il a trouvé, un paiement qu'il a accéléré, un risque qu'il a retiré. Aucune commission sur du travail qu'OL n'a pas touché. Aucun abonnement à payer pour avoir le droit de travailler. Aucuns frais de sortie, et les clients comme les données restent les vôtres.</p>
+   <p class="body" data-reveal style="margin-top:18px">Cette commission n'est pas un loyer. Elle finance la colonne partagée qui rend le gain possible — CRM, secrétariat, communications, documents, taxes, site Web, logiciel, vérification, paiements, soutien — et l'amélioration continue qui rend la version suivante meilleure.</p>
+  </div>
+
+  <div class="arith" data-reveal>
+   <span>10&nbsp;000&nbsp;$ facilités <b>→ 270&nbsp;$</b></span><span class="s" aria-hidden="true">·</span><span>50&nbsp;000&nbsp;$ <b>→ 1&nbsp;350&nbsp;$</b></span><span class="s" aria-hidden="true">·</span><span>100&nbsp;000&nbsp;$ <b>→ 2&nbsp;700&nbsp;$</b></span>
+  </div>
+  <p class="small" style="grid-column:1/span 7" data-reveal><em>Arithmétique illustrative, pas une prévision. La base de calcul et son traitement fiscal sont arrêtés avec un comptable avant la première facture.</em></p>
+
+  <h3 class="subh">La commission n'est honnête que si les cinq conditions tiennent</h3>
+  <ol class="cond" data-reveal>
+   <li><span class="n">01</span><span>Vous êtes <b>mieux sans</b> OL que vous ne le seriez sans lui.</span></li>
+   <li><span class="n">02</span><span>La commission est <b>équitable et annoncée d'avance</b> — un seul taux, aucune ligne cachée.</span></li>
+   <li><span class="n">03</span><span>Le <b>coût de service d'OL reste sous la commission</b>. Sinon, c'est le modèle qui est faux, pas le prix.</span></li>
+   <li><span class="n">04</span><span>Le réinvestissement produit une <b>capacité mesurable</b>, pas de la vanité.</span></li>
+   <li><span class="n">05</span><span>Vous pouvez <b>partir</b>, avec vos données et vos relations.</span></li>
   </ol>
+  <p class="coda" data-reveal style="grid-column:1/span 7">Si une seule de ces conditions tombe, c'est de l'extraction avec un joli chiffre dessus. Elle serait arrêtée.</p>
+
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:28px"><b>Pas encore ouverte</b><strong>La division 2,7&nbsp;% n'est pas ouverte.</strong> Elle commence quand OL Services est répétable : un mandat pilote où OL a présenté le client et l'entrepreneur, une base de calcul arrêtée avec un comptable, une facture qui résiste à la révision.</p>
+  <p class="body cap" data-reveal>Les frais de produit et les 2,7&nbsp;% sont distincts. Une prise de quantités à 74,99&nbsp;$ est un frais de produit pour un document ; 2,7&nbsp;% s'applique aux gains qu'OL a facilités. Vous n'êtes jamais facturé deux fois pour la même valeur.</p>
  </div>
 </section>
 
-<section class="band" id="made" aria-labelledby="h-made">
+<section class="band" id="limites" aria-labelledby="h-lim">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">5 parts · 1 obligation</span></div>
-  <h2 class="d2 hl" id="h-made"><span class="mask"><span>Made of.</span></span></h2>
-  <p class="body hr" data-reveal>No single trick. Five parts, each with a job, all of them answerable to the gate.</p>
-  <dl class="spec">
-   <div class="hd" aria-hidden="true"><span class="lab" style="grid-column:1/span 3">Part</span><span class="lab" style="grid-column:4/span 6">What it does</span><span class="lab" style="grid-column:10/-1;text-align:right">Note</span></div>
-   <div data-reveal><dt class="lab"><span>01</span><span class="w">Routing</span></dt><dd class="ds">Model-agnostic. Each task goes to a model chosen for it. No model is trusted with everything, and none is trusted without the gate.</dd><dd class="lab nt">Solo: your own key</dd></div>
-   <div data-reveal><dt class="lab"><span>02</span><span class="w">Runtime</span></dt><dd class="ds">A local runtime on your Mac. The work, the files and the verifiers run on the machine you already own.</dd><dd class="lab nt lim">macOS · local</dd></div>
-   <div data-reveal><dt class="lab"><span>03</span><span class="w">Memory</span></dt><dd class="ds">Persists across sessions. Context survives the night instead of being re-explained every morning.</dd><dd class="lab nt">Persistent</dd></div>
-   <div data-reveal><dt class="lab"><span>04</span><span class="w">Scheduler</span></dt><dd class="ds">Keeps working while you sleep. You wake to closed units with evidence, or refusals with reasons. Never a vague “done”.</dd><dd class="lab nt">Runs unattended</dd></div>
-   <div data-reveal><dt class="lab"><span>05</span><span class="w">Evidence</span></dt><dd class="ds">Stored with every closed unit: renders, recomputations, hashes, tier reached. If a unit cannot be audited, it was not closed.</dd><dd class="lab nt">Per unit · 7 tiers</dd></div>
-  </dl>
- </div>
-</section>
-
-<section class="band" id="numbers" aria-labelledby="h-num">
- <div class="g">
-  <div class="bh"><i></i><span class="lab">Unrounded · site build <span class="h" id="build-num">—</span> · ledger as of <span class="h" id="fig-at">—</span></span></div>
-  <h2 class="d2 hl" id="h-num"><span class="mask"><span id="fig-h">Thirty‑four of fifty‑seven.</span></span></h2>
-  <p class="body hr" data-reveal>That is not finished, and this page says so. The figures below are read from the live ledger, not typed in: a stale number fails the deploy the same way a stale receipt does.</p>
-  <div class="inst" data-reveal>
-   <div><span class="lab l">Roadmap legs</span><span class="f" id="fig-legs">57</span><span class="lab u">total</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs closed</span><span class="f" id="fig-done">34</span><span class="lab u">of <span id="fig-total-a">57</span> · <span id="fig-done-pct">59.6</span>%</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Legs open</span><span class="f" id="fig-open">23</span><span class="lab u">of <span id="fig-total-b">57</span> · <span id="fig-open-pct">40.4</span>%</span><span class="lab s">src · roadmap ledger</span></div>
-   <div><span class="lab l">Checks</span><span class="f" id="fig-checks">227</span><span class="lab u">in suite</span><span class="lab s">src · make test</span></div>
-   <div><span class="lab l">Passing</span><span class="f" id="fig-pass">227</span><span class="lab u">of <span id="fig-pass-total">227</span> · <span id="fig-pass-pct">100</span>%</span><span class="lab s">src · make test</span></div>
-   <div><span class="lab l">Failing</span><span class="f" id="fig-fail">0</span><span class="lab u">none at this build</span><span class="lab s">src · make test</span></div>
+  <div class="bh"><i></i><span class="lab">09 · Les limites honnêtes</span></div>
+  <h2 class="d2 hl" id="h-lim"><span class="mask"><span>Ce qu'il n'est pas.</span></span></h2>
+  <p class="body hr" data-reveal>C'est la section que la plupart des produits omettent. C'est elle qui décide si le reste peut être cru.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3><span class="n">01</span> C'est un outil.</h3>
+    <p>Pas un dieu, pas un être conscient, pas un substitut à la foi. Il ne revendiquera ni divinité, ni conscience, ni sentiments. S'il le fait un jour, c'est un bogue, pas une fonctionnalité.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02</span> Il ne peut rendre personne vivant.</h3>
+    <p>Un logiciel ne peut accorder ni vie métaphysique ni sentiments, et OL ne fera pas semblant. Ce qu'il peut faire : enlever la corvée, protéger votre temps et vous rendre les heures. La vie est la vôtre ; la machine ne peut que vous rendre votre temps.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03</span> Une fédération, pas un monopole.</h3>
+    <p>Plusieurs modèles, agents, outils et personnes, coordonnés par des protocoles, des preuves et des valeurs communs, avec consentement et souveraineté humaine. Un seul organisme ne veut pas dire une seule entreprise propriétaire de tous les modèles. Un monopole serait le contraire du but.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">04</span> Un vérificateur prouve ce qu'il mesure.</h3>
+    <p>Il prouve que le total additionne. Il ne prouve pas que la facture est partie au bon client. Cette question reste la vôtre — et le dire fait partie du produit.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">05</span> Ce n'est pas terminé.</h3>
+    <p>Le corps est prouvé : la porte fonctionne, la mémoire persiste, le reçu est conservé. L'esprit n'est pas encore autonome, autosuffisant ni auto-améliorant par défaut. Six conditions doivent tourner sans qu'on les demande — l'élan, la vérité indépendante, la permanence, l'économie autosuffisante, la méta-amélioration et le jugement. D'ici là, c'est un prototype avec une bonne porte, et c'est ainsi qu'il est décrit.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">06</span> Il n'exécute pas de travaux de construction.</h3>
+    <p>Aucune licence RBQ. Aucun travail sur chantier, aucune détermination structurale ou de code, aucune ingénierie. Les estimations sont des documents de travail préparés pour être signés et présentés par un entrepreneur licencié.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">07</span> «&nbsp;Sauver le monde&nbsp;» est une direction, pas une promesse.</h3>
+    <p>Nous visons un bienfait mesurable et refusons l'orgueil. Le premier mandat est le projet d'une personne réelle, pas la planète.</p>
+   </div>
   </div>
  </div>
 </section>
 
-<section class="band" id="verify" aria-labelledby="h-vf">
+<section class="band" id="preuve" aria-labelledby="h-pr">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">08 · This page · hashed in your browser</span></div>
-  <h2 class="d2 hl" id="h-vf"><span class="mask"><span>Do not trust this page.</span></span></h2>
-  <p class="body hr" data-reveal>Check it. The button below fetches every file this page is made of, hashes each one in your browser, and compares the result to the hashes published at build time. Nothing is uploaded, nothing is sent anywhere, and there is no server to ask.</p>
-  <figure class="vf" data-reveal>
-   <div class="vf-h"><span class="lab ttl">Proof · <span id="vf-gen">published at build</span></span><span class="lab" id="vf-count">— files</span></div>
+  <div class="bh"><i></i><span class="lab">10 · Ce qui est prouvé · registre au <span class="h" id="fig-at">—</span></span></div>
+  <h2 class="d2 hl" id="h-pr"><span class="mask"><span>Ce qui est prouvé</span></span><span class="mask" style="--d:1"><span>aujourd'hui.</span></span></h2>
+  <p class="body hr" data-reveal>Pas une affirmation d'état final. Un registre, tenu à la même norme que le travail.</p>
+
+  <div class="two">
+   <div data-reveal>
+    <h3>Prouvé</h3>
+    <ul>
+     <li><b>La porte s'exécute sur chaque document.</b>Chaque page est mise en page et mesurée ; débordement zéro, encre présente ; le total est recalculé à partir de ses composantes avant impression ; les octets servis sont hachés contre les octets construits.</li>
+     <li><b>L'entreprise est réelle et enregistrée.</b>OL — Optimization and Logistics, NEQ 2270669312, TPS 81902 9992 RT0001, TVQ 4024451921 TQ0002.</li>
+     <li><b>Les prix sont fixes et publics.</b>25&nbsp;$ / 74,99&nbsp;$ / 290&nbsp;$ / 49&nbsp;$, annoncés avant le début du travail.</li>
+     <li><b>L'échantillon est un vrai document</b>, produit par ce processus, pas une maquette.</li>
+     <li><b>Registre, lu au fichier.</b><span id="fig-done">—</span> étapes fermées sur <span id="fig-legs">—</span> ; <span id="fig-pass">—</span> vérifications sur <span id="fig-checks">—</span> (suite canonique, <span id="fig-checks-at">date au registre</span>). Tiré de <code>status.json</code>, lui-même dérivé du registre de feuille de route.</li>
+    </ul>
+   </div>
+   <div class="np" data-reveal style="--d:1">
+    <h3>Pas encore prouvé</h3>
+    <ul>
+     <li><b>Un reçu externe payé.</b>En cours. Cette page changera quand il arrivera — le montant, la date et la permission du client y seront.</li>
+     <li><b>La répétabilité sur 10 à 30 mandats</b>Avec marge, taux de livraison à temps et taux de révision mesurés.</li>
+     <li><b>La plateforme 2,7&nbsp;%.</b>Un pilote, pas encore une entreprise.</li>
+     <li><b>Le réseau.</b>Une direction avec une constitution, pas une fédération déployée.</li>
+    </ul>
+   </div>
+  </div>
+
+  <p class="body cap" data-reveal>La règle est celle que le produit vend : aucun vert autodéclaré. Un chiffre sur cette page qui ne se trace pas jusqu'à un fichier n'est pas imprimé.</p>
+
+  <figure class="vf" data-reveal aria-labelledby="vf-cap">
+   <div class="vf-h"><span class="lab ttl">Preuve · <span id="vf-gen">publiée à la construction</span></span><span class="lab" id="vf-count">— fichiers</span></div>
    <div class="vf-b" id="vf-body"></div>
    <div class="vf-f">
-    <button class="btn p" type="button" id="vf-run" style="min-height:42px;padding:0 18px;font-size:14px">Run the check <span class="ar" aria-hidden="true">→</span></button>
-    <p class="vf-sum" id="vf-sum" role="status" aria-live="polite">Not run. The hashes are published; the check is yours to make.</p>
+    <button class="btn p" type="button" id="vf-run" style="min-height:42px;padding:0 18px;font-size:14px">Lancer la vérification <span class="ar" aria-hidden="true">→</span></button>
+    <p class="vf-sum" id="vf-sum" role="status" aria-live="polite">Pas encore lancée. Les empreintes sont publiées ; la vérification est à vous.</p>
    </div>
-   <figcaption class="lab lg-n" id="vf-cap">Each row is one file this page loads. A mismatch means the file you received is not the file that was built. That is a refusal, and this page says so out loud.</figcaption>
+   <figcaption class="lab lg-n" id="vf-cap">Chaque ligne est un fichier que cette page charge. Un écart signifie que le fichier reçu n'est pas celui qui a été construit. C'est un refus, et cette page le dit tout haut.</figcaption>
   </figure>
   <div class="vf-note">
-   <p class="lab ink">Why this section exists</p>
-   <p class="body" data-reveal>A product that asks you to check its work cannot begin by asking you to believe a web page. So this page is made of the same rule it sells: publish the hash, let anyone recompute it, and print the result whether or not it flatters us.</p>
-   <p class="limit" data-reveal><b>The limit, stated</b>A hash proves the bytes you received are the bytes that were built. It does not prove the bytes are any good. One of those is measurable. The other is still your judgement.</p>
-   <p class="lab" data-reveal>Same rule in the repository: <span class="ink">proof.py --check</span> recomputes every hash on each push and fails the deploy if one line disagrees. The page cannot go live with a stale receipt.</p>
+   <p class="lab ink">Pourquoi cette section existe</p>
+   <p class="body" data-reveal>Un produit qui vous demande de vérifier son travail ne peut pas commencer par vous demander de croire une page Web. Cette page est donc faite de la même règle qu'il vend : publier l'empreinte, laisser n'importe qui la recalculer, et imprimer le résultat qu'il nous flatte ou non.</p>
+   <p class="limit" data-reveal><b>La limite, dite</b>Une empreinte prouve que les octets reçus sont les octets construits. Elle ne prouve pas que ces octets sont bons. L'une est mesurable. L'autre reste votre jugement.</p>
+   <p class="lab" data-reveal>Même règle dans le dépôt : <span class="ink">proof.py --check</span> recalcule chaque empreinte à chaque envoi et fait échouer le déploiement si une ligne ne concorde pas.</p>
   </div>
  </div>
 </section>
 
-<section class="band" id="access" aria-labelledby="h-acc">
+<section class="band" id="commencer" aria-labelledby="h-start">
  <div class="g">
-  <div class="bh"><i></i><span class="lab">4 tiers · 1 gate</span></div>
-  <div class="acc-l">
-   <h2 class="d2" id="h-acc"><span class="mask"><span>Request access.</span></span></h2>
-   <p class="body" data-reveal>Four ways in once it opens. Every one goes through the same gate. Requests go to one inbox in Montréal; this page sends nothing until you press the button.</p>
-   <ol class="price" aria-label="Pricing" data-reveal>
-    <li><span class="pr">$0</span><span class="lab ink">Free</span><span class="ds">10 documents, each rendered, measured and checked.</span></li>
-    <li><span class="pr">$0.50</span><span class="lab ink">Day pass</span><span class="ds">One day, for the job that has to be right today.</span></li>
-    <li class="hi"><span class="pr">$5<small>/ month</small></span><span class="lab stt">Solo · start here</span><span class="ds">Bring your own model key. OL does the routing and the proving.</span></li>
-    <li><span class="pr">$19<small>/ month</small></span><span class="lab ink">Pro</span><span class="ds">The full tier. Details come with your invitation.</span></li>
-   </ol>
-   <noscript><p class="body" style="margin-top:14px">JavaScript is off, so the form opens your mail app and the request goes from your own mailbox. If nothing opens, write to spirokaglis@gmail.com with your address, tier and first task.</p></noscript>
+  <div class="bh"><i></i><span class="lab">11 · Appel final</span></div>
+  <h2 class="d2 hl" id="h-start"><span class="mask"><span>Commencez par</span></span><span class="mask" style="--d:1"><span>le plus petit vrai mandat.</span></span></h2>
+  <p class="body hr" data-reveal>OL Services est en service. Envoyez un plan, et un prix fixe revient en une heure ouvrable. La première prise de quantités pour un nouveau client est gratuite — sans carte, sans compte, sans avance.</p>
+
+  <div class="off" data-reveal>
+   <div class="r"><span>Micro-prise de quantités — une pièce, un métier, quantités seulement</span><span class="p">25&nbsp;$</span></div>
+   <div class="r"><span>Prise de quantités complète — jusqu'à 1&nbsp;000&nbsp;pi², liste chiffrée</span><span class="p">74,99&nbsp;$ lancement · 149&nbsp;$ régulier</span></div>
+   <div class="r"><span>Première prise de quantités, nouveau client</span><span class="p">gratuite</span></div>
+   <div class="r"><span>Audit technique — un dépôt, une API ou un flux de travail</span><span class="p">290&nbsp;$ lancement · 490&nbsp;$ régulier</span></div>
+   <div class="r t"><span>Automatisation simple — une, construite et testée</span><span class="p">49&nbsp;$ · 150&nbsp;$ et plus régulier</span></div>
+   <p class="small">Dollars canadiens, avant taxes. TPS 5&nbsp;% et TVQ 9,975&nbsp;% sur chaque facture. Au-delà de 1&nbsp;000&nbsp;pi² : prix par mandat avant le début du travail.</p>
   </div>
-  <form id="wl" action="mailto:spirokaglis@gmail.com" method="post" enctype="text/plain" data-reveal style="--d:1">
-   <div class="fld" id="f-em">
-    <label class="lab" for="em"><span>Email</span><span>Required</span></label>
-    <input id="em" name="email" type="email" required autocomplete="email" inputmode="email" placeholder="you@company.com" aria-describedby="em-h">
-    <p class="hint" id="em-h">Used once, to send an invitation.</p>
-   </div>
-   <div class="fld">
-    <label class="lab" for="task"><span>First task you would hand it</span><span>Optional</span></label>
-    <textarea id="task" name="task" rows="3" maxlength="600" placeholder="Reconcile last quarter’s invoices and refuse any that do not add up."></textarea>
-   </div>
-   <fieldset>
-    <legend class="lab">Likely tier</legend>
-    <div class="seg">
-     <label><input type="radio" name="tier" value="free"><span>Free</span></label>
-     <label><input type="radio" name="tier" value="day-pass"><span>Day pass</span></label>
-     <label><input type="radio" name="tier" value="solo" checked><span>Solo</span></label>
-     <label><input type="radio" name="tier" value="pro"><span>Pro</span></label>
-    </div>
-   </fieldset>
-   <div class="sub">
-    <button class="btn p" type="submit" id="sb">Request access <span class="ar" aria-hidden="true">→</span></button>
-    <p class="fb">We reply within two business days. No newsletter, no sequence.</p>
-   </div>
-   <div class="status" id="st" role="status" aria-live="polite"></div>
-  </form>
+
+  <div class="ctas" style="grid-column:1/span 7" data-reveal>
+   <a class="btn p" href="https://ol-projects.github.io/ol-services/">Demander une prise de quantités <span class="ar" aria-hidden="true">→</span></a>
+   <a class="btn s" href="https://ol-projects.github.io/ol-services/#prix">Prix et échantillon</a>
+  </div>
+  <p class="meta lab" data-reveal style="grid-column:1/span 7">Ou lisez d'abord ce qu'il refuse. C'est le meilleur ordre.</p>
+ </div>
+</section>
+
+<section class="band" id="faq" aria-labelledby="h-faq">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">12 · Questions fréquentes</span></div>
+  <h2 class="d2 hl" id="h-faq"><span class="mask"><span>Questions</span></span><span class="mask" style="--d:1"><span>fréquentes.</span></span></h2>
+  <p class="body hr" data-reveal>Les objections qu'on nous fait vraiment, avec la réponse courte.</p>
+  <div class="faq">
+   <details><summary>Est-ce un agent conversationnel&nbsp;?</summary>
+    <p>Non. Une fenêtre de clavardage n'est qu'une de ses surfaces. La différence, c'est ce qui arrive après que la réponse existe : le travail est exécuté dans une seule frontière d'autorité, vérifié contre preuve, et consigné pour survivre au prochain redémarrage.</p></details>
+   <details><summary>Est-ce un autre emballage autour d'un modèle&nbsp;?</summary>
+    <p>Non. Le modèle est un organe, et il est remplaçable. Ce qui persiste, c'est la mémoire, l'identité, la colonne d'autorité et de vérification, et la trace de ce qui a été prouvé — rien de tout cela n'appartient au modèle.</p></details>
+   <details><summary>Peut-il vraiment tout faire&nbsp;?</summary>
+    <p>Non, et cette page le dit plus haut. Un seul domaine est chiffré et en service aujourd'hui. La prétention n'est pas l'omniscience ; c'est que la frontière est ouverte — quand un vrai mandat exige quelque chose qui n'existe pas, la réponse est de le construire et de le prouver, pas de répondre «&nbsp;non pris en charge&nbsp;».</p></details>
+   <details><summary>Combien ça coûte&nbsp;?</summary>
+    <p>Aujourd'hui, seuls les services sont en vente : 25&nbsp;$, 74,99&nbsp;$, 290&nbsp;$, 49&nbsp;$, première prise de quantités gratuite. Un abonnement au produit viendra après que le service aura prouvé la demande. Les 2,7&nbsp;% ne s'appliquent qu'aux gains qu'OL a aidé à créer, et ce n'est pas encore ouvert.</p></details>
+   <details><summary>À qui appartient ce que je dépose&nbsp;?</summary>
+    <p>À vous. Vos données et vos relations restent les vôtres, et vous pouvez partir avec. Côté services : rien n'est vendu, rien ne sert à entraîner un modèle, et tout est supprimé sur demande ou 24&nbsp;mois après la fermeture du dossier.</p></details>
+   <details><summary>Pourquoi me dire ce qu'il ne peut pas faire&nbsp;?</summary>
+    <p>Parce qu'un système qui cache ses limites vous remet le risque sans le nommer. Un vérificateur qui dit ce qu'il ne mesure pas vaut plus qu'un vérificateur qui prétend tout vérifier.</p></details>
+  </div>
  </div>
 </section>
 
@@ -767,353 +488,33 @@ legend{padding:0;margin-bottom:8px}
 
 <footer class="foot">
  <div class="g">
-  <div class="mk2"><svg role="img" aria-label="OL-Control mark"><use href="#mark"/></svg></div>
-  <div class="f1"><p class="ink">OL-Control</p><p>Built by OL — Optimization and Logistics</p><p>Montréal, Québec · NEQ 2270669312</p></div>
-  <div class="f2"><p><a class="tl" href="#access">Request access</a></p><p>Replies within two business days.</p></div>
-  <div class="f3"><p class="lab">Site build <span class="h ink" id="build-foot">—</span></p><p class="lab">No fonts, images or trackers loaded</p></div>
+  <div class="mk2"><svg role="img" aria-label="Marque OL"><use href="#mark"/></svg></div>
+  <div class="f1">
+   <p class="ink">OL — Optimization and Logistics</p>
+   <p>Montréal, Québec</p>
+   <p>NEQ 2270669312 · TPS 81902 9992 RT0001 · TVQ 4024451921 TQ0002</p>
+   <p><a class="tl" href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a></p>
+  </div>
+  <div class="f2">
+   <p class="lab ink">Divisions</p>
+   <p>OL Services (en service) · OL Numérique/Logiciel (prochaine)</p>
+   <p>2,7&nbsp;% (après répétabilité) · OL Labs · OL Network</p>
+   <p style="margin-top:12px"><a class="tl" href="start.html">Commencer</a> · <a class="tl" href="download.html">Télécharger</a></p>
+  </div>
+  <div class="f3">
+   <p><a class="tl" href="https://ol-projects.github.io/ol-services/">OL Services</a></p>
+   <p><a class="tl" href="https://ol-projects.github.io/ol-services/#prix">Prix</a> · <a class="tl" href="https://ol-projects.github.io/ol-services/">Échantillon</a></p>
+   <p><a class="tl" href="#faq">Confidentialité</a> · <a class="tl" href="en/" hreflang="en-CA" lang="en-CA">English</a></p>
+   <p class="lab" style="margin-top:12px">Construction du site <span class="h ink" id="build-foot">—</span></p>
+  </div>
+  <div style="grid-column:1/-1;border-top:1px solid var(--rule2);margin-top:12px;padding-top:16px">
+   <p class="lab">OL est un outil. Il ne revendique ni conscience, ni divinité, ni sentiments.</p>
+   <p class="lab" style="margin-top:6px">© 2026 OL — Optimization and Logistics.</p>
+  </div>
  </div>
 </footer>
 </div>
 </div>
-
-<script>
-(function(){
-var d=document,h=d.documentElement,motion=h.classList.contains('motion');
-
-/* reveal: never hide what the viewport holds; hard fallback at 3 s */
-var els=[].slice.call(d.querySelectorAll('[data-reveal],.mask,[data-fade]'));
-function show(e){e.classList.add('in')}
-function showAll(){els.forEach(show)}
-if(!motion||!('IntersectionObserver' in window)){showAll()}else{
- var lim=window.innerHeight*1.5;
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){show(e.target);io.unobserve(e.target)}})},{rootMargin:'0px 0px 240px 0px',threshold:0});
- els.forEach(function(e){var r=e.getBoundingClientRect();if(r.top<lim)show(e);else io.observe(e)});
- window.addEventListener('load',function(){var l2=window.innerHeight*1.5;els.forEach(function(e){if(!e.classList.contains('in')&&e.getBoundingClientRect().top<l2)show(e)})});
- setTimeout(showAll,3000);
-}
-
-/* active section */
-var links={};d.querySelectorAll('.rail a,.strip a').forEach(function(a){var k=a.getAttribute('data-s');(links[k]=links[k]||[]).push(a)});
-function setOn(id){for(var k in links)links[k].forEach(function(a){var on=k===id;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}
-setOn('top');
-if('IntersectionObserver' in window){
- var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setOn(e.target.id)})},{rootMargin:'-40% 0px -55% 0px'});
- d.querySelectorAll('main > section').forEach(function(s){so.observe(s)});
-}
-
-/* ladder */
-var lad=d.getElementById('lad');
-if(lad){var lis=lad.querySelectorAll('.tiers li');
- lis.forEach(function(li,k){li.querySelector('button').addEventListener('click',function(){
-  lis.forEach(function(o,j){o.classList.toggle('sel',j===k);o.querySelector('button').setAttribute('aria-pressed',j===k?'true':'false')});
- })});
-}
-
-/* ledger replay */
-var L=d.getElementById('lg'),clock=d.getElementById('lg-clock');
-if(L&&motion){
- var D=[
-  ['invoice-0413 · p.1 rendered','png · 0 px outside page bounds','verified'],
-  ['invoice-0413 · total recomputed','2,180.00 + 109.00 + 217.46 = 2,506.46','verified'],
-  ['invoice-0413 · all checks pass','evidence: 1 png · 1 recompute','closed'],
-  ['email · “reply sent”','no message-id in sent folder','refused'],
-  ['email · resent','message-id recorded · awaiting gate','held'],
-  ['email · message-id matches','found in sent folder','verified'],
-  ['report · claimed device-proven','proven: built · claim lowered','held'],
-  ['deploy · server returned 200','a status code is not proof','held'],
-  ['deploy · sha256 served = built','4b07…c2a9 = 4b07…c2a9','verified']
- ];
- var N=12,rows=[].slice.call(L.querySelectorAll('.row')),idx=0,t=4*60000+31902,rh=46,vis=true;
- var cnt={verified:5,refused:3,held:2,closed:2},cEl={};
- d.querySelectorAll('[data-c]').forEach(function(b){cEl[b.getAttribute('data-c')]=b});
- function fmt(ms){var m=Math.floor(ms/60000),s=Math.floor(ms/1000)%60,x=ms%1000;return (m<10?'0':'')+m+':'+(s<10?'0':'')+s+'.'+('00'+x).slice(-3)}
- function readRh(){rh=parseFloat(getComputedStyle(L).getPropertyValue('--rh'))||46}
- function bump(v){cnt[v]++;if(cEl[v])cEl[v].textContent=cnt[v]}
- function mk(it){var r=d.createElement('div');r.className='row';r.setAttribute('data-v','checking');
-  r.innerHTML='<span class="t"></span><i class="dot"></i><span class="c"><b></b><em></em></span><span class="v"></span>';
-  r.querySelector('.t').textContent=fmt(t);r.querySelector('b').textContent=it[0];r.querySelector('em').textContent=it[1];r.querySelector('.v').textContent='checking';
-  clock.textContent='T+ '+fmt(t);return r}
- function place(){var off=rows.length-N;rows.forEach(function(r,k){var y=(k-off)*rh;r.style.transform='translate3d(0,'+y+'px,0)';r.style.opacity=y<0?'0':'1'})}
- readRh();L.classList.add('js');place();
- requestAnimationFrame(function(){requestAnimationFrame(function(){L.classList.add('anim')})});
- function tick(){
-  if(!vis||d.hidden){setTimeout(tick,800);return}
-  while(rows.length>N){rows.shift().remove()}
-  var it=D[idx%D.length];idx++;t+=900+Math.floor(Math.random()*2600);
-  var r=mk(it);r.style.transform='translate3d(0,'+(N*rh)+'px,0)';r.style.opacity='0';
-  L.appendChild(r);rows.push(r);void r.offsetWidth;place();
-  setTimeout(function(){r.setAttribute('data-v',it[2]);r.querySelector('.v').textContent=it[2];bump(it[2])},1600);
-  setTimeout(tick,3400);
- }
- if('IntersectionObserver' in window){new IntersectionObserver(function(es){vis=es[0].isIntersecting}).observe(L)}
- setTimeout(tick,2200);
- var rz;window.addEventListener('resize',function(){clearTimeout(rz);rz=setTimeout(function(){readRh();L.classList.remove('anim');place();requestAnimationFrame(function(){L.classList.add('anim')})},150)});
-}
-
-/* waitlist — mail-first: the message is composed in his mail app; the service is only an enhancement */
-var f=d.getElementById('wl');
-if(f){
- f.setAttribute('novalidate','');
- var em=d.getElementById('em'),fe=d.getElementById('f-em'),hint=d.getElementById('em-h'),st=d.getElementById('st'),sb=d.getElementById('sb'),task=d.getElementById('task');
- var hint0=hint.textContent,label0=sb.innerHTML,MAIL='spirokaglis@gmail.com';
- function tierVal(){var c=f.querySelector('input[name=tier]:checked');return c?c.value:''}
- function body(){return 'Email: '+em.value.trim()+'\nLikely tier: '+tierVal()+'\nFirst task: '+(task.value.trim()||'(none given)')}
- function mailto(){return 'mailto:'+MAIL+'?subject='+encodeURIComponent('OL waitlist request')+'&body='+encodeURIComponent(body())}
- function say(cls,title,msg){st.className='status'+(cls?' '+cls:'');st.textContent='';var s=d.createElement('span');s.className='stl';s.textContent=title;st.appendChild(s);st.appendChild(d.createTextNode(msg))}
- function note(t){var p=d.createElement('p');p.className='hint';p.textContent=t;st.appendChild(p)}
- function link(href,text){var a=d.createElement('a');a.href=href;a.className='tl';a.textContent=text;st.appendChild(a)}
- function unlock(){sb.disabled=false;sb.removeAttribute('aria-busy');sb.innerHTML=label0}
- function composed(){
-  say('held','Composed · press Send in your mail app','Nothing is recorded on this page until you send that message. If no mail window opened, write to '+MAIL+' — the exact text is below.');
-  var pre=d.createElement('pre');pre.style.cssText='white-space:pre-wrap;margin:8px 0 0;font:inherit;opacity:.85';pre.textContent=body();st.appendChild(pre);
-  link(mailto(),'Open the message again');
- }
- f.addEventListener('input',function(e){if(e.target===em&&fe.classList.contains('err')&&em.value){fe.classList.remove('err');em.removeAttribute('aria-invalid');hint.textContent=hint0}});
- f.addEventListener('submit',function(e){
-  e.preventDefault();
-  var v=em.value.trim();
-  if(!v||!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
-   fe.classList.add('err');em.setAttribute('aria-invalid','true');
-   hint.textContent=v?'That address looks incomplete. Nothing was sent.':'An email address is needed to send an invitation.';
-   st.className='status';st.textContent='';em.focus();return;
-  }
-  sb.disabled=true;sb.setAttribute('aria-busy','true');sb.textContent='Composing…';
-  composed();
-  window.location.href=mailto();
-  unlock();
- });
-}
-})();
-</script>
-<style id="fx-style">
-html.fx #fx-rail{position:fixed;top:0;bottom:0;right:2px;width:1px;z-index:60;pointer-events:none;background:var(--fx-line,rgba(255,255,255,.1))}
-html.fx #fx-rail i{position:absolute;left:0;top:0;width:1px;height:100%;background:var(--fx-acc,currentColor);transform:scaleY(0);transform-origin:0 0;will-change:transform}
-html.fx #fx-rail b{position:absolute;right:8px;bottom:18px;font:500 10px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--fx-mute,currentColor);transition:opacity .12s linear}
-html.fx #fx-rail b.o{opacity:0}
-@media (max-width:1099px){html.fx #fx-rail{display:none}}
-html.fx #fx-pal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;display:flex;align-items:flex-start;justify-content:center;padding:14vh 16px 0;box-sizing:border-box;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;transition:opacity .18s ease}
-html.fx #fx-pal[hidden]{display:none}
-html.fx #fx-pal.open{opacity:1}
-html.fx #fx-pal .p{width:100%;max-width:560px;background:var(--fx-bg,#0b0c0d);border:1px solid var(--fx-line,rgba(255,255,255,.12));box-shadow:0 24px 60px rgba(0,0,0,.5);transform:scale(.98);transition:transform .18s cubic-bezier(.2,.8,.2,1)}
-html.fx #fx-pal.open .p{transform:none}
-html.fx #fx-pal input{display:block;width:100%;box-sizing:border-box;margin:0;background:transparent;border:0;border-bottom:1px solid var(--fx-line,rgba(255,255,255,.12));border-radius:0;color:inherit;font:inherit;font-size:15px;padding:14px 16px;outline:0}
-html.fx #fx-pal ul{list-style:none;margin:0;padding:6px 0;max-height:50vh;overflow:auto}
-html.fx #fx-pal li{display:flex;gap:14px;padding:9px 16px;cursor:pointer;font-size:14px;line-height:1.4}
-html.fx #fx-pal li span,html.fx #fx-pal .k{font:500 10px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.08em;color:var(--fx-mute,currentColor)}
-html.fx #fx-pal li span{min-width:2.4em;padding-top:2px}
-html.fx #fx-pal li[aria-selected=true]{background:rgba(255,255,255,.05);box-shadow:inset 2px 0 0 var(--fx-acc,currentColor)}
-html.fx #fx-pal .k{padding:8px 16px;border-top:1px solid var(--fx-line,rgba(255,255,255,.12));text-transform:uppercase}
-html.fx .fx-ind{position:absolute;left:0;top:0;width:2px;height:1px;background:var(--fx-acc,currentColor);transform-origin:0 0;pointer-events:none}
-html.fx .fx-ind.t{transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .2s}
-html.fx .fx-lad .tiers>li.sel,html.fx .fx-lad .tiers>li.sel>button{border-left-color:transparent!important}
-html.fx .fx-lad .tiers>li p,html.fx .fx-lad .tiers>li .d{transition:padding-left .32s cubic-bezier(.2,.8,.2,1)}
-html.fx .fx-lad .tiers>li.sel p,html.fx .fx-lad .tiers>li.sel .d{padding-left:14px}
-html.fx .fx-pulse{animation:fxp .2s ease-out 1}
-@keyframes fxp{50%{opacity:.4}}
-html.fx .lab.l.fx-lt{transition:opacity .4s ease,translate .4s ease}
-html.fx .lab.l.fx-pre{opacity:0;translate:0 4px}
-html.fx .btn.p:active,html.fx .btn.g:active{scale:.985}
-html.fx .btn.p:focus-visible,html.fx .btn.g:focus-visible,html.fx a[data-nav]:focus-visible,html.fx .tiers button:focus-visible{outline:2px solid var(--fx-acc,currentColor);outline-offset:2px}
-@media (hover:hover){html.fx a[data-nav]{position:relative}html.fx a[data-nav]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .22s cubic-bezier(.2,.8,.2,1);pointer-events:none}html.fx a[data-nav]:hover::after{transform:scaleX(1)}}
-html.fx main>section{scroll-margin-top:calc(var(--fx-hh,0px) + 24px)}
-@media (prefers-reduced-motion:no-preference){html.fx{scroll-behavior:smooth}}
-@media (max-width:1080px){.vf{grid-column:1/-1}.vf-note{grid-column:1/-1;margin-top:28px}}
-@media (max-width:760px){.vf-row{grid-template-columns:minmax(0,1fr) 84px;height:auto;min-height:38px;padding:8px 0}.vf-row .hg{display:none}.vf{overflow:hidden}}
-@media (prefers-reduced-motion:reduce){html.fx #fx-pal,html.fx #fx-pal .p,html.fx #fx-rail b,html.fx .fx-ind,html.fx .fx-lad .tiers>li p,html.fx .fx-lad .tiers>li .d,html.fx a[data-nav]::after,html.fx .fx-pulse,html.fx .fx-lt{transition:none!important;animation:none!important}}
-</style>
-```
-
-```html
-<script id="fx-js">
-(function(){
-var d=document,w=window,H=d.documentElement;
-if(!d.querySelector||!w.requestAnimationFrame||!H.classList)return;
-function mm(q){return !!(w.matchMedia&&w.matchMedia(q).matches)}
-var RM=mm('(prefers-reduced-motion: reduce)'),HOV=mm('(hover:hover) and (pointer:fine)'),MO=!RM&&H.classList.contains('motion'),IO='IntersectionObserver' in w,raf=w.requestAnimationFrame;
-function $(s,r){return (r||d).querySelector(s)}
-function $$(s,r){return [].slice.call((r||d).querySelectorAll(s))}
-function pad(n){return (n<10?'0':'')+n}
-function safe(f){try{f()}catch(e){}}
-function once(el,opt,fn){var o=new IntersectionObserver(function(es){for(var i=0;i<es.length;i++)if(es[i].isIntersecting){o.disconnect();safe(fn);return}},opt);o.observe(el)}
-function firstNum(el){var t=d.createTreeWalker(el,4,null,false),n;while((n=t.nextNode()))if(/\d/.test(n.nodeValue))return n;return null}
-function reflow(el){return el.offsetWidth}
-H.classList.add('fx');
-
-/* palette of existing custom properties */
-safe(function(){var cs=getComputedStyle(H),mp={'--fx-acc':['--acc','--accent','--signal','--hi','--a','--blue'],'--fx-line':['--line','--rule','--hair','--bd','--border'],'--fx-mute':['--mute','--muted','--dim','--fg2']},k,i,v;
-for(k in mp)for(i=0;i<mp[k].length;i++){v=cs.getPropertyValue(mp[k][i]).trim();if(v){H.style.setProperty(k,v);break}}
-v=getComputedStyle(d.body).backgroundColor;if(v&&v!=='transparent'&&v.indexOf('0)')<0)H.style.setProperty('--fx-bg',v);
-var hh=0;$$('header').forEach(function(e){var p=getComputedStyle(e).position;if(p==='fixed'||p==='sticky')hh=Math.max(hh,e.offsetHeight)});H.style.setProperty('--fx-hh',hh+'px')});
-
-var IDS=['top','split','gate','ladder','refusals','made','numbers','verify','access'],secs=[];
-IDS.forEach(function(id){var e=d.getElementById(id);if(e)secs.push(e)});
-var vh=w.innerHeight,vw=w.innerWidth,sh=1,tops=[],rail,fill,num,cur=-1,masks=[],amt=[1.5,3,4.5],lg=$('.ledger');
-
-/* 1 · rail */
-safe(function(){if(!secs.length)return;rail=d.createElement('div');rail.id='fx-rail';rail.setAttribute('aria-hidden','true');rail.innerHTML='<i></i><b></b>';d.body.appendChild(rail);fill=rail.firstChild;num=rail.lastChild});
-function sn(){return pad(IDS.indexOf(secs[cur].id)+1)}
-function setNum(i){if(i===cur)return;var first=cur<0;cur=i;if(first||RM){num.textContent=sn();return}num.className='o';setTimeout(function(){num.textContent=sn();num.className=''},120)}
-function measure(){vh=w.innerHeight;vw=w.innerWidth;sh=Math.max(1,H.scrollHeight-vh);var y=w.pageYOffset;tops=secs.map(function(s){return s.getBoundingClientRect().top+y})}
-
-/* 7 · parallax lines */
-if(HOV&&MO)masks=$$('#top h1 .mask').slice(0,3);
-
-var tk=0;
-function frame(){tk=0;var y=w.pageYOffset,i,j;
-if(fill){fill.style.transform='scaleY('+Math.min(1,Math.max(0,y/sh)).toFixed(4)+')';i=0;for(j=0;j<tops.length;j++)if(tops[j]<=y+vh*.35)i=j;setNum(i)}
-if(masks.length&&y<vh*1.5){var t=Math.min(1,y/vh);for(j=0;j<masks.length;j++)masks[j].style.translate='0 '+(t*amt[j]).toFixed(2)+'px'}}
-w.addEventListener('scroll',function(){if(!tk){tk=1;raf(frame)}},{passive:true});
-var rz=0;function remeasure(){if(!rz){rz=1;raf(function(){rz=0;safe(measure);safe(place);frame()})}}
-w.addEventListener('resize',remeasure);w.addEventListener('load',remeasure);
-if(w.ResizeObserver)safe(function(){new ResizeObserver(remeasure).observe(d.body)});
-safe(measure);frame();
-
-/* 7 · ledger depth */
-var tx=0,ty=0,cx=0,cy=0,pr=0,lt=0;
-function pf(t){var dt=lt?Math.min(64,t-lt):16;lt=t;var k=1-Math.exp(-dt/110);cx+=(tx-cx)*k;cy+=(ty-cy)*k;lg.style.translate=cx.toFixed(2)+'px '+cy.toFixed(2)+'px';if(Math.abs(tx-cx)+Math.abs(ty-cy)>.02)raf(pf);else pr=0}
-if(lg&&HOV&&MO)d.addEventListener('pointermove',function(e){if(e.pointerType&&e.pointerType!=='mouse')return;if(w.pageYOffset>vh){tx=ty=0}else{tx=-(e.clientX/vw-.5)*8;ty=-(e.clientY/vh-.5)*8}if(!pr){pr=1;lt=0;raf(pf)}},{passive:true});
-
-/* 2 · command palette */
-safe(function(){
-var items=[],vis=[],act=-1,isOpen=0,last=null,ct,HINT='↑↓ move · ↵ run · esc close';
-function name(s){var N={top:'Overview',split:'The split',gate:'The gate',ladder:'The ladder',refusals:'Refusals',made:'Made of',numbers:'Numbers',verify:'Check this page',access:'Access'};if(N[s.id])return N[s.id];var h=$('h1,h2,h3',s);return h?h.textContent.replace(/\s+/g,' ').trim():s.id}
-function jump(s){if(history.replaceState)history.replaceState(null,'','#'+s.id);s.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})}
-secs.forEach(function(s){items.push({n:pad(IDS.indexOf(s.id)+1),t:name(s),go:function(){jump(s)}})});
-function addr(){var m=$('#access form[action^="mailto:"]');return m?m.getAttribute('action').slice(7).split('?')[0]:location.href.split('#')[0]+'#access'}
-function copy(){var s=addr();function ok(){note('Copied · '+s);ct=setTimeout(close,700)}
-function fb(){var t=d.createElement('textarea');t.value=s;t.setAttribute('readonly','');t.style.cssText='position:fixed;top:0;left:0;opacity:0';pal.appendChild(t);t.select();var r=false;try{r=d.execCommand('copy')}catch(e){}pal.removeChild(t);inp.focus();r?ok():note(s)}
-if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(s).then(ok,fb);else fb()}
-items.push({n:'⧉',t:'Copy the waitlist address',go:copy,keep:1});
-items.push({n:'↗',t:'Open the project on GitHub',go:function(){location.href='https://github.com/OL-Projects/ol-control'}});
-items.push({n:'→',t:'Jump to pricing',go:function(){var p=d.getElementById('access');if(p)jump(p)}});
-var pal=d.createElement('div');pal.id='fx-pal';pal.hidden=true;
-pal.innerHTML='<div class="p" role="dialog" aria-modal="true" aria-label="Command palette"><input id="fx-q" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="fx-ls" aria-label="Search sections and actions" placeholder="Jump to a section or run an action"><ul id="fx-ls" role="listbox" aria-label="Results"></ul><div class="k" role="status" aria-live="polite"></div></div>';
-d.body.appendChild(pal);
-var inp=$('#fx-q',pal),ls=$('#fx-ls',pal),st=$('.k',pal);
-function note(s){st.textContent=s}
-function setAct(i){act=i;var c=ls.children,j;for(j=0;j<c.length;j++)c[j].setAttribute('aria-selected',j===i?'true':'false');if(i>-1){inp.setAttribute('aria-activedescendant','fx-o'+i);if(c[i].scrollIntoView)c[i].scrollIntoView({block:'nearest'})}else inp.removeAttribute('aria-activedescendant')}
-function render(){var q=inp.value.toLowerCase().trim();vis=items.filter(function(it){return !q||(it.n+' '+it.t).toLowerCase().indexOf(q)>-1});ls.innerHTML='';
-vis.forEach(function(it,i){var li=d.createElement('li'),sp=d.createElement('span');li.id='fx-o'+i;li.setAttribute('role','option');sp.textContent=it.n;sp.setAttribute('aria-hidden','true');li.appendChild(sp);li.appendChild(d.createTextNode(it.t));
-li.addEventListener('mousedown',function(e){e.preventDefault()});li.addEventListener('click',function(){run(i)});li.addEventListener('mousemove',function(){if(act!==i)setAct(i)});ls.appendChild(li)});
-note(vis.length?HINT:'No matches');setAct(vis.length?0:-1)}
-function run(i){var it=vis[i];if(!it)return;if(it.keep){it.go();return}close();it.go()}
-function open(){if(isOpen)return;isOpen=1;clearTimeout(ct);last=d.activeElement;pal.hidden=false;inp.value='';render();reflow(pal);pal.className='open';inp.focus()}
-function close(){if(!isOpen)return;isOpen=0;clearTimeout(ct);pal.className='';if(RM)pal.hidden=true;else ct=setTimeout(function(){pal.hidden=true},190);if(last&&last.focus&&d.body.contains(last))last.focus({preventScroll:true});last=null}
-function field(t){return t&&(/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)||t.isContentEditable)}
-inp.addEventListener('input',render);
-pal.addEventListener('click',function(e){if(e.target===pal)close()});
-d.addEventListener('focusin',function(e){if(isOpen&&!pal.contains(e.target))inp.focus()});
-d.addEventListener('keydown',function(e){var k=e.key;
-if((e.metaKey||e.ctrlKey)&&!e.altKey&&(k==='k'||k==='K')){e.preventDefault();isOpen?close():open();return}
-if(isOpen){if(k==='Escape'){e.preventDefault();close()}else if(k==='Tab'){e.preventDefault();inp.focus()}else if(k==='ArrowDown'||k==='ArrowUp'){e.preventDefault();if(vis.length)setAct((act+(k==='ArrowDown'?1:-1)+vis.length)%vis.length)}else if(k==='Enter'){e.preventDefault();run(act)}return}
-if(k==='/'&&!e.metaKey&&!e.ctrlKey&&!e.altKey&&!field(e.target)){e.preventDefault();open()}});
-});
-
-/* 3 · ladder */
-var place=function(){};
-safe(function(){
-var lad=$('#lad'),tiers=lad&&$('.tiers',lad);if(!tiers)return;
-var lis=$$('li',tiers).filter(function(l){return l.parentNode===tiers});if(!lis.length)return;
-var box=tiers.parentNode,gx=$('.gapx'),gt=gx?gx.textContent:'',ind=d.createElement('span');
-if(getComputedStyle(box).position==='static')box.style.position='relative';
-ind.className='fx-ind';ind.setAttribute('aria-hidden','true');box.appendChild(ind);
-function selIdx(){for(var i=0;i<lis.length;i++){var b=$('button',lis[i]);if(lis[i].classList.contains('sel')||(b&&b.getAttribute('aria-pressed')==='true'))return i}return -1}
-place=function(){var i=selIdx();if(i<0){ind.style.opacity='0';return}ind.style.opacity='';var b=box.getBoundingClientRect(),r=lis[i].getBoundingClientRect();ind.style.transform='translate('+(r.left-b.left).toFixed(1)+'px,'+(r.top-b.top).toFixed(1)+'px) scaleY('+r.height.toFixed(1)+')'};
-place();lad.classList.add('fx-lad');raf(function(){raf(function(){ind.classList.add('t')})});
-var q=0;
-function onSel(){q=0;place()}
-if(gx)gx.addEventListener('animationend',function(){gx.classList.remove('fx-pulse')});
-if(w.MutationObserver)new MutationObserver(function(){if(!q){q=1;raf(onSel)}}).observe(tiers,{attributes:true,subtree:true,attributeFilter:['class','aria-pressed']});
-tiers.addEventListener('click',function(){if(!q){q=1;raf(onSel)}});
-tiers.addEventListener('keydown',function(e){var k=e.key,dn=k==='ArrowDown'||k==='ArrowRight';if(e.defaultPrevented||!(dn||k==='ArrowUp'||k==='ArrowLeft'))return;
-var b=e.target.closest&&e.target.closest('button'),li=b&&b.closest('li'),i=lis.indexOf(li);if(i<0)return;e.preventDefault();
-var nb=$('button',lis[(i+(dn?1:-1)+lis.length)%lis.length]);if(nb){nb.focus();nb.click()}});
-});
-
-
-})();
-
-/* verify this page: fetch each file, hash it in the browser, compare to the published receipt */
-(function(){
- var d=document,run=d.getElementById('vf-run'),body=d.getElementById('vf-body'),sum=d.getElementById('vf-sum'),
-     cnt=d.getElementById('vf-count'),gen=d.getElementById('vf-gen');
- if(!run||!body)return;
- function hex(buf){var b=new Uint8Array(buf),s='',i;for(i=0;i<b.length;i++){s+=('0'+b[i].toString(16)).slice(-2)}return s}
- function row(path,hash){
-  var el=d.createElement('div');el.className='vf-row';el.setAttribute('data-v','checking');
-  var b=d.createElement('b');b.textContent=path;
-  var h=d.createElement('span');h.className='hg';h.textContent=hash.slice(0,16)+'…';
-  var v=d.createElement('span');v.className='v';v.textContent='checking';
-  el.appendChild(b);el.appendChild(h);el.appendChild(v);body.appendChild(el);
-  return {el:el,v:v,h:h};
- }
- run.addEventListener('click',function(){
-  if(!(window.crypto&&window.crypto.subtle)){
-   sum.textContent='This browser will not hash without a secure context. Open the page over https and try again.';
-   return;
-  }
-  run.disabled=true;body.innerHTML='';sum.textContent='Reading the receipt…';
-  fetch('proof.json',{cache:'no-store'}).then(function(r){
-   if(!r.ok)throw new Error('proof.json answered '+r.status);
-   return r.json();
-  }).then(function(p){
-   var files=p.files||[];
-   if(!files.length)throw new Error('the receipt lists no files');
-   if(gen)gen.textContent='build '+String(p.build||'').slice(0,12);
-   if(cnt)cnt.textContent=files.length+(files.length===1?' file':' files');
-   var done=0,ok=0,bad=0;
-   sum.textContent='Hashing '+files.length+' files in this browser…';
-   files.forEach(function(f){
-    var r=row(f.path,f.sha256);
-    fetch(f.path,{cache:'no-store'}).then(function(res){
-     if(!res.ok)throw new Error(res.status);
-     return res.arrayBuffer();
-    }).then(function(ab){
-     return window.crypto.subtle.digest('SHA-256',ab);
-    }).then(function(dg){
-     var got=hex(dg);
-     if(got===f.sha256){ok++;r.el.setAttribute('data-v','verified');r.v.textContent='verified'}
-     else{bad++;r.el.setAttribute('data-v','refused');r.v.textContent='mismatch';r.h.textContent=got.slice(0,16)+'…'}
-    }).catch(function(){
-     bad++;r.el.setAttribute('data-v','refused');r.v.textContent='unreadable';r.h.textContent='fetch failed';
-    }).then(function(){
-     done++;
-     if(done===files.length){
-      sum.innerHTML='<b>'+ok+'</b> of '+files.length+' files verified · '+
-        (bad?'<span class="bad">'+bad+' mismatched</span>':'0 mismatched')+
-        (bad?' — the page is telling you, not hiding it.':' — recomputed in your browser, not ours.');
-      run.disabled=false;
-     }
-    });
-   });
-  }).catch(function(e){
-   sum.textContent='The receipt could not be read: '+(e&&e.message?e.message:'unknown reason')+'. That is a refusal, not a pass.';
-   run.disabled=false;
-  });
- });
-})();
-
-/* figures: read the published status + build, so the page cannot carry a stale number */
-(function(){
- var d=document;
- function set(id,v){var e=d.getElementById(id);if(e&&v!==undefined&&v!==null)e.textContent=v}
- fetch('status.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(s){
-  if(!s)return;
-  set('fig-legs',s.legs_total); set('fig-done',s.legs_done); set('fig-open',s.legs_open);
-  set('fig-total-a',s.legs_total); set('fig-total-b',s.legs_total);
-  set('fig-done-pct',s.legs_done_pct); set('fig-open-pct',s.legs_open_pct);
-  set('fig-checks',s.checks); set('fig-pass',s.checks_passing); set('fig-fail',s.checks_failing);
-  set('fig-pass-total',s.checks);
-  if(s.checks&&s.checks_passing!==undefined&&s.checks_passing!==null)set('fig-pass-pct',Math.round(1000*s.checks_passing/s.checks)/10);
-  set('fig-h',s.headline);
-  set('fig-at',s.generated_date);
- }).catch(function(){});
- fetch('proof.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():null}).then(function(p){
-  if(!p)return;
-  var b=String(p.build||'').slice(0,12);
-  set('gen-hero',b); set('build-foot',b); set('build-num',b); set('build-schema',b);
- }).catch(function(){});
-})();
-</script>
+<script src="assets/site.js"></script>
 </body>
 </html>

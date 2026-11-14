@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Download OL-Control 0.17.1 — notarised, macOS Apple Silicon</title>
-<meta name="description" content="Download OL 0.17.1 for macOS. Notarised by Apple, Gatekeeper accepted. Private beta, Apple Silicon, bring your own model key. Checksum and first-launch steps included.">
+<title>Télécharger OL 0.17.1 — notarié, macOS Apple Silicon</title>
+<meta name="description" content="Téléchargez OL 0.17.1 pour macOS. Notarié par Apple, accepté par Gatekeeper. Apple Silicon, votre propre clé de modèle. Somme de contrôle et premières étapes incluses.">
 <link rel="canonical" href="https://ol-projects.github.io/ol-control/download.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/download.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/download.html">
+<meta name="ol-root" content="">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Download OL-Control 0.17.1">
-<meta property="og:description" content="Private beta for macOS. Signed with a Developer ID and notarised by Apple. Checksum and first-launch steps included.">
+<meta property="og:title" content="Télécharger OL 0.17.1">
+<meta property="og:description" content="Pour macOS. Signé avec un Developer ID et notarié par Apple. Somme de contrôle et premières étapes incluses.">
 <meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23080A0E'/%3E%3Cg fill='%23ECEBE4'%3E%3Cpath fill-rule='evenodd' d='M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z'/%3E%3Cpath d='M68 29h14v48h28v14H68z'/%3E%3C/g%3E%3C/svg%3E">
 <style>
@@ -27,12 +32,16 @@
   .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
   .ml{font:500 10.5px/1.5 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
   header{border-bottom:1px solid var(--rule)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
   .brand svg{width:26px;height:26px;color:var(--ink)}
   .brand b{font-size:15px;letter-spacing:.02em;font-weight:600}
+  .nav{display:flex;align-items:center;gap:18px}
   .back{color:var(--mute);text-decoration:none;border-bottom:1px solid transparent}
   .back:hover{color:var(--ink);border-bottom-color:var(--rule)}
+  .lang{display:flex;align-items:center;gap:8px}
+  .lang a{text-decoration:none;color:var(--mute);border-bottom:1px solid transparent}
+  .lang a[aria-current=true]{color:var(--ink);border-bottom-color:var(--accent)}
   main{padding:72px 0 40px}
   .eyebrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
   .eyebrow::before{content:"";width:28px;height:1px;background:var(--rule)}
@@ -82,66 +91,71 @@
     <a class="brand" href="./">
       <svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg>
     </a>
-    <a class="back ml" href="./">← Back to the product</a>
+    <div class="nav">
+      <a class="back ml" href="./">← Retour au produit</a>
+      <nav class="lang ml" aria-label="Langue">
+        <a href="download.html" aria-current="true" hreflang="fr-CA">FR</a><span aria-hidden="true" style="color:var(--dim)">/</span><a href="en/download.html" hreflang="en-CA" lang="en-CA">EN</a>
+      </nav>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
-  <p class="eyebrow ml">Download · 0.17.1 · gen f225595fa9b9 · macOS 12+ · Apple silicon</p>
-  <h1>Install OL.</h1>
-  <p class="lede">Private beta. One download, one model key of your own, nothing to configure before the first unit of work.</p>
+  <p class="eyebrow ml">Téléchargement · 0.17.1 · génération f225595fa9b9 · macOS 12+ · Apple silicon</p>
+  <h1>Installez OL.</h1>
+  <p class="lede">Un téléchargement, une clé de modèle à vous, rien à configurer avant la première unité de travail.</p>
 
   <div class="grid">
     <section>
       <div class="dl">
-        <a class="btn btn-p" href="https://github.com/OL-Projects/ol-control/releases/latest/download/OL-0.17.1-notarized.zip" id="dl">Download for macOS <span aria-hidden="true">↓</span></a>
-        <a class="btn btn-g" href="#verify">Verify the file</a>
+        <a class="btn btn-p" href="https://github.com/OL-Projects/ol-control/releases/latest/download/OL-0.17.1-notarized.zip" id="dl">Télécharger pour macOS <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-g" href="#verify">Vérifier le fichier</a>
       </div>
-      <p class="meta ml" id="meta">331 MB · notarised by Apple · Gatekeeper accepted · arm64 only · macOS 12+</p>
+      <p class="meta ml" id="meta">331 Mo · notarié par Apple · accepté par Gatekeeper · arm64 seulement · macOS 12+</p>
 
       <div class="codewrap" id="verify">
-        <div class="cap ml"><span>sha-256</span><span>check this before you open it</span></div>
+        <div class="cap ml"><span>sha-256</span><span>à vérifier avant de l'ouvrir</span></div>
         <pre><b>961479034168cf09258271d7602982069a34892af0bbda36595c2fb23fbd9c30</b>
 shasum -a 256 OL-0.17.1-notarized.zip</pre>
       </div>
 
       <div class="note">
-        <b>First launch opens normally.</b> This build is signed with a Developer ID, notarised by Apple
-        (notary status: Accepted) and the ticket is stapled into the bundle — verified again after a full
-        round trip through this zip. Gatekeeper reports <code>accepted / Notarized Developer ID</code>,
-        so there is no right-click step and no quarantine command to run.
+        <b>La première ouverture se fait normalement.</b> Cette version est signée avec un Developer ID,
+        notariée par Apple (statut du notaire : Accepted) et le ticket est agrafé dans le paquet — vérifié
+        de nouveau après un aller-retour complet dans ce zip. Gatekeeper rapporte
+        <code>accepted / Notarized Developer ID</code> : pas de clic droit à faire, aucune commande de
+        quarantaine à lancer.
       </div>
     </section>
 
     <section>
-      <h2>Install</h2>
+      <h2>Installer</h2>
       <ol class="steps">
-        <li><b>Unzip</b> the download and drag <b>OL.app</b> into <code>/Applications</code>.</li>
-        <li><b>Open it</b> — Gatekeeper accepts this build, so it launches like any other app.</li>
-        <li><b>Add one model key</b> — Anthropic, OpenAI, DeepSeek or OpenRouter. OL routes the work and proves the result.</li>
+        <li><b>Décompressez</b> le téléchargement et glissez <b>OL.app</b> dans <code>/Applications</code>.</li>
+        <li><b>Ouvrez-le</b> — Gatekeeper accepte cette version, elle démarre comme n'importe quelle application.</li>
+        <li><b>Ajoutez une clé de modèle</b> — Anthropic, OpenAI, DeepSeek ou OpenRouter. OL route le travail et prouve le résultat.</li>
       </ol>
-      <p class="ml" style="margin-top:6px">Requires macOS 12 Monterey or later · Apple Silicon</p>
-      <p style="margin-top:22px"><a href="start.html" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px">New to OL? Five steps from download to your first proof →</a></p>
+      <p class="ml" style="margin-top:6px">Requiert macOS 12 Monterey ou plus récent · Apple Silicon</p>
+      <p style="margin-top:22px"><a href="start.html" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px">Nouveau sur OL&nbsp;? Cinq étapes du téléchargement à votre première preuve →</a></p>
     </section>
   </div>
 
   <div class="cols">
     <section>
-      <h2>In this build</h2>
+      <h2>Dans cette version</h2>
       <ul class="plain">
-        <li>Generation f225595fa9b9 — notarised, timestamped, sealed</li>
-        <li>The proof gate: render, measure, recompute, hash</li>
-        <li>Local runtime, scheduler, memory, seven-tier ladder</li>
-        <li>Bring your own key; no credits are sold with it</li>
+        <li>Génération f225595fa9b9 — notariée, horodatée, scellée</li>
+        <li>La porte de preuve : mettre en page, mesurer, recalculer, hacher</li>
+        <li>Exécution locale, ordonnanceur, mémoire, échelle à sept paliers</li>
+        <li>Votre propre clé ; aucun crédit n'est vendu avec</li>
       </ul>
     </section>
     <section>
-      <h2>Not in it yet</h2>
+      <h2>Pas encore dedans</h2>
       <ul class="plain">
-        <li>No licence server, no payments, no auto-update</li>
-        <li>No Apple notarisation (needs a credential only the owner can give)</li>
-        <li>No Windows or Intel build</li>
-        <li>The bundle is 864 MB installed; the next pass prunes it</li>
+        <li>Aucun serveur de licences, aucun paiement, aucune mise à jour automatique</li>
+        <li>Aucune version Windows ni Intel</li>
+        <li>Le paquet occupe 864 Mo installé ; la prochaine passe l'allège</li>
       </ul>
     </section>
   </div>
@@ -150,7 +164,7 @@ shasum -a 256 OL-0.17.1-notarized.zip</pre>
 <footer>
   <div class="wrap">
     <span class="ml">OL — Optimization and Logistics · Montréal · NEQ 2270669312</span>
-    <span class="ml"><a href="./" style="text-decoration:none">The product</a> · <a href="https://github.com/OL-Projects/ol-control/releases" style="text-decoration:none">All releases</a></span>
+    <span class="ml"><a href="./" style="text-decoration:none">Le produit</a> · <a href="https://github.com/OL-Projects/ol-control/releases" style="text-decoration:none">Toutes les versions</a></span>
   </div>
 </footer>
 

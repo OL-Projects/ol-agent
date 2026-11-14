@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Download OL 0.17.1 — notarised, macOS Apple Silicon</title>
+<meta name="description" content="Download OL 0.17.1 for macOS. Notarised by Apple, Gatekeeper accepted. Apple Silicon, bring your own model key. Checksum and first-launch steps included.">
+<link rel="canonical" href="https://ol-projects.github.io/ol-control/en/download.html">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/download.html">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/download.html">
+<meta name="ol-root" content="../">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Download OL 0.17.1">
+<meta property="og:description" content="For macOS. Signed with a Developer ID and notarised by Apple. Checksum and first-launch steps included.">
+<meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%23080A0E'/%3E%3Cg fill='%23ECEBE4'%3E%3Cpath fill-rule='evenodd' d='M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z'/%3E%3Cpath d='M68 29h14v48h28v14H68z'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#080A0E; --ink:#ECEBE4; --mute:#93A0B4; --dim:#6B7A8F;
+    --rule:rgba(236,235,228,.14); --rule2:rgba(236,235,228,.07);
+    --accent:#5B9DFF; --ok:#7FE3A9; --warn:#E8B07C;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  .ml{font:500 10.5px/1.5 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--dim)}
+  header{border-bottom:1px solid var(--rule)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand svg{width:26px;height:26px;color:var(--ink)}
+  .brand b{font-size:15px;letter-spacing:.02em;font-weight:600}
+  .nav{display:flex;align-items:center;gap:18px}
+  .back{color:var(--mute);text-decoration:none;border-bottom:1px solid transparent}
+  .back:hover{color:var(--ink);border-bottom-color:var(--rule)}
+  .lang{display:flex;align-items:center;gap:8px}
+  .lang a{text-decoration:none;color:var(--mute);border-bottom:1px solid transparent}
+  .lang a[aria-current=true]{color:var(--ink);border-bottom-color:var(--accent)}
+  main{padding:72px 0 40px}
+  .eyebrow{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .eyebrow::before{content:"";width:28px;height:1px;background:var(--rule)}
+  h1{font-size:clamp(40px,6vw,72px);line-height:1;letter-spacing:-.04em;font-weight:600;margin:22px 0 0;max-width:14ch}
+  .lede{margin-top:22px;max-width:52ch;color:var(--mute);font-size:18px}
+  .grid{display:grid;gap:56px;margin-top:56px;min-width:0}
+  .grid>section{min-width:0}
+  .codewrap{min-width:0;max-width:100%}
+  @media (min-width:900px){.grid{grid-template-columns:1.1fr .9fr;gap:72px}}
+  .dl{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:4px;text-decoration:none;
+       font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .12s ease, background .2s ease}
+  .btn:active{transform:scale(.985)}
+  .btn-p{background:var(--accent);color:#04101F}
+  .btn-p:hover{background:#7DB2FF}
+  .btn-g{border-color:var(--rule);color:var(--ink)}
+  .btn-g:hover{border-color:rgba(236,235,228,.35)}
+  .meta{margin-top:18px;color:var(--dim)}
+  .codewrap{margin-top:22px;border:1px solid var(--rule);background:#0B1017}
+  .codewrap .cap{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--rule2)}
+  pre{margin:0;padding:14px;overflow-x:auto;font:400 12.5px/1.7 var(--mono);color:var(--mute)}
+  pre b{color:var(--ink);font-weight:500}
+  h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);font-weight:600;
+     padding-bottom:12px;border-bottom:1px solid var(--rule);margin-bottom:18px}
+  ol.steps{list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;padding:0 0 18px 40px;position:relative;color:var(--mute)}
+  ol.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;
+    font:500 11px/1.6 var(--mono);letter-spacing:.1em;color:var(--dim)}
+  ol.steps b{color:var(--ink);font-weight:500}
+  code{font:400 12.5px/1.6 var(--mono);background:#0B1017;border:1px solid var(--rule2);padding:2px 6px;color:var(--ink)}
+  .cols{display:grid;gap:40px;margin-top:64px}
+  @media (min-width:820px){.cols{grid-template-columns:1fr 1fr;gap:64px}}
+  ul.plain{list-style:none}
+  ul.plain li{padding:10px 0;border-bottom:1px solid var(--rule2);color:var(--mute);display:flex;gap:12px}
+  ul.plain li:last-child{border-bottom:0}
+  ul.plain li::before{content:"—";color:var(--dim);flex:none}
+  .note{margin-top:56px;border-left:2px solid var(--warn);padding:14px 18px;background:#0B1017;color:var(--mute);font-size:14.5px}
+  footer{border-top:1px solid var(--rule);margin-top:72px;padding:26px 0 64px}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--dim)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="../">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M41 29a31 31 0 1 0 0 62a31 31 0 1 0 0-62zM41 43a17 17 0 1 1 0 34a17 17 0 1 1 0-34z"/><path fill="currentColor" d="M68 29h14v48h28v14H68z"/></svg>
+    </a>
+    <div class="nav">
+      <a class="back ml" href="../">← Back to the product</a>
+      <nav class="lang ml" aria-label="Language">
+        <a href="../download.html" hreflang="fr-CA" lang="fr-CA">FR</a><span aria-hidden="true" style="color:var(--dim)">/</span><a href="download.html" aria-current="true" hreflang="en-CA">EN</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow ml">Download · 0.17.1 · gen f225595fa9b9 · macOS 12+ · Apple silicon</p>
+  <h1>Install OL.</h1>
+  <p class="lede">One download, one model key of your own, nothing to configure before the first unit of work.</p>
+
+  <div class="grid">
+    <section>
+      <div class="dl">
+        <a class="btn btn-p" href="https://github.com/OL-Projects/ol-control/releases/latest/download/OL-0.17.1-notarized.zip" id="dl">Download for macOS <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-g" href="#verify">Verify the file</a>
+      </div>
+      <p class="meta ml" id="meta">331 MB · notarised by Apple · Gatekeeper accepted · arm64 only · macOS 12+</p>
+
+      <div class="codewrap" id="verify">
+        <div class="cap ml"><span>sha-256</span><span>check this before you open it</span></div>
+        <pre><b>961479034168cf09258271d7602982069a34892af0bbda36595c2fb23fbd9c30</b>
+shasum -a 256 OL-0.17.1-notarized.zip</pre>
+      </div>
+
+      <div class="note">
+        <b>First launch opens normally.</b> This build is signed with a Developer ID, notarised by Apple
+        (notary status: Accepted) and the ticket is stapled into the bundle — verified again after a full
+        round trip through this zip. Gatekeeper reports <code>accepted / Notarized Developer ID</code>,
+        so there is no right-click step and no quarantine command to run.
+      </div>
+    </section>
+
+    <section>
+      <h2>Install</h2>
+      <ol class="steps">
+        <li><b>Unzip</b> the download and drag <b>OL.app</b> into <code>/Applications</code>.</li>
+        <li><b>Open it</b> — Gatekeeper accepts this build, so it launches like any other app.</li>
+        <li><b>Add one model key</b> — Anthropic, OpenAI, DeepSeek or OpenRouter. OL routes the work and proves the result.</li>
+      </ol>
+      <p class="ml" style="margin-top:6px">Requires macOS 12 Monterey or later · Apple Silicon</p>
+      <p style="margin-top:22px"><a href="start.html" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:2px">New to OL? Five steps from download to your first proof →</a></p>
+    </section>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h2>In this build</h2>
+      <ul class="plain">
+        <li>Generation f225595fa9b9 — notarised, timestamped, sealed</li>
+        <li>The proof gate: render, measure, recompute, hash</li>
+        <li>Local runtime, scheduler, memory, seven-tier ladder</li>
+        <li>Bring your own key; no credits are sold with it</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Not in it yet</h2>
+      <ul class="plain">
+        <li>No licence server, no payments, no auto-update</li>
+        <li>No Windows or Intel build</li>
+        <li>The bundle is 864 MB installed; the next pass prunes it</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="ml">OL — Optimization and Logistics · Montréal · NEQ 2270669312</span>
+    <span class="ml"><a href="../" style="text-decoration:none">The product</a> · <a href="https://github.com/OL-Projects/ol-control/releases" style="text-decoration:none">All releases</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

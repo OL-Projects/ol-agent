@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OL — the one app that replaces the stack</title>
+<meta name="description" content="OL is one persistent organism: the coding power of Claude Code, Codex, Cline and Cursor; the runtime of Hermes; the computer use of OpenClaw; the orchestration of Dots and Herdr. One memory, one identity, one authority and verification spine — and a core that builds what is missing.">
+<link rel="canonical" href="https://ol-projects.github.io/ol-control/en/">
+<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/">
+<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/">
+<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-control/">
+<meta name="ol-root" content="../">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ol-projects.github.io/ol-control/en/">
+<meta property="og:title" content="The one app that replaces the stack.">
+<meta property="og:description" content="One persistent organism: one memory, one identity, one authority and verification spine — and a core that builds what is missing.">
+<meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The one app that replaces the stack.">
+<meta name="twitter:description" content="One memory, one identity, one authority and verification spine — and a core that builds what is missing.">
+<meta name="twitter:image" content="https://ol-projects.github.io/ol-control/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -12 56 56'%3E%3Crect x='0' y='-12' width='56' height='56' fill='%230b0b0a'/%3E%3Ccircle cx='15' cy='16' r='12.4' fill='none' stroke='%23ecebe6' stroke-width='3.6'/%3E%3Cpath d='M35.6 3.4V28.6H54' fill='none' stroke='%23ecebe6' stroke-width='3.6' stroke-linecap='square'/%3E%3C/svg%3E">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0b0a">
+<link rel="stylesheet" href="../assets/site.css">
+<script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('motion')}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","url":"https://ol-projects.github.io/ol-control/","email":"spirokaglis+ol@gmail.com","description":"OL — Optimization and Logistics, Montréal. One persistent organism: one memory, one identity, one authority and verification spine, and a generative core.","identifier":"NEQ 2270669312","vatID":"819029992RT0001","taxID":"4024451921TQ0002","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"}},
+ {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/en/","name":"OL","inLanguage":"en-CA","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"}},
+ {"@type":"Service","name":"OL Services","serviceType":"Construction takeoffs, estimates, technical audits and automation","provider":{"@id":"https://ol-projects.github.io/ol-control/#org"},"areaServed":{"@type":"AdministrativeArea","name":"Québec"},"url":"https://ol-projects.github.io/ol-services/","offers":[
+  {"@type":"Offer","name":"Micro-takeoff","price":"25","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Full takeoff (founding)","price":"74.99","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Technical audit (founding)","price":"290","priceCurrency":"CAD"},
+  {"@type":"Offer","name":"Simple automation (founding)","price":"49","priceCurrency":"CAD"}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+ <symbol id="mark" viewBox="0 0 56 32"><circle cx="15" cy="16" r="13.2" fill="none" stroke="currentColor" stroke-width="3.2"/><path d="M35.6 3.4V28.6H54" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/></symbol>
+</svg>
+
+<header class="top">
+ <div class="box-w">
+  <div class="bar">
+   <a class="brand" href="#top" aria-label="OL — back to top"><svg aria-hidden="true"><use href="#mark"/></svg></a>
+   <nav class="strip" aria-label="Sections, compact">
+    <a href="#top" data-s="top" aria-label="01 Overview">01</a><a href="#film" data-s="film" aria-label="02 The film">02</a><a href="#stack" data-s="stack" aria-label="03 The stack">03</a><a href="#organism" data-s="organism" aria-label="04 The organism">04</a><a href="#core" data-s="core" aria-label="05 The core">05</a><a href="#spine" data-s="spine" aria-label="06 The spine">06</a><a href="#funnel" data-s="funnel" aria-label="07 The funnel">07</a><a href="#divisions" data-s="divisions" aria-label="08 Divisions">08</a><a href="#fee" data-s="fee" aria-label="09 2.7 percent">09</a><a href="#limits" data-s="limits" aria-label="10 Limits">10</a><a href="#proof" data-s="proof" aria-label="11 Proof">11</a><a href="#start" data-s="start" aria-label="12 Start">12</a><a href="#faq" data-s="faq" aria-label="13 Questions">13</a>
+   </nav>
+   <a class="svc" href="https://ol-projects.github.io/ol-services/"><span>OL Services</span> <span aria-hidden="true">→</span></a>
+   <nav class="langsw lab" aria-label="Language">
+    <a href="../" hreflang="fr-CA" lang="fr-CA">FR</a><span class="sep" aria-hidden="true">/</span><a href="./" aria-current="true" hreflang="en-CA">EN</a>
+   </nav>
+  </div>
+ </div>
+</header>
+
+<div class="frame">
+<nav class="rail" aria-label="Sections">
+ <ol>
+  <li><a href="#top" data-s="top"><span class="n">01</span><span>Overview</span></a></li>
+  <li><a href="#film" data-s="film"><span class="n">02</span><span>The film</span></a></li>
+  <li><a href="#stack" data-s="stack"><span class="n">03</span><span>The stack</span></a></li>
+  <li><a href="#organism" data-s="organism"><span class="n">04</span><span>The organism</span></a></li>
+  <li><a href="#core" data-s="core"><span class="n">05</span><span>The core</span></a></li>
+  <li><a href="#spine" data-s="spine"><span class="n">06</span><span>The spine</span></a></li>
+  <li><a href="#funnel" data-s="funnel"><span class="n">07</span><span>The funnel</span></a></li>
+  <li><a href="#divisions" data-s="divisions"><span class="n">08</span><span>Divisions</span></a></li>
+  <li><a href="#fee" data-s="fee"><span class="n">09</span><span>2.7%</span></a></li>
+  <li><a href="#limits" data-s="limits"><span class="n">10</span><span>Limits</span></a></li>
+  <li><a href="#proof" data-s="proof"><span class="n">11</span><span>Proof</span></a></li>
+  <li><a href="#start" data-s="start"><span class="n">12</span><span>Start</span></a></li>
+  <li><a href="#faq" data-s="faq"><span class="n">13</span><span>FAQ</span></a></li>
+ </ol>
+</nav>
+
+<div class="col">
+<main id="main">
+
+<section class="band hero" id="top" aria-labelledby="h-hero">
+ <div class="g">
+  <div class="bh"><span class="lab">01 · Montréal · OL — Optimization and Logistics</span><i></i></div>
+  <h1 class="d1" id="h-hero">
+   <span class="mask" style="--d:0"><span>The one app that</span></span>
+   <span class="mask" style="--d:1"><span>replaces the stack.</span></span>
+  </h1>
+  <p class="what" data-reveal style="--d:2">Not by bundling nine products. By owning the thing each of them only partly has.</p>
+  <div class="hero-copy" data-reveal style="--d:3">
+   <div>
+    <p class="lede"><span>One memory, one identity, one authority and verification spine —</span> <span>and a core that builds whatever is missing,</span> <span>then improves the method that built it.</span></p>
+    <div class="ctas">
+     <a class="btn p" href="https://ol-projects.github.io/ol-services/">Get a takeoff — the first one is free <span class="ar" aria-hidden="true">→</span></a>
+     <a class="btn s" href="#limits">See what it refuses</a>
+     <a class="btn s" href="#film">Watch 30s <span class="ar" aria-hidden="true">▶</span></a>
+    </div>
+    <p class="meta lab">OL Services is live. Construction takeoffs from $25, first one free. Audits and automation at a fixed price.</p>
+   </div>
+  </div>
+
+  <figure class="ledger" data-reveal style="--d:4" aria-labelledby="lg-cap">
+   <div class="lg-h"><span class="lab ttl">Ledger</span><span class="lab" id="lg-clock">T+ 04:31.902</span></div>
+   <div class="lg-k" aria-hidden="true"><span class="lab">Time</span><span></span><span class="lab">Claim / evidence</span><span class="lab">Verdict</span></div>
+   <div class="lg-b" id="lg">
+    <div class="row" data-v="verified"><span class="t">04:02.118</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.1 rendered</b><em>png · 0 px outside page bounds</em></span><span class="v">verified</span></div>
+    <div class="row" data-v="refused"><span class="t">04:04.603</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.2 ink</b><em>coverage 0.0% · blank page</em></span><span class="v">refused</span></div>
+    <div class="row" data-v="verified"><span class="t">04:07.091</span><i class="dot"></i><span class="c"><b>subtotal + GST 5% + QST 9.975%</b><em>1,240.00 + 62.00 + 123.69 = 1,425.69</em></span><span class="v">verified</span></div>
+    <div class="row" data-v="refused"><span class="t">04:09.774</span><i class="dot"></i><span class="c"><b>printed total vs recomputed</b><em>1,425.96 ≠ 1,425.69 · Δ 0.27</em></span><span class="v">refused</span></div>
+    <div class="row" data-v="held"><span class="t">04:12.330</span><i class="dot"></i><span class="c"><b>invoice-0412 · regenerated</b><em>awaiting the gate again</em></span><span class="v">held</span></div>
+    <div class="row" data-v="verified"><span class="t">04:15.046</span><i class="dot"></i><span class="c"><b>invoice-0412 · p.2 re-rendered</b><em>ink 41.2% · 0 px clipped</em></span><span class="v">verified</span></div>
+    <div class="row" data-v="closed"><span class="t">04:17.158</span><i class="dot"></i><span class="c"><b>invoice-0412 · all checks pass</b><em>evidence: 2 png · 1 recompute</em></span><span class="v">closed</span></div>
+    <div class="row" data-v="held"><span class="t">04:20.442</span><i class="dot"></i><span class="c"><b>deploy · server returned 200</b><em>a status code is not proof</em></span><span class="v">held</span></div>
+    <div class="row" data-v="verified"><span class="t">04:23.902</span><i class="dot"></i><span class="c"><b>deploy · sha256 served = built</b><em>9f3c…41e0 = 9f3c…41e0</em></span><span class="v">verified</span></div>
+    <div class="row" data-v="closed"><span class="t">04:25.517</span><i class="dot"></i><span class="c"><b>deploy · unit closed</b><em>tier recorded: runtime-proven</em></span><span class="v">closed</span></div>
+    <div class="row" data-v="refused"><span class="t">04:28.260</span><i class="dot"></i><span class="c"><b>report · “sent to client”</b><em>no delivery receipt on record</em></span><span class="v">refused</span></div>
+    <div class="row" data-v="verified"><span class="t">04:31.902</span><i class="dot"></i><span class="c"><b>leg 21 · tier reached: installed</b><em>claim lowered from device-proven</em></span><span class="v">verified</span></div>
+   </div>
+   <div class="lg-f"><p class="lab cnt"><span class="k1">verified <b data-c="verified">5</b></span> · <span class="k2">refused <b data-c="refused">3</b></span> · <span class="k3">held <b data-c="held">2</b></span> · <span class="k4">closed <b data-c="closed">2</b></span></p></div>
+   <figcaption class="lab lg-n" id="lg-cap">A replay, not a live feed. The rules are the ones the gate runs. The rows are a sample.</figcaption>
+  </figure>
+
+  <div class="tools" data-reveal style="--d:3;margin-top:36px">
+   <span>Hermes</span><span class="d">·</span><span>Claude Code</span><span class="d">·</span><span>Codex</span><span class="d">·</span><span>MUSE</span><span class="d">·</span><span>OpenClaw</span><span class="d">·</span><span>Cline</span><span class="d">·</span><span>Cursor</span><span class="d">·</span><span>Dots</span><span class="d">·</span><span>Herdr</span><span class="ar" aria-hidden="true">→</span><span class="to">OL</span>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="film" aria-labelledby="h-film">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">30 seconds · captions burned in</span></div>
+  <h2 class="d2 hl" id="h-film"><span class="mask"><span>Watch it refuse.</span></span></h2>
+  <p class="body hr" data-reveal>One document, one failed check, one verdict. The film runs the same rules the gate runs — and its ledger rows are a sample replay, not a live customer feed.</p>
+  <figure class="film" data-reveal>
+   <video controls preload="none" playsinline poster="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%201080%201920%27%3E%3Crect%20width%3D%271080%27%20height%3D%271920%27%20fill%3D%27%230b0b0a%27%2F%3E%3Cg%20fill%3D%27none%27%20stroke%3D%27%23ecebe6%27%20stroke-width%3D%277%27%3E%3Ccircle%20cx%3D%27486%27%20cy%3D%27886%27%20r%3D%2786%27%2F%3E%3Cpath%20d%3D%27M598%20800V972H726%27%20stroke-linecap%3D%27square%27%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23a19e96%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2726%27%20letter-spacing%3D%276%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271102%27%3EPLAY%20%C2%B7%2030%20S%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%27%23ecebe6%27%20font-family%3D%27ui-monospace%2CSFMono-Regular%2CMenlo%2Cmonospace%27%20font-size%3D%2722%27%20letter-spacing%3D%275%27%20text-anchor%3D%27middle%27%3E%3Ctext%20x%3D%27540%27%20y%3D%271152%27%3ECAPTIONS%20BURNED%20IN%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E" width="1080" height="1920" aria-describedby="film-cap">
+    <source src="../ol-control-30s.mp4" type="video/mp4">
+    <track kind="captions" src="../ol-control-30s.vtt" srclang="en" label="English" default>
+    <p class="body">This browser cannot play the file. <a class="tl" href="../ol-control-30s.mp4">Download it instead</a> — 910 KB.</p>
+   </video>
+   <figcaption class="lab lg-n" id="film-cap">Shot by shot: a page that clips, a total that is off by twenty-seven cents, a refusal with its reason, and a close that carries its evidence. No music library, no stock footage, no actor.</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section class="band" id="stack" aria-labelledby="h-stack">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">02 · The stack</span></div>
+  <h2 class="d2 hl" id="h-stack"><span class="mask"><span>Nine tools.</span></span><span class="mask" style="--d:1"><span>One organism.</span></span></h2>
+  <p class="body hr" data-reveal>Each of these is excellent at one thing. Each carries its own memory, its own idea of what is true, and its own place where the work stops. OL owns the layer they share — and the one none of them has.</p>
+
+  <div class="stk" role="table" aria-label="Nine tools and what OL unifies">
+   <div class="stk-r stk-h" role="row"><span role="columnheader">Tool</span><span role="columnheader">What it is known for</span><span role="columnheader">What OL unifies</span></div>
+   <div class="stk-r" role="row"><b role="cell">Hermes</b><span role="cell">agent runtime, messaging, orchestration</span><span role="cell">one runtime, one identity, channels, missions, durable work</span></div>
+   <div class="stk-r" role="row"><b role="cell">Claude Code</b><span role="cell">terminal and coding agent</span><span role="cell">code, shell, tests, repositories, verified execution</span></div>
+   <div class="stk-r" role="row"><b role="cell">Codex</b><span role="cell">code generation and execution</span><span role="cell">code, tools, execution, proof</span></div>
+   <div class="stk-r" role="row"><b role="cell">MUSE</b><span role="cell">creative and knowledge agent</span><span role="cell">research, creative work, world model, artifacts</span></div>
+   <div class="stk-r" role="row"><b role="cell">OpenClaw</b><span role="cell">computer use and automation</span><span role="cell">screen, browser, device action through one effect gateway</span></div>
+   <div class="stk-r" role="row"><b role="cell">Cline</b><span role="cell">IDE coding agent</span><span role="cell">code edits, tools, codebase context</span></div>
+   <div class="stk-r" role="row"><b role="cell">Cursor</b><span role="cell">AI-native editor</span><span role="cell">editor, codebase, agentic coding</span></div>
+   <div class="stk-r" role="row"><b role="cell">Dots</b><span role="cell">agent orchestration and teams</span><span role="cell">roles, contracts, multi-agent coordination</span></div>
+   <div class="stk-r" role="row"><b role="cell">Herdr</b><span role="cell">agent fleet orchestration</span><span role="cell">fleet, scheduling, supervision, recovery</span></div>
+   <div class="stk-r z" role="row"><b role="cell">OL</b><span role="cell"><strong>all of the above, and more</strong></span><span role="cell">one organism, one memory, one authority and verification spine, one generative core</span></div>
+  </div>
+
+  <p class="body cap" data-reveal>The <em>more</em> is not a tenth feature. It is the core: it can build the capability that does not exist yet, test it against real failure, adopt it, and retire it when something better arrives.</p>
+ </div>
+</section>
+
+<section class="band" id="organism" aria-labelledby="h-org">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">03 · A stack is not an organism</span></div>
+  <h2 class="d2 hl" id="h-org"><span class="mask"><span>A stack is not</span></span><span class="mask" style="--d:1"><span>an organism.</span></span></h2>
+  <p class="body hr" data-reveal>The difference is not in the feature list. It is in what happens when the work asked for falls outside the category the tool was built for.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3><span class="n">01</span> They are tools with a fixed surface.</h3>
+    <p>You use them for a category of work, and the category is the limit. Ask for something outside it and the honest answer is “unsupported”.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02</span> OL is an organism with a generative core.</h3>
+    <p>It takes a purpose, finds the gap between what is needed and what exists, builds the missing piece, proves the outcome, and keeps the method that worked.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03</span> The tools are organs.</h3>
+    <p>OL can grow, absorb or replace any of them. OL is the intelligence that coordinates them — and the memory that survives when one is swapped out.</p>
+   </div>
+  </div>
+
+  <h3 class="subh">What that buys you, concretely</h3>
+  <div class="two" style="border-top:0;margin-top:0">
+   <div data-reveal><ul>
+    <li><b>The context survives the model.</b>Swap the model, keep the memory, the commitments and the record of what was proven.</li>
+   </ul></div>
+   <div data-reveal style="--d:1"><ul>
+    <li><b>One truth.</b>One world model, one ledger, one place where a claim is checked — not nine chat histories that disagree with each other.</li>
+   </ul></div>
+  </div>
+  <div style="grid-column:1/-1;border-bottom:1px solid var(--rule2)">
+   <div data-reveal style="padding:14px 0"><p class="body" style="max-width:70ch"><strong>The tenth tool.</strong> When the job needs something that does not exist, the answer is not “unsupported”.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="core" aria-labelledby="h-core">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">04 · THE GENERATIVE LOOP</span></div>
+  <h2 class="d2 hl" id="h-core"><span class="mask"><span>It builds the part</span></span><span class="mask" style="--d:1"><span>that is missing.</span></span></h2>
+  <p class="body hr" data-reveal>The loop, not the feature list, is the product. Everything else on this page — the app, the models, the divisions — is an organ, a proof or an application of it.</p>
+
+  <div class="loop" data-reveal aria-label="The steps of the loop">
+   <span>Perceive</span><span class="s" aria-hidden="true">→</span><span>Understand</span><span class="s" aria-hidden="true">→</span><span>Plan</span><span class="s" aria-hidden="true">→</span><span class="s">Find the gap</span><span class="s" aria-hidden="true">→</span><span>Build or acquire</span><span class="s" aria-hidden="true">→</span><span>Act</span><span class="s" aria-hidden="true">→</span><span>Observe</span><span class="s" aria-hidden="true">→</span><span>Verify</span><span class="s" aria-hidden="true">→</span><span>Learn</span><span class="s" aria-hidden="true">→</span><span>Improve the method</span><span class="s" aria-hidden="true">→</span><b>Repeat</b>
+  </div>
+
+  <div class="cds">
+   <div data-reveal>
+    <h3>Knows what it does not know.</h3>
+    <p>It holds a model of its own capabilities, limits, uncertainty and performance. It can say “I do not know” and “I have not proven that” — and both are recorded, not smoothed over.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Builds what is missing.</h3>
+    <p>A gap is detected from real failure, not from a roadmap meeting. The missing capability is built or acquired, tested against the failure that revealed it, registered on evidence, used, and retired when it stops earning its place.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Doesn’t lose the thread.</h3>
+    <p>Missions, checkpoints, effects and continuations survive a crash, a restart or a closed laptop. No phantom work, no blind retry, no duplicated action.</p>
+   </div>
+   <div data-reveal>
+    <h3>Proves the outcome.</h3>
+    <p>Gates, receipts, provenance, independent evidence. “The request returned 200” is not done. “Dispatched” is not done. Done is when the check passes and the evidence is stored.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Learns the method, not just the fact.</h3>
+    <p>Memory is layered: working, episodic, semantic, procedural, institutional. It keeps corrections and contradictions instead of overwriting them, and it improves the way it evaluates its own work — not only the work.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Stays under your hand.</h3>
+    <p>The owner is the root principal. Actions are authorized, scoped and audited. STOP is absolute and immediate — the one switch that is never delegated.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="spine" aria-labelledby="h-spine">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">05 · The spine</span></div>
+  <h2 class="d2 hl" id="h-spine"><span class="mask"><span>One memory. One identity.</span></span><span class="mask" style="--d:1"><span>One authority.</span></span></h2>
+  <p class="body hr" data-reveal>Three things nine separate tools cannot give you, because none of them owns them.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3>Memory</h3>
+    <p>One world model with provenance. Observation is kept separate from inference, prediction and claim. A fact carries when it was true. Corrections are superseded, not deleted. Nothing has to be re-explained every morning.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3>Identity</h3>
+    <p>The same OL across models, machines, restarts and substrates. Purpose, authority, memory and lineage travel; the model does not have to. The model is a replaceable organ — the fabric is the organism.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3>Authority and verification</h3>
+    <p>One effect boundary, one gate, one receipt. Whatever acts, acts through the same authorized path, and whatever claims, claims only what a check confirmed. Your data and your decisions stay yours, and STOP is absolute.</p>
+   </div>
+  </div>
+  <p class="coda" data-reveal>A bundle gives you nine tools with nine memories and nine ideas of what is true. This gives you <b>one world model.</b></p>
+ </div>
+</section>
+
+<section class="band" id="funnel" aria-labelledby="h-funnel">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">06 · The funnel</span></div>
+  <h2 class="d2 hl" id="h-funnel"><span class="mask"><span>If it can be delivered</span></span><span class="mask" style="--d:1"><span>through software, it belongs here.</span></span></h2>
+  <p class="body hr" data-reveal>One place for any human need or want that can be delivered digitally. Not only construction. Not only work.</p>
+
+  <p class="tools" style="margin-top:36px">work<span class="d">·</span>clients<span class="d">·</span>business operations<span class="d">·</span>software<span class="d">·</span>media<span class="d">·</span>research<span class="d">·</span>education<span class="d">·</span>tools<span class="d">·</span>services<span class="d">·</span>creative work<span class="d">·</span>data</p>
+
+  <p class="body cap" data-reveal>The digital spine of a business in one place: CRM, secretary, email, SMS, calls, scheduling, documents, estimates, invoices, taxes, website, software, automation, media, records. Plus the part that is harder to buy: understanding a project, a price, a contract or the next step — and keeping your data, your reputation and your relationships where you can reach them.</p>
+
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:32px"><b>Honest status</b><strong>One domain is priced and live today:</strong> construction takeoffs, technical audits and automation, through OL Services. The rest is the map we are building, not a menu you can order from. This page will not pretend otherwise.</p>
+ </div>
+</section>
+
+<section class="band" id="divisions" aria-labelledby="h-div">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">07 · Divisions</span></div>
+  <h2 class="d2 hl" id="h-div"><span class="mask"><span>Five divisions.</span></span><span class="mask" style="--d:1"><span>One spine.</span></span></h2>
+  <p class="body hr" data-reveal>Each division is an organ of the same organism: same memory, same authority, same gate. A division opens when the one before it is repeatable.</p>
+
+  <div class="cds c5">
+   <div data-reveal>
+    <h3><span class="n">01 · OL Services</span> <span class="bdg live">Live now</span></h3>
+    <p><em>The first division.</em> Construction takeoffs, estimates, technical audits and automation. Fixed prices, stated before work starts, delivered in 24 to 48 hours.</p>
+    <a class="lnk" href="https://ol-projects.github.io/ol-services/">→ Prices and sample</a>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02 · OL Digital / Software</span> <span class="bdg">Next</span></h3>
+    <p>Any digital product, software, media, research, education, data or creative service a person needs — built on the same core as the takeoff. Opens after the first service is repeatable, not before.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03 · 2.7%</span> <span class="bdg">After repeatability</span></h3>
+    <p>The platform fee on earnings OL actually helped create: a job introduced, a client found, a payment made faster, a risk removed. 2.7% only when you earn. <a class="tl" href="#fee">See below</a>.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">04 · OL Labs</span> <span class="bdg">Continuous</span></h3>
+    <p>Recursive self-improvement, new capabilities, hardware. Where the core is tested against itself, and where a candidate change is probed, reviewed and rolled back if it does not hold.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">05 · OL Network</span> <span class="bdg">Long horizon</span></h3>
+    <p>Federated AI coordination and long-horizon science: shared protocols, shared evidence, shared values, each participant sovereign. A federation, not a monopoly — the distinction is the whole point.</p>
+   </div>
+  </div>
+
+  <p class="body cap" data-reveal>No division is a rebrand of a service that already exists elsewhere. Each has to earn its own economics, and none is allowed to degrade the core.</p>
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:24px"><b>What is for sale</b><strong>The ultra-app itself</strong> — OL as a subscription product — is not for sale yet. It opens after the services prove demand. Until then, the only thing for sale on this site is OL Services, at the prices on its page.</p>
+ </div>
+</section>
+
+<section class="band" id="fee" aria-labelledby="h-fee">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">08 · DIVISION 03 · AFTER REPEATABILITY · NOT OPEN YET</span></div>
+  <h2 class="d2 hl" id="h-fee"><span class="mask"><span>2.7%, and only</span></span><span class="mask" style="--d:1"><span>when you earn.</span></span></h2>
+  <p class="body hr" data-reveal>A fee on earnings OL actually helped create. Nothing on work OL did not touch. It is not a subscription, and it is not open yet.</p>
+
+  <div class="stat2" data-reveal>
+   <div><p class="f">2.7%</p><p class="d">of earnings OL actually helped create</p></div>
+   <div><p class="f">97.3%</p><p class="d">stays with the person who did the work</p></div>
+  </div>
+
+  <div style="grid-column:1/span 7;min-width:0">
+   <p class="body" data-reveal style="margin-top:32px">OL takes 2.7% of earnings it actually helped create — a job it introduced, a client it found, a payment it made faster, a risk it removed. No fee on work OL did not touch. No subscription you must pay to be allowed to work. No exit fee, and the clients and the data stay yours.</p>
+   <p class="body" data-reveal style="margin-top:18px">The fee is not rent. It funds the shared spine that makes the earning possible — CRM, secretary, communications, documents, taxes, website, software, verification, payments, support — and the self-improvement that makes the next version better.</p>
+  </div>
+
+  <div class="arith" data-reveal>
+   <span>$10,000 facilitated <b>→ $270</b></span><span class="s" aria-hidden="true">·</span><span>$50,000 <b>→ $1,350</b></span><span class="s" aria-hidden="true">·</span><span>$100,000 <b>→ $2,700</b></span>
+  </div>
+  <p class="small" style="grid-column:1/span 7" data-reveal><em>Illustrative arithmetic, not a forecast. The fee base and its tax treatment are agreed with an accountant before the first invoice.</em></p>
+
+  <h3 class="subh">The fee is honest only if all five hold</h3>
+  <ol class="cond" data-reveal>
+   <li><span class="n">01</span><span>You are <b>better off</b> than you would be without OL.</span></li>
+   <li><span class="n">02</span><span>The fee is <b>fair and stated up front</b> — one rate, no hidden line items.</span></li>
+   <li><span class="n">03</span><span>OL's <b>cost to serve stays below the fee</b>. If it does not, the model is wrong, not the price.</span></li>
+   <li><span class="n">04</span><span>The reinvestment produces <b>measurable capability</b>, not vanity.</span></li>
+   <li><span class="n">05</span><span>You can <b>leave</b>, with your data and your relationships.</span></li>
+  </ol>
+  <p class="coda" data-reveal style="grid-column:1/span 7">If any one of those fails, this is extraction with a nice number on it. It would be stopped.</p>
+
+  <p class="limit" data-reveal style="grid-column:1/span 7;max-width:64ch;margin-top:28px"><b>Not open yet</b><strong>The 2.7% division is not open.</strong> It starts after OL Services is repeatable: one pilot job where OL introduced the client and the contractor, one fee base agreed with an accountant, one invoice that survives review.</p>
+  <p class="body cap" data-reveal>Product fees and the 2.7% are separate. A takeoff at $74.99 is a product fee for a document; 2.7% applies to earnings OL facilitated. You are never charged twice for the same value.</p>
+ </div>
+</section>
+
+<section class="band" id="limits" aria-labelledby="h-lim">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">09 · Honest limits</span></div>
+  <h2 class="d2 hl" id="h-lim"><span class="mask"><span>What it is not.</span></span></h2>
+  <p class="body hr" data-reveal>This is the section most products leave out. It is the one that decides whether the rest can be believed.</p>
+  <div class="cds">
+   <div data-reveal>
+    <h3><span class="n">01</span> It is a tool.</h3>
+    <p>Not a god, not a conscious being, not a substitute for faith. It will not claim divinity, consciousness or feelings. If it ever does, that is a bug, not a feature.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">02</span> It cannot make anyone alive.</h3>
+    <p>Software cannot grant metaphysical aliveness or feelings, and OL will not pretend to. What it can do is take the drudgery, protect your time and give the hours back. The aliveness is yours; the machine can only return your time.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">03</span> A federation, not a monopoly.</h3>
+    <p>Many models, agents, tools and people, coordinated by shared protocols, evidence and values, with consent and human sovereignty. One organism does not mean one company owning every model. A monopoly would be the opposite of the point.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">04</span> A verifier proves what it measures.</h3>
+    <p>It proves the total adds up. It does not prove the invoice went to the right client. That question is still yours — and saying so is part of the product.</p>
+   </div>
+   <div data-reveal style="--d:1">
+    <h3><span class="n">05</span> It is not finished.</h3>
+    <p>The body is proven: the gate runs, the memory persists, the receipt is stored. The mind is not yet self-directing, self-sustaining or self-improving by default. Six conditions have to run without being asked — drive, independent truth, permanence, self-sustaining economics, meta-improvement and judgement. Until they do, this is a prototype with a good gate, and it is described as one.</p>
+   </div>
+   <div data-reveal style="--d:2">
+    <h3><span class="n">06</span> It does not do construction work.</h3>
+    <p>No RBQ licence. No site work, no structural or code determination, no engineering. Estimates are drafts prepared for a licensed contractor to sign and present.</p>
+   </div>
+   <div data-reveal>
+    <h3><span class="n">07</span> “Save the world” is a direction, not a promise.</h3>
+    <p>We aim at measurable benefit and refuse hubris. The first job is one real person's project, not the planet.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="proof" aria-labelledby="h-pr">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">10 · What is proven · ledger as of <span class="h" id="fig-at">—</span></span></div>
+  <h2 class="d2 hl" id="h-pr"><span class="mask"><span>What is proven</span></span><span class="mask" style="--d:1"><span>today.</span></span></h2>
+  <p class="body hr" data-reveal>Not a claim of the final state. A ledger, kept to the same standard as the work.</p>
+
+  <div class="two">
+   <div data-reveal>
+    <h3>Proven</h3>
+    <ul>
+     <li><b>The gate runs on every document.</b>Each page rendered and measured; clipping zero, ink present; the total recomputed from its parts before it is printed; the bytes served hashed against the bytes built.</li>
+     <li><b>The company is real and registered.</b>OL — Optimization and Logistics, NEQ 2270669312, GST 81902 9992 RT0001, QST 4024451921 TQ0002.</li>
+     <li><b>The prices are fixed and public.</b>$25 / $74.99 / $290 / $49, stated before work starts.</li>
+     <li><b>The sample is a real document</b>, produced by this process, not a mock-up.</li>
+     <li><b>Ledger, read from the file.</b><span id="fig-done">—</span> roadmap legs closed of <span id="fig-legs">—</span>; <span id="fig-pass">—</span> checks passing of <span id="fig-checks">—</span> (canonical suite, <span id="fig-checks-at">date in the ledger</span>). Read from <code>status.json</code>, itself derived from the roadmap ledger.</li>
+    </ul>
+   </div>
+   <div class="np" data-reveal style="--d:1">
+    <h3>Not yet proven</h3>
+    <ul>
+     <li><b>One external paid receipt.</b>In progress. This page changes when it lands — the amount, the date and the client's permission will be here.</li>
+     <li><b>Repeatability at 10 to 30 jobs</b> with measured margin, on-time rate and revision rate.</li>
+     <li><b>The 2.7% platform.</b>One pilot, not a business yet.</li>
+     <li><b>The network.</b>A direction with a constitution, not a deployed federation.</li>
+    </ul>
+   </div>
+  </div>
+
+  <p class="body cap" data-reveal>The rule is the same one the product sells: no self-declared green. A number on this page that cannot be traced to a file is not printed.</p>
+
+  <figure class="vf" data-reveal aria-labelledby="vf-cap">
+   <div class="vf-h"><span class="lab ttl">Proof · <span id="vf-gen">published at build</span></span><span class="lab" id="vf-count">— files</span></div>
+   <div class="vf-b" id="vf-body"></div>
+   <div class="vf-f">
+    <button class="btn p" type="button" id="vf-run" style="min-height:42px;padding:0 18px;font-size:14px">Run the check <span class="ar" aria-hidden="true">→</span></button>
+    <p class="vf-sum" id="vf-sum" role="status" aria-live="polite">Not run. The hashes are published; the check is yours to make.</p>
+   </div>
+   <figcaption class="lab lg-n" id="vf-cap">Each row is one file this page loads. A mismatch means the file you received is not the file that was built. That is a refusal, and this page says so out loud.</figcaption>
+  </figure>
+  <div class="vf-note">
+   <p class="lab ink">Why this section exists</p>
+   <p class="body" data-reveal>A product that asks you to check its work cannot begin by asking you to believe a web page. So this page is made of the same rule it sells: publish the hash, let anyone recompute it, and print the result whether or not it flatters us.</p>
+   <p class="limit" data-reveal><b>The limit, stated</b>A hash proves the bytes you received are the bytes that were built. It does not prove the bytes are any good. One of those is measurable. The other is still your judgement.</p>
+   <p class="lab" data-reveal>Same rule in the repository: <span class="ink">proof.py --check</span> recomputes every hash on each push and fails the deploy if one line disagrees.</p>
+  </div>
+ </div>
+</section>
+
+<section class="band" id="start" aria-labelledby="h-start">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">11 · Final call</span></div>
+  <h2 class="d2 hl" id="h-start"><span class="mask"><span>Start with the</span></span><span class="mask" style="--d:1"><span>smallest real job.</span></span></h2>
+  <p class="body hr" data-reveal>OL Services is live. Send a plan, and a fixed price comes back within one business hour. The first takeoff for a new client is free — no card, no account, no retainer.</p>
+
+  <div class="off" data-reveal>
+   <div class="r"><span>Micro-takeoff — one room, one trade, quantities only</span><span class="p">$25</span></div>
+   <div class="r"><span>Full takeoff — up to 1,000 ft², priced material list</span><span class="p">$74.99 founding · $149 standard</span></div>
+   <div class="r"><span>First takeoff, new client</span><span class="p">free</span></div>
+   <div class="r"><span>Technical audit — one repository, API or workflow</span><span class="p">$290 founding · $490 standard</span></div>
+   <div class="r t"><span>Simple automation — one, built and tested</span><span class="p">$49 · $150+ standard</span></div>
+   <p class="small">Canadian dollars, before tax. GST 5% and QST 9.975% on every invoice. Above 1,000 ft²: priced per job before work starts.</p>
+  </div>
+
+  <div class="ctas" style="grid-column:1/span 7" data-reveal>
+   <a class="btn p" href="https://ol-projects.github.io/ol-services/">Get a takeoff <span class="ar" aria-hidden="true">→</span></a>
+   <a class="btn s" href="https://ol-projects.github.io/ol-services/#prices">Prices and sample</a>
+  </div>
+  <p class="meta lab" data-reveal style="grid-column:1/span 7">Or read what it refuses first. That is the better order.</p>
+ </div>
+</section>
+
+<section class="band" id="faq" aria-labelledby="h-faq">
+ <div class="g">
+  <div class="bh"><i></i><span class="lab">12 · Fair questions</span></div>
+  <h2 class="d2 hl" id="h-faq"><span class="mask"><span>Fair</span></span><span class="mask" style="--d:1"><span>questions.</span></span></h2>
+  <p class="body hr" data-reveal>The objections we actually get, with the short answer.</p>
+  <div class="faq">
+   <details><summary>Is this a chatbot?</summary>
+    <p>No. A chat window is one surface of it. The difference is what happens after the answer exists: whether the work is executed inside one authority boundary, checked against evidence, and recorded so it survives the next restart.</p></details>
+   <details><summary>Is it another wrapper around a model?</summary>
+    <p>No. The model is an organ and it is replaceable. What persists is the memory, the identity, the authority and verification spine, and the record of what has been proven — none of which belong to the model.</p></details>
+   <details><summary>Can it really do anything?</summary>
+    <p>No, and this page says so above. One domain is priced and live today. The claim is not omniscience; it is that the boundary is open-ended — when a real job needs something that does not exist, the response is to build and prove it, not to return “unsupported”.</p></details>
+   <details><summary>What does it cost?</summary>
+    <p>Today, only services are for sale: $25, $74.99, $290, $49, first takeoff free. A product subscription comes after the service proves demand. The 2.7% applies only to earnings OL helped create, and it is not open yet.</p></details>
+   <details><summary>Who owns what I put in?</summary>
+    <p>You do. Your data and your relationships stay yours, and you can leave with them. On the services side: nothing is sold, nothing is used to train a model, and it is deleted on request or 24 months after the job closes.</p></details>
+   <details><summary>Why tell me what it cannot do?</summary>
+    <p>Because a system that hides its limits is handing you the risk without naming it. A verifier that says what it does not measure is worth more than one that says it checks everything.</p></details>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer class="foot">
+ <div class="g">
+  <div class="mk2"><svg role="img" aria-label="OL mark"><use href="#mark"/></svg></div>
+  <div class="f1">
+   <p class="ink">OL — Optimization and Logistics</p>
+   <p>Montréal, Québec</p>
+   <p>NEQ 2270669312 · GST 81902 9992 RT0001 · QST 4024451921 TQ0002</p>
+   <p><a class="tl" href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a></p>
+  </div>
+  <div class="f2">
+   <p class="lab ink">Divisions</p>
+   <p>OL Services (live) · OL Digital/Software (next)</p>
+   <p>2.7% (after repeatability) · OL Labs · OL Network</p>
+   <p style="margin-top:12px"><a class="tl" href="start.html">Start</a> · <a class="tl" href="download.html">Download</a></p>
+  </div>
+  <div class="f3">
+   <p><a class="tl" href="https://ol-projects.github.io/ol-services/">OL Services</a></p>
+   <p><a class="tl" href="https://ol-projects.github.io/ol-services/#prices">Prices</a> · <a class="tl" href="https://ol-projects.github.io/ol-services/">Sample</a></p>
+   <p><a class="tl" href="#faq">Privacy</a> · <a class="tl" href="../" hreflang="fr-CA" lang="fr-CA">Français</a></p>
+   <p class="lab" style="margin-top:12px">Site build <span class="h ink" id="build-foot">—</span></p>
+  </div>
+  <div style="grid-column:1/-1;border-top:1px solid var(--rule2);margin-top:12px;padding-top:16px">
+   <p class="lab">OL is a tool. It does not claim consciousness, divinity or feelings.</p>
+   <p class="lab" style="margin-top:6px">© 2026 OL — Optimization and Logistics.</p>
+  </div>
+ </div>
+</footer>
+</div>
+</div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

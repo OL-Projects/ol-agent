@@ -1,17 +1,22 @@
 {
  "schema": "ol.control.status/1",
- "generated": "2026-11-09T13:06:46Z",
- "generated_date": "2026-11-09",
- "legs_total": 57,
- "legs_done": 34,
- "legs_open": 23,
- "legs_done_pct": 59.6,
- "legs_open_pct": 40.4,
- "roadmap_updated": "2026-11-09T12:34:22Z",
- "checks": 227,
- "checks_passing": 227,
+ "generated": "2026-11-13T23:51:50Z",
+ "generated_date": "2026-11-13",
+ "legs_total": 156,
+ "legs_done": 119,
+ "legs_open": 37,
+ "legs_done_pct": 76.3,
+ "legs_open_pct": 23.7,
+ "roadmap_updated": "2026-11-13T02:15:19Z",
+ "checks": 240,
+ "checks_passing": 240,
  "checks_failing": 0,
- "checks_at": "2026-11-09T07:56:14",
- "headline": "Thirty\u2011four of fifty\u2011seven.",
- "source": "~/.ol/state/roadmap.json"
+ "checks_at": "2026-11-12T06:26:00Z",
+ "checks_date": "2026-11-12",
+ "headline": "119 of 156 roadmap legs closed.",
+ "sources": [
+  "~/.ol/state/roadmap.json (live ledger, re-derived)",
+  "~/.ol/state/continuity-make-test-20261112T0621.log (last line: 240/240 passed)"
+ ],
+ "note": "Every figure on the page is read from this file at runtime; nothing is typed into the HTML."
 }
