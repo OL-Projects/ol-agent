@@ -6,9 +6,9 @@ The site is French at the root (Bill 96), English under `/en/`.
 
 | | |
 |---|---|
-| French | <https://ol-projects.github.io/ol-control/> |
-| English | <https://ol-projects.github.io/ol-control/en/> |
-| Services (the only thing for sale today) | <https://ol-projects.github.io/ol-services/> |
+| French | <https://olcontrol.com/> |
+| English | <https://olcontrol.com/en/> |
+| Services (the only thing for sale today) | <https://services.olcontrol.com/> |
 
 ## What the page says
 

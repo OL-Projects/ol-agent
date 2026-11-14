@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OL — l'application qui remplace la pile</title>
-<meta name="description" content="OL est un seul organisme persistant : la puissance de code de Claude Code, Codex, Cline et Cursor ; l'exécution d'agents de Hermes ; l'usage de l'ordinateur d'OpenClaw ; l'orchestration de Dots et Herdr. Une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
-<link rel="canonical" href="https://ol-projects.github.io/ol-control/">
-<link rel="alternate" hreflang="fr-CA" href="https://ol-projects.github.io/ol-control/">
-<link rel="alternate" hreflang="en-CA" href="https://ol-projects.github.io/ol-control/en/">
-<link rel="alternate" hreflang="x-default" href="https://ol-projects.github.io/ol-control/">
+<meta name="description" content="OL réunit code, agents, mémoire et vérification dans un seul organisme persistant — et construit ce qui manque.">
+<link rel="canonical" href="https://olcontrol.com/">
+<link rel="alternate" hreflang="fr-CA" href="https://olcontrol.com/">
+<link rel="alternate" hreflang="en-CA" href="https://olcontrol.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://olcontrol.com/">
 <meta name="ol-root" content="">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ol-projects.github.io/ol-control/">
+<meta property="og:url" content="https://olcontrol.com/">
 <meta property="og:title" content="L'application qui remplace la pile.">
 <meta property="og:description" content="Un seul organisme persistant : une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
-<meta property="og:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta property="og:image" content="https://olcontrol.com/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="fr_CA">
@@ -22,17 +22,18 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="L'application qui remplace la pile.">
 <meta name="twitter:description" content="Une mémoire, une identité, une colonne d'autorité et de vérification — et un noyau qui construit ce qui manque.">
-<meta name="twitter:image" content="https://ol-projects.github.io/ol-control/og.png">
+<meta name="twitter:image" content="https://olcontrol.com/og.png">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -12 56 56'%3E%3Crect x='0' y='-12' width='56' height='56' fill='%230b0b0a'/%3E%3Ccircle cx='15' cy='16' r='12.4' fill='none' stroke='%23ecebe6' stroke-width='3.6'/%3E%3Cpath d='M35.6 3.4V28.6H54' fill='none' stroke='%23ecebe6' stroke-width='3.6' stroke-linecap='square'/%3E%3C/svg%3E">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0b0b0a">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0b0a">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f5ef">
 <link rel="stylesheet" href="assets/site.css">
 <script>if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('motion')}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","@id":"https://ol-projects.github.io/ol-control/#org","name":"OL — Optimization and Logistics","url":"https://ol-projects.github.io/ol-control/","email":"spirokaglis+ol@gmail.com","description":"OL — Optimization and Logistics, Montréal. Un organisme persistant : une mémoire, une identité, une colonne d'autorité et de vérification, et un noyau génératif.","identifier":"NEQ 2270669312","vatID":"819029992RT0001","taxID":"4024451921TQ0002","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"}},
- {"@type":"WebSite","@id":"https://ol-projects.github.io/ol-control/#site","url":"https://ol-projects.github.io/ol-control/","name":"OL","inLanguage":"fr-CA","publisher":{"@id":"https://ol-projects.github.io/ol-control/#org"}},
- {"@type":"Service","name":"OL Services","serviceType":"Prises de quantités, estimations, audits techniques et automatisation","provider":{"@id":"https://ol-projects.github.io/ol-control/#org"},"areaServed":{"@type":"AdministrativeArea","name":"Québec"},"url":"https://ol-projects.github.io/ol-services/","offers":[
+ {"@type":"Organization","@id":"https://olcontrol.com/#org","name":"OL — Optimization and Logistics","url":"https://olcontrol.com/","email":"support@olcontrol.com","description":"OL — Optimization and Logistics, Montréal. Un organisme persistant : une mémoire, une identité, une colonne d'autorité et de vérification, et un noyau génératif.","identifier":"NEQ 2270669312","vatID":"819029992RT0001","taxID":"4024451921TQ0002","address":{"@type":"PostalAddress","addressLocality":"Montréal","addressRegion":"QC","addressCountry":"CA"}},
+ {"@type":"WebSite","@id":"https://olcontrol.com/#site","url":"https://olcontrol.com/","name":"OL","inLanguage":"fr-CA","publisher":{"@id":"https://olcontrol.com/#org"}},
+ {"@type":"Service","name":"OL Services","serviceType":"Prises de quantités, estimations, audits techniques et automatisation","provider":{"@id":"https://olcontrol.com/#org"},"areaServed":{"@type":"AdministrativeArea","name":"Québec"},"url":"https://services.olcontrol.com/","offers":[
   {"@type":"Offer","name":"Micro-prise de quantités","price":"25","priceCurrency":"CAD"},
   {"@type":"Offer","name":"Prise de quantités complète (lancement)","price":"74.99","priceCurrency":"CAD"},
   {"@type":"Offer","name":"Audit technique (lancement)","price":"290","priceCurrency":"CAD"},
@@ -54,7 +55,7 @@
    <nav class="strip" aria-label="Sections, forme compacte">
     <a href="#top" data-s="top" aria-label="01 Aperçu">01</a><a href="#film" data-s="film" aria-label="02 Le film">02</a><a href="#pile" data-s="pile" aria-label="03 La pile">03</a><a href="#organisme" data-s="organisme" aria-label="04 L'organisme">04</a><a href="#noyau" data-s="noyau" aria-label="05 Le noyau">05</a><a href="#colonne" data-s="colonne" aria-label="06 La colonne">06</a><a href="#entonnoir" data-s="entonnoir" aria-label="07 L'entonnoir">07</a><a href="#divisions" data-s="divisions" aria-label="08 Divisions">08</a><a href="#commission" data-s="commission" aria-label="09 2,7 pour cent">09</a><a href="#limites" data-s="limites" aria-label="10 Limites">10</a><a href="#preuve" data-s="preuve" aria-label="11 Preuve">11</a><a href="#commencer" data-s="commencer" aria-label="12 Commencer">12</a><a href="#faq" data-s="faq" aria-label="13 Questions">13</a>
    </nav>
-   <a class="svc" href="https://ol-projects.github.io/ol-services/"><span>OL Services</span> <span aria-hidden="true">→</span></a>
+   <a class="svc" href="https://services.olcontrol.com/"><span>OL Services</span> <span aria-hidden="true">→</span></a>
    <nav class="langsw lab" aria-label="Langue">
     <a href="./" aria-current="true" hreflang="fr-CA">FR</a><span class="sep" aria-hidden="true">/</span><a href="en/" hreflang="en-CA" lang="en-CA">EN</a>
    </nav>
@@ -96,7 +97,7 @@
    <div>
     <p class="lede"><span>Une mémoire, une identité, une colonne d'autorité et de vérification —</span> <span>et un noyau qui construit ce qui manque,</span> <span>puis améliore la méthode qui l'a construit.</span></p>
     <div class="ctas">
-     <a class="btn p" href="https://ol-projects.github.io/ol-services/">Demander une prise de quantités — la première est gratuite <span class="ar" aria-hidden="true">→</span></a>
+     <a class="btn p" href="https://services.olcontrol.com/">Demander une prise de quantités — la première est gratuite <span class="ar" aria-hidden="true">→</span></a>
      <a class="btn s" href="#limites">Voir ce qu'il refuse</a>
      <a class="btn s" href="#film">Regarder 30&nbsp;s <span class="ar" aria-hidden="true">▶</span></a>
     </div>
@@ -292,7 +293,7 @@
    <div data-reveal>
     <h3><span class="n">01 · OL Services</span> <span class="bdg live">En service</span></h3>
     <p><em>La première division.</em> Prises de quantités, estimations, audits techniques et automatisation en construction. Prix fixes annoncés avant le début du travail, livrés en 24&nbsp;à&nbsp;48&nbsp;h.</p>
-    <a class="lnk" href="https://ol-projects.github.io/ol-services/">→ Prix et échantillon</a>
+    <a class="lnk" href="https://services.olcontrol.com/">→ Prix et échantillon</a>
    </div>
    <div data-reveal style="--d:1">
     <h3><span class="n">02 · OL Numérique / Logiciel</span> <span class="bdg">Prochaine</span></h3>
@@ -455,8 +456,8 @@
   </div>
 
   <div class="ctas" style="grid-column:1/span 7" data-reveal>
-   <a class="btn p" href="https://ol-projects.github.io/ol-services/">Demander une prise de quantités <span class="ar" aria-hidden="true">→</span></a>
-   <a class="btn s" href="https://ol-projects.github.io/ol-services/#prix">Prix et échantillon</a>
+   <a class="btn p" href="https://services.olcontrol.com/">Demander une prise de quantités <span class="ar" aria-hidden="true">→</span></a>
+   <a class="btn s" href="https://services.olcontrol.com/#prix">Prix et échantillon</a>
   </div>
   <p class="meta lab" data-reveal style="grid-column:1/span 7">Ou lisez d'abord ce qu'il refuse. C'est le meilleur ordre.</p>
  </div>
@@ -493,7 +494,7 @@
    <p class="ink">OL — Optimization and Logistics</p>
    <p>Montréal, Québec</p>
    <p>NEQ 2270669312 · TPS 81902 9992 RT0001 · TVQ 4024451921 TQ0002</p>
-   <p><a class="tl" href="mailto:spirokaglis+ol@gmail.com">spirokaglis+ol@gmail.com</a></p>
+   <p><a class="tl" href="mailto:support@olcontrol.com">support@olcontrol.com</a></p>
   </div>
   <div class="f2">
    <p class="lab ink">Divisions</p>
@@ -502,8 +503,8 @@
    <p style="margin-top:12px"><a class="tl" href="start.html">Commencer</a> · <a class="tl" href="download.html">Télécharger</a></p>
   </div>
   <div class="f3">
-   <p><a class="tl" href="https://ol-projects.github.io/ol-services/">OL Services</a></p>
-   <p><a class="tl" href="https://ol-projects.github.io/ol-services/#prix">Prix</a> · <a class="tl" href="https://ol-projects.github.io/ol-services/">Échantillon</a></p>
+   <p><a class="tl" href="https://services.olcontrol.com/">OL Services</a></p>
+   <p><a class="tl" href="https://services.olcontrol.com/#prix">Prix</a> · <a class="tl" href="https://services.olcontrol.com/">Échantillon</a></p>
    <p><a class="tl" href="#faq">Confidentialité</a> · <a class="tl" href="en/" hreflang="en-CA" lang="en-CA">English</a></p>
    <p class="lab" style="margin-top:12px">Construction du site <span class="h ink" id="build-foot">—</span></p>
   </div>

@@ -1,14 +1,19 @@
 {
  "schema": "ol.control.proof/1",
- "build": "2bc78aab3ff9",
- "generated": "2026-11-14T00:18:08Z",
+ "build": "1d86a82edc88",
+ "generated": "2026-11-14T04:25:08Z",
  "algorithm": "sha256",
  "note": "Recomputed in the visitor's browser and in CI. A mismatch is a refusal, not a warning.",
  "files": [
   {
+   "path": "CNAME",
+   "sha256": "6f592e3eaf35be9f1c2ed01aae57cac389291f8496c7fac6496f9ee942689b94",
+   "bytes": 14
+  },
+  {
    "path": "README.md",
-   "sha256": "6d0d96d16b13cd21c88579a3aacc7f35b6f9a53f77cf92fc308e436acdcca878",
-   "bytes": 1644
+   "sha256": "365f541d3cc8ed623c3b2dc6d87d549e332f92b66e0d6ac250e72c6af76148f8",
+   "bytes": 1595
   },
   {
    "path": "RELEASE-NOTES.md",
@@ -17,8 +22,8 @@
   },
   {
    "path": "assets/site.css",
-   "sha256": "b06cff396f97e043c9d6ca8bcaabb0de58946bfd3358cfd8c92fa179c56b6632",
-   "bytes": 36299
+   "sha256": "4996b51c80cf90ef28beb1562ef666df92a452fd512bb7c72254ca1f0b348b6f",
+   "bytes": 38312
   },
   {
    "path": "assets/site.js",
@@ -32,28 +37,28 @@
   },
   {
    "path": "download.html",
-   "sha256": "f98ec9b7d0feddb65fa3b75a669cfef653c7e5427e2ab11c9546f7664dcd05bd",
-   "bytes": 10215
+   "sha256": "9592fef74a74ac289f581a0a2c693a14ea08f83ff65d846db33f6d8b763bc222",
+   "bytes": 10139
   },
   {
    "path": "en/download.html",
-   "sha256": "e2a700861a1ebd9b9c323e0aa6e58824fe39eabeed2f28e40108996cdf702d91",
-   "bytes": 9906
+   "sha256": "77418c8b31050cdd6bd18ed2510ddc4c2ff865f6bc7488adfbf60c0d6256214d",
+   "bytes": 9830
   },
   {
    "path": "en/index.html",
-   "sha256": "116b006c2532d97220e25b3539789a3df4e1e0e444279bf4de2806b214bed801",
-   "bytes": 44533
+   "sha256": "131925391917b897741bf3245064cb8847cc184aa5085a8dde775c39175dffad",
+   "bytes": 44124
   },
   {
    "path": "en/start.html",
-   "sha256": "28dac5048c6a8418f1f0e4b44935b5ab969675371d35ca6f5c62aaf6bd12c9d8",
-   "bytes": 9169
+   "sha256": "6736ff92dfb7df95484c5c12b18164f957c88dd72e8ed938ebae5666d346c8b1",
+   "bytes": 9093
   },
   {
    "path": "index.html",
-   "sha256": "005270a5533351ba7f50e5cc770586df89c8c7ae3039a22d14981b95d77076ce",
-   "bytes": 48171
+   "sha256": "ee02bf7eb33d197e67beeb54d654c3e0855c5a83c81149487ee8d4a6c4101123",
+   "bytes": 47735
   },
   {
    "path": "og.png",
@@ -72,8 +77,13 @@
   },
   {
    "path": "ol-mark-v2.svg",
-   "sha256": "17db3151664b03b832ddbf990b864922f0618ccbd0af2b36604bfd9f8fc54086",
-   "bytes": 247
+   "sha256": "6bc07cc14ecac90edf39c5efe9d85ced82b66aefadc23180e6347fefa15c59b7",
+   "bytes": 271
+  },
+  {
+   "path": "ol-mark.svg",
+   "sha256": "6bc07cc14ecac90edf39c5efe9d85ced82b66aefadc23180e6347fefa15c59b7",
+   "bytes": 271
   },
   {
    "path": "proof.py",
@@ -82,18 +92,18 @@
   },
   {
    "path": "robots.txt",
-   "sha256": "9f7c04246dce5a9e85bfd0eaee402f378c8c67cd02fc2803e6629ed128d951c2",
-   "bytes": 86
+   "sha256": "559af301475e834fea60d23d458502fa22817a6d8ca3197268dff604041102a8",
+   "bytes": 67
   },
   {
    "path": "sitemap.xml",
-   "sha256": "1576b9a1a9dee95a68444262261b1bb825ffa1e139b6cfb6fe9d20e1ee47e3c8",
-   "bytes": 1730
+   "sha256": "1dae31b526f82e5a85fab6615c5c5f30bd12c1d91efea8216ac8198aa16a6d81",
+   "bytes": 1502
   },
   {
    "path": "start.html",
-   "sha256": "fa5b7ea0a3d93c7b568cbb104850b919328939b276a58e1eda37d4050eb7b3f2",
-   "bytes": 9493
+   "sha256": "4a9e0b950bd211ef0c92921e8ee8f2fe913c9363bee8430f92c2d475590396e2",
+   "bytes": 9417
   },
   {
    "path": "status.json",
